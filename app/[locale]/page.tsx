@@ -1,13 +1,31 @@
-import {useTranslations} from 'next-intl';
-import LanguageSwitcher from '@/components/LanguageSwitcher';
+import Navbar from '@/components/Navbar';
+import HeroSection from '@/components/HeroSection';
+import ProblemSection from '@/components/ProblemSection';
+import FeaturesSection from '@/components/FeaturesSection';
+import FounderSection from '@/components/FounderSection';
+import CtaSection from '@/components/CtaSection';
 
 export default function LocalePage() {
-  const t = useTranslations('common');
-
   return (
-    <main className="flex flex-1 flex-col items-center justify-center gap-6">
-      <h1 className="text-3xl font-semibold tracking-tight">{t('siteName')}</h1>
-      <LanguageSwitcher />
-    </main>
+    <>
+      <Navbar />
+      <main>
+        <HeroSection />
+        <ProblemSection />
+        <FeaturesSection />
+        <FounderSection />
+        <CtaSection />
+      </main>
+      <footer
+        className="py-8 border-t text-center text-[13px]"
+        style={{
+          backgroundColor: 'var(--navy-950)',
+          borderColor: 'var(--border-subtle)',
+          color: 'var(--text-muted)',
+        }}
+      >
+        © {new Date().getFullYear()} CamperFlow. All rights reserved.
+      </footer>
+    </>
   );
 }

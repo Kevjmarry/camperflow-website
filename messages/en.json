@@ -1,5 +1,69 @@
 {
   "common": {
     "siteName": "CamperFlow"
+  },
+  "nav": {
+    "features": "Features",
+    "about": "About",
+    "contact": "Contact",
+    "bookDemo": "Book a demo"
+  },
+  "hero": {
+    "headline": "Software for camper rental operations",
+    "subheadline": "CamperFlow helps campervan, caravan, and motorhome rental companies manage vehicle readiness, compliance, checklists, and daily operations in one system.",
+    "clarification": "CamperFlow is not a booking platform. It works alongside your existing booking system to manage the operational side of your rental business.",
+    "ctaDemo": "Book a demo",
+    "ctaHow": "See how it works",
+    "trust": "Built by Kevin Marry, founder of Epic Vans, for real rental operations"
+  },
+  "problem": {
+    "badge": "The problem",
+    "headline": "Running a rental fleet is operationally complex",
+    "intro": "Booking systems handle reservations. But they don't track whether a vehicle is ready, compliant, or fit to hand over.",
+    "item0Title": "Spreadsheets and paper checklists",
+    "item0Desc": "Most operators still use spreadsheets to track vehicle readiness, compliance, and handover status — creating gaps, duplication, and missed checks.",
+    "item1Title": "No single source of truth",
+    "item1Desc": "Vehicle status, open issues, and compliance records are scattered across emails, WhatsApp, notes, and multiple tools.",
+    "item2Title": "Compliance risks",
+    "item2Desc": "Without a structured system, important checks get missed. Warranty conditions, roadworthiness, and regulatory requirements fall through the cracks.",
+    "item3Title": "Slow handovers",
+    "item3Desc": "Handover processes are manual, inconsistent, and time-consuming — creating friction for guests and pressure on staff."
+  },
+  "features": {
+    "badge": "How it works",
+    "headline": "One operational system for your entire fleet",
+    "subheadline": "CamperFlow replaces scattered tools with a single, structured operations hub.",
+    "tab0": "Bookings operational hub",
+    "tab0Desc": "See every upcoming rental in one view. Track which vehicles are assigned, their readiness status, and what actions need to happen before handover.",
+    "tab0Detail": "Connect your existing booking platform and get a unified view of all upcoming reservations alongside vehicle readiness and open tasks.",
+    "tab1": "Vehicle readiness",
+    "tab1Desc": "Every vehicle has a live readiness status. Know at a glance what's ready, what needs attention, and what's blocked before each rental starts.",
+    "tab1Detail": "Track readiness across your entire fleet — from service schedules and compliance dates to open issues and pre-rental checks.",
+    "tab2": "Digital checklists",
+    "tab2Desc": "Replace paper checklists with structured digital workflows for handover, return, and deep cleans. Every step is logged and timestamped.",
+    "tab2Detail": "Build custom checklist templates for any workflow. Assign them to staff, track completion, and keep a full audit trail for every rental.",
+    "tab3": "Issue tracking",
+    "tab3Desc": "Log and track vehicle defects, damage, and maintenance needs from the field. Link issues to rentals and monitor resolution.",
+    "tab3Detail": "Staff can report issues on the spot. Every issue is tracked from discovery to resolution — linked to the vehicle, rental, and responsible person.",
+    "tab4": "Compliance monitoring",
+    "tab4Desc": "Track service intervals, warranty conditions, roadworthiness certificates, and regulatory checks. Get alerts before deadlines.",
+    "tab4Detail": "Never miss a compliance deadline. CamperFlow monitors service intervals, safety certificates, and warranty conditions for every vehicle in your fleet.",
+    "tab5": "Guest information pages",
+    "tab5Desc": "Automatically generate branded information pages for each rental — vehicle guides, local tips, emergency contacts, and handover instructions.",
+    "tab5Detail": "Each guest gets a personalised digital page with everything they need for their trip — reducing support calls and improving the guest experience."
+  },
+  "founder": {
+    "badge": "Why CamperFlow",
+    "headline": "Built by someone who ran the operation",
+    "body1": "I ran Epic Vans, a campervan rental company, and experienced first-hand how poorly the existing tools handled the operational side. Booking systems handled reservations. Nothing handled the rest.",
+    "body2": "I built CamperFlow to fill that gap — not as a generic SaaS product, but as a system designed specifically for how rental operations actually work.",
+    "name": "Kevin Marry",
+    "role": "Founder, CamperFlow — and former operator of Epic Vans"
+  },
+  "cta": {
+    "headline": "See CamperFlow in action",
+    "body": "Book a 30-minute demo to see how CamperFlow fits into your operation.",
+    "button": "Book a demo",
+    "note": "No commitment required. We'll walk through your specific operation."
   }
 }
