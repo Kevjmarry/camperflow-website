@@ -1,6 +1,7 @@
 'use client';
 
 import {useState} from 'react';
+import Image from 'next/image';
 import {useTranslations} from 'next-intl';
 import {useLocale} from 'next-intl';
 import {usePathname, useRouter} from '@/navigation';
@@ -39,17 +40,13 @@ export default function Navbar() {
 
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 flex-shrink-0">
-            <div
-              className="w-7 h-7 rounded-md flex items-center justify-center flex-shrink-0"
-              style={{backgroundColor: 'var(--blue-brand)'}}
-            >
-              <svg viewBox="0 0 20 20" fill="white" className="w-[14px] h-[14px]">
-                <rect x="2" y="2" width="7" height="7" rx="1" />
-                <rect x="11" y="2" width="7" height="7" rx="1" />
-                <rect x="2" y="11" width="7" height="7" rx="1" />
-                <rect x="11" y="11" width="4" height="4" rx="1" />
-              </svg>
-            </div>
+            <Image
+              src="/screenshots/logo.png"
+              alt="CamperFlow"
+              width={28}
+              height={28}
+              className="rounded-md flex-shrink-0"
+            />
             <span className="font-semibold text-[15px] tracking-tight" style={{color: 'var(--text-primary)'}}>
               CamperFlow
             </span>
@@ -90,7 +87,7 @@ export default function Navbar() {
 
             <a
               href="#cta"
-              className="hidden sm:inline-flex items-center text-[13px] font-medium px-4 py-2 rounded-lg bg-[#1e6aff] hover:bg-[#1459d9] text-white transition-colors"
+              className="hidden sm:inline-flex items-center text-[13px] font-medium px-4 py-2 rounded-lg bg-[#2563eb] hover:bg-[#1d4ed8] text-white transition-colors"
             >
               {t('bookDemo')}
             </a>

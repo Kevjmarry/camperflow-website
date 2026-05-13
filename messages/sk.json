@@ -10,11 +10,11 @@
   },
   "hero": {
     "headline": "Softvér pre prevádzku autopožičovní",
-    "subheadline": "CamperFlow pomáha spoločnostiam prenajímajúcim karavany, obytné prívesy a motorhome spravovať pripravenosť vozidiel, súlad s predpismi, kontrolné zoznamy a každodennú prevádzku v jednom systéme.",
-    "clarification": "CamperFlow nie je rezervačná platforma. Pracuje spolu s vaším existujúcim rezervačným systémom a spravuje prevádzkovú stránku vášho požičovného podnikania.",
+    "subheadline": "CamperFlow prepája vaše rezervácie s prevádzkou — pripravenosť vozidiel, digitálne kontrolné zoznamy, sledovanie súladu a odovzdávanie hostí — aby nič neprepadlo medzi potvrdením rezervácie a odovzdaním kľúčov.",
+    "clarification": "Nie je to rezervačná platforma. CamperFlow funguje vedľa vášho rezervačného systému a rieši všetko, čo on nerieši: celú prevádzkovú vrstvu od potvrdenia rezervácie po vrátenie vozidla.",
     "ctaDemo": "Rezervovať demo",
     "ctaHow": "Zistiť, ako to funguje",
-    "trust": "Vytvorené Kevinom Marryom, zakladateľom Epic Vans, pre skutočné prevádzky autopožičovní"
+    "trust": "Vytvorené Kevinom Marryom — bývalým prevádzkovateľom Epic Vans"
   },
   "problem": {
     "badge": "Problém",
@@ -29,10 +29,29 @@
     "item3Title": "Pomalé odovzdávanie",
     "item3Desc": "Procesy odovzdávania sú manuálne, nekonzistentné a časovo náročné — vytvárajú trenie pre hostí a tlak na personál."
   },
+  "lifecycle": {
+    "badge": "Kompletný prevádzkový cyklus",
+    "headline": "Od potvrdenej rezervácie po pripravenosť na cestu",
+    "subheadline": "CamperFlow orchestruje každú fázu prenájmu — automaticky, bez medzier.",
+    "step0": "Rezervácia príde",
+    "step0Desc": "Rezervácia dorazí z vašej existujúcej platformy",
+    "step1": "Kontrolné zoznamy priradené",
+    "step1Desc": "Kontrolný zoznam prepojený s vozidlom",
+    "step2": "Príprava vozidla",
+    "step2Desc": "Personál spracuje kontroly pripravenosti",
+    "step3": "Súlad overený",
+    "step3Desc": "Blokátory identifikované pred odovzdaním",
+    "step4": "Portál pre hostí aktívny",
+    "step4Desc": "Hosť dostane QR odkaz na trip guide",
+    "step5": "Odovzdanie vozidla",
+    "step5Desc": "Digitálny protokol zaznamenaný a orazítkovaný",
+    "step6": "Vrátenie a reset",
+    "step6Desc": "Kontrola vrátenia dokončená, vozidlo pripravené"
+  },
   "features": {
     "badge": "Ako to funguje",
     "headline": "Jeden prevádzkový systém pre celú vašu flotilu",
-    "subheadline": "CamperFlow nahrádza rozptýlené nástroje jedným štruktúrovaným prevádzkovým centrom.",
+    "subheadline": "Od momentu potvrdenia rezervácie po vrátenie a reset vozidla — CamperFlow riadi prevádzkovú vrstvu.",
     "tab0": "Prevádzkový hub rezervácií",
     "tab0Desc": "Zobrazte každý nadchádzajúci prenájom v jednom pohľade. Sledujte pridelené vozidlá, ich stav pripravenosti a potrebné akcie pred odovzdaním.",
     "tab0Detail": "Prepojte svoju platofrmu na rezervácie a získajte jednotný pohľad na všetky rezervácie spolu s pripravenosťou vozidiel a otvorenými úlohami.",
@@ -46,24 +65,24 @@
     "tab3Desc": "Zaznamenávajte a sledujte závady vozidiel, poškodenia a potreby údržby v teréne. Prepojte problémy s prenájmami.",
     "tab3Detail": "Personál môže okamžite nahlasovať problémy. Každý problém je sledovaný od objavenia až po vyriešenie — prepojený s vozidlom a zodpovednou osobou.",
     "tab4": "Monitorovanie súladu s predpismi",
-    "tab4Desc": "Sledujte intervaly servisu, záručné podmienky, osvedčenia o spôsobilosti a regulačné kontroly. Dostávajte upozornenia pred termínmi.",
+    "tab4Desc": "Sledujte intervaly servisu, záručné podmienky, osvedčenia o spôsobilosti a regulačné kontroly. Upozornenia dostanete pred termínmi — nie po nich.",
     "tab4Detail": "Nikdy nezmeškaite termín súladu. CamperFlow monitoruje intervaly servisu, bezpečnostné certifikáty a záručné podmienky pre každé vozidlo.",
-    "tab5": "Informačné stránky pre hostí",
-    "tab5Desc": "Automaticky generujte informačné stránky pre každý prenájom — príručky vozidiel, miestne tipy, núdzové kontakty a pokyny na odovzdanie.",
-    "tab5Detail": "Každý hosť dostane personalizovanú digitálnu stránku so všetkým, čo potrebuje — čo znižuje servisné hovory a zlepšuje zážitok hostí."
+    "tab5": "Portál pre hostí a QR prístup",
+    "tab5Desc": "Každý prenájom generuje stránku pre hostí — príručka vozidla, núdzové kontakty, pokyny na vrátenie — prístupnú cez QR kód. Bez inštalácie aplikácie. Viacjazyčne.",
+    "tab5Detail": "Hostia naskenujú QR kód pred prevzatím a dostanú všetko, čo potrebujú na cestu. Vy kontrolujete obsah a branding. Podporuje viac jazykov, aktualizuje sa v reálnom čase."
   },
   "founder": {
     "badge": "Prečo CamperFlow",
     "headline": "Vytvorené niekým, kto prevádzkoval firmu",
-    "body1": "Viedol som Epic Vans, spoločnosť na prenájom karavanov, a na vlastné oči som zažil, ako zle existujúce nástroje zvládajú prevádzkovú stránku. Rezervačné systémy spravovali rezervácie. Nič iné sa nespravovalo.",
-    "body2": "CamperFlow som vytvoril na vyplnenie tejto medzery — nie ako generický SaaS produkt, ale ako systém navrhnutý špeciálne pre skutočné fungovanie prevádzok prenájmu.",
+    "body1": "V Epic Vans som každodenne spravoval flotilu — príprava vozidiel, termíny súladu, kontrolné zoznamy personálu, odovzdávanie hostí. Rezervačný systém spravoval rezervácie. Všetko ostatné žilo v tabuľkách, WhatsApp správach a pamäti.",
+    "body2": "CamperFlow je to, čo som potreboval a nemohol nájsť: nie generický softvér s doplnkami pre požičovne, ale systém navrhnutý špeciálne pre to, ako prevádzka požičovne skutočne funguje — od potvrdenia rezervácie po vrátenie vozidla.",
     "name": "Kevin Marry",
-    "role": "Zakladateľ, CamperFlow — a bývalý prevádzkovateľ Epic Vans"
+    "role": "Zakladateľ, CamperFlow — bývalý prevádzkovateľ Epic Vans"
   },
   "cta": {
     "headline": "Pozrite CamperFlow v akcii",
-    "body": "Rezervujte si 30-minútové demo a zistite, ako CamperFlow zapadá do vašej prevádzky.",
+    "body": "Rezervujte si 30-minútové demo. Prejdeme vaším vozidlovým parkom, vaším súčasným procesom a ukážeme vám presne, ako CamperFlow zapadá do vašej prevádzky.",
     "button": "Rezervovať demo",
-    "note": "Žiadny záväzok. Prejdeme vašou konkrétnou prevádzkou."
+    "note": "Žiadny záväzok. Žiadna prezentácia. Len skutočný pohľad na produkt."
   }
 }

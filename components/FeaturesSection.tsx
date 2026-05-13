@@ -1,6 +1,7 @@
 'use client';
 
 import {useState} from 'react';
+import Image from 'next/image';
 import {useTranslations} from 'next-intl';
 
 type TabIndex = 0 | 1 | 2 | 3 | 4 | 5;
@@ -48,38 +49,23 @@ const TAB_ICONS: Record<TabIndex, React.ReactNode> = {
 
 function BookingsVisual() {
   return (
-    <div className="space-y-2">
-      <div className="grid grid-cols-3 gap-2 mb-3">
-        {[
-          {label: 'Upcoming', value: '6'},
-          {label: 'Today', value: '2'},
-          {label: 'This week', value: '9'},
-        ].map((s) => (
-          <div key={s.label} className="rounded-lg p-2.5 text-center border"
-            style={{backgroundColor: 'var(--navy-950)', borderColor: 'var(--border-subtle)'}}>
-            <div className="text-[15px] font-bold" style={{color: 'var(--text-primary)'}}>{s.value}</div>
-            <div className="text-[10px]" style={{color: 'var(--text-muted)'}}>{s.label}</div>
-          </div>
-        ))}
+    <div className="rounded-xl overflow-hidden" style={{border: '1px solid var(--border-subtle)'}}>
+      <div className="relative" style={{height: '300px', overflow: 'hidden'}}>
+        <Image
+          src="/screenshots/bookings.png"
+          alt="CamperFlow Bookings view showing upcoming rentals with statuses and next actions"
+          width={2561}
+          height={4973}
+          style={{width: '100%', height: 'auto', display: 'block'}}
+        />
+        <div
+          className="absolute bottom-0 left-0 right-0 pointer-events-none"
+          style={{
+            height: '60px',
+            background: 'linear-gradient(to bottom, transparent, var(--navy-900))',
+          }}
+        />
       </div>
-      {[
-        {v: 'EV-A3', date: 'Today 10:00', status: 'Ready', c: '#22c55e'},
-        {v: 'EV-B7', date: 'Today 14:00', status: 'Checking', c: '#f59e0b'},
-        {v: 'EV-C2', date: 'Tomorrow', status: 'Ready', c: '#22c55e'},
-        {v: 'EV-D5', date: 'May 14', status: 'Ready', c: '#22c55e'},
-      ].map((r, i) => (
-        <div key={i} className="flex items-center justify-between px-3 py-2.5 rounded-lg border"
-          style={{backgroundColor: 'rgba(255,255,255,0.02)', borderColor: 'var(--border-subtle)'}}>
-          <div>
-            <div className="text-[12px] font-semibold" style={{color: 'var(--text-primary)'}}>{r.v}</div>
-            <div className="text-[10px]" style={{color: 'var(--text-muted)'}}>{r.date}</div>
-          </div>
-          <div className="flex items-center gap-1.5">
-            <div className="w-1.5 h-1.5 rounded-full" style={{backgroundColor: r.c}} />
-            <span className="text-[11px] font-medium" style={{color: r.c}}>{r.status}</span>
-          </div>
-        </div>
-      ))}
     </div>
   );
 }
@@ -208,39 +194,29 @@ function IssueTrackingVisual() {
 }
 
 function ComplianceVisual() {
-  const items = [
-    {vehicle: 'EV-A3', check: 'Service', due: '15 Jun 2026', urgent: false},
-    {vehicle: 'EV-B7', check: 'Roadworthiness', due: '20 May 2026', urgent: true},
-    {vehicle: 'EV-C2', check: 'Gas cert.', due: '01 Aug 2026', urgent: false},
-    {vehicle: 'EV-D5', check: 'Service', due: '30 Sep 2026', urgent: false},
-  ];
   return (
-    <div>
-      <div className="flex items-center justify-between mb-3">
-        <span className="text-[12px] font-semibold" style={{color: 'var(--text-primary)'}}>Compliance status</span>
-        <span className="text-[11px] px-2 py-0.5 rounded-full"
-          style={{backgroundColor: 'rgba(245,158,11,0.15)', color: '#f59e0b'}}>
-          1 due soon
-        </span>
-      </div>
-      <div className="space-y-2">
-        {items.map((item, i) => (
-          <div key={i} className="flex items-center justify-between px-3 py-2.5 rounded-lg border"
-            style={{
-              backgroundColor: item.urgent ? 'rgba(245,158,11,0.05)' : 'rgba(255,255,255,0.02)',
-              borderColor: item.urgent ? 'rgba(245,158,11,0.2)' : 'var(--border-subtle)',
-            }}>
-            <div>
-              <div className="text-[12px] font-medium" style={{color: 'var(--text-primary)'}}>{item.vehicle} — {item.check}</div>
-              <div className="text-[10px]" style={{color: 'var(--text-muted)'}}>Due: {item.due}</div>
-            </div>
-            {item.urgent && (
-              <svg viewBox="0 0 16 16" fill="none" stroke="#f59e0b" strokeWidth={1.5} strokeLinecap="round" className="w-4 h-4 flex-shrink-0">
-                <path d="M8 2l6 12H2L8 2zM8 7v3M8 12h.01" />
-              </svg>
-            )}
-          </div>
-        ))}
+    <div className="rounded-xl overflow-hidden" style={{border: '1px solid var(--border-subtle)'}}>
+      {/* Show the compliance section of the vehicle page — crop to compliance rows */}
+      <div className="relative" style={{height: '300px', overflow: 'hidden'}}>
+        <Image
+          src="/screenshots/vehicle.png"
+          alt="CamperFlow vehicle compliance view showing service dates, insurance status and compliance blockers"
+          width={2561}
+          height={2834}
+          style={{
+            width: '100%',
+            height: 'auto',
+            display: 'block',
+            marginTop: '-52%',
+          }}
+        />
+        <div
+          className="absolute bottom-0 left-0 right-0 pointer-events-none"
+          style={{
+            height: '60px',
+            background: 'linear-gradient(to bottom, transparent, var(--navy-900))',
+          }}
+        />
       </div>
     </div>
   );
@@ -248,39 +224,23 @@ function ComplianceVisual() {
 
 function GuestPageVisual() {
   return (
-    <div className="rounded-xl overflow-hidden border" style={{borderColor: 'var(--border-subtle)'}}>
-      <div className="px-4 py-3 border-b flex items-center justify-between"
-        style={{backgroundColor: 'var(--navy-950)', borderColor: 'var(--border-subtle)'}}>
-        <div className="flex items-center gap-2">
-          <div className="w-5 h-5 rounded flex items-center justify-center" style={{backgroundColor: 'var(--blue-brand)'}}>
-            <svg viewBox="0 0 12 12" fill="white" className="w-3 h-3">
-              <rect x="1" y="1" width="4" height="4" rx="0.5" />
-              <rect x="7" y="1" width="4" height="4" rx="0.5" />
-              <rect x="1" y="7" width="4" height="4" rx="0.5" />
-              <rect x="7" y="7" width="2" height="2" rx="0.5" />
-            </svg>
-          </div>
-          <span className="text-[12px] font-semibold" style={{color: 'var(--text-primary)'}}>EV-A3 — Your trip guide</span>
-        </div>
-        <div className="text-[10px] px-2 py-0.5 rounded-full" style={{backgroundColor: 'rgba(34,197,94,0.15)', color: '#22c55e'}}>
-          Ready
-        </div>
-      </div>
-      <div className="p-4" style={{backgroundColor: 'var(--navy-800)'}}>
-        <div className="text-[13px] font-medium mb-3" style={{color: 'var(--text-secondary)'}}>
-          Ready for your adventure!
-        </div>
-        <div className="space-y-2">
-          {['How to use the campervan', 'Emergency contacts', 'Local recommendations', 'Return instructions'].map((item, i) => (
-            <div key={i} className="flex items-center gap-2.5 px-3 py-2 rounded-lg border"
-              style={{backgroundColor: 'rgba(255,255,255,0.03)', borderColor: 'var(--border-subtle)'}}>
-              <div className="w-4 h-4 rounded flex items-center justify-center" style={{backgroundColor: 'rgba(30,106,255,0.15)'}}>
-                <div className="w-1.5 h-1.5 rounded-full" style={{backgroundColor: 'var(--blue-brand)'}} />
-              </div>
-              <span className="text-[12px]" style={{color: 'var(--text-secondary)'}}>{item}</span>
-            </div>
-          ))}
-        </div>
+    <div className="rounded-xl overflow-hidden" style={{border: '1px solid var(--border-subtle)'}}>
+      {/* Show the full guest portal page — it's compact enough to fit */}
+      <div className="relative" style={{height: '300px', overflow: 'hidden'}}>
+        <Image
+          src="/screenshots/guest-portal.png"
+          alt="CamperFlow guest portal showing My Booking page with booking details, pickup info, return info and multilingual access"
+          width={2561}
+          height={1264}
+          style={{width: '100%', height: 'auto', display: 'block'}}
+        />
+        <div
+          className="absolute bottom-0 left-0 right-0 pointer-events-none"
+          style={{
+            height: '40px',
+            background: 'linear-gradient(to bottom, transparent, var(--navy-900))',
+          }}
+        />
       </div>
     </div>
   );
@@ -324,8 +284,8 @@ export default function FeaturesSection() {
           <div
             className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-widest mb-4 border"
             style={{
-              backgroundColor: 'rgba(30,106,255,0.08)',
-              borderColor: 'rgba(30,106,255,0.2)',
+              backgroundColor: 'rgba(37,99,235,0.08)',
+              borderColor: 'rgba(37,99,235,0.2)',
               color: 'var(--blue-light)',
             }}
           >
@@ -355,14 +315,14 @@ export default function FeaturesSection() {
                   onClick={() => selectTab(idx)}
                   className="w-full text-left flex items-start gap-3 px-4 py-3.5 rounded-xl border transition-all"
                   style={{
-                    backgroundColor: isActive ? 'rgba(30,106,255,0.08)' : 'rgba(255,255,255,0.01)',
-                    borderColor: isActive ? 'rgba(30,106,255,0.25)' : 'var(--border-subtle)',
+                    backgroundColor: isActive ? 'rgba(37,99,235,0.08)' : 'rgba(255,255,255,0.01)',
+                    borderColor: isActive ? 'rgba(37,99,235,0.25)' : 'var(--border-subtle)',
                   }}
                 >
                   <div
                     className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 transition-colors"
                     style={{
-                      backgroundColor: isActive ? 'rgba(30,106,255,0.2)' : 'rgba(255,255,255,0.04)',
+                      backgroundColor: isActive ? 'rgba(37,99,235,0.2)' : 'rgba(255,255,255,0.04)',
                       color: isActive ? 'var(--blue-light)' : 'var(--text-muted)',
                     }}
                   >
@@ -409,7 +369,7 @@ export default function FeaturesSection() {
                 </div>
                 <div
                   className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 ml-3"
-                  style={{backgroundColor: 'rgba(30,106,255,0.15)', color: 'var(--blue-light)'}}
+                  style={{backgroundColor: 'rgba(37,99,235,0.15)', color: 'var(--blue-light)'}}
                 >
                   {TAB_ICONS[active]}
                 </div>

@@ -1,6 +1,7 @@
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import ProblemSection from '@/components/ProblemSection';
+import LifecycleSection from '@/components/LifecycleSection';
 import FeaturesSection from '@/components/FeaturesSection';
 import FounderSection from '@/components/FounderSection';
 import CtaSection from '@/components/CtaSection';
@@ -12,6 +13,7 @@ export default function LocalePage() {
       <main>
         <HeroSection />
         <ProblemSection />
+        <LifecycleSection />
         <FeaturesSection />
         <FounderSection />
         <CtaSection />

@@ -13,7 +13,7 @@ export default function CtaSection() {
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse at center, rgba(30,106,255,0.1) 0%, transparent 60%)',
+          background: 'radial-gradient(ellipse at center, rgba(37,99,235,0.1) 0%, transparent 60%)',
         }}
       />
 
@@ -35,7 +35,7 @@ export default function CtaSection() {
         {/* CTA button */}
         <a
           href="mailto:demo@camperflow.io"
-          className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-[16px] font-semibold bg-[#1e6aff] hover:bg-[#1459d9] text-white transition-colors mb-5"
+          className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-[16px] font-semibold bg-[#2563eb] hover:bg-[#1d4ed8] text-white transition-colors mb-5"
         >
           {t('button')}
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">

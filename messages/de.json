@@ -10,11 +10,11 @@
   },
   "hero": {
     "headline": "Software für den Campervermietungsbetrieb",
-    "subheadline": "CamperFlow hilft Wohnmobil-, Caravan- und Campervermietern bei der Verwaltung von Fahrzeugbereitschaft, Compliance, Checklisten und dem täglichen Betrieb in einem System.",
-    "clarification": "CamperFlow ist keine Buchungsplattform. Es arbeitet mit Ihrem bestehenden Buchungssystem zusammen und übernimmt die operative Seite Ihres Vermietgeschäfts.",
+    "subheadline": "CamperFlow verbindet Ihre Buchungen mit dem Betrieb — Fahrzeugbereitschaft, digitale Checklisten, Compliance-Tracking und Gästeübergaben — damit zwischen bestätigter Buchung und Schlüsselübergabe nichts verloren geht.",
+    "clarification": "Keine Buchungsplattform. CamperFlow läuft neben Ihrem Reservierungssystem und übernimmt alles, was es nicht leistet: die vollständige operative Schicht von der bestätigten Buchung bis zur Fahrzeugrückgabe.",
     "ctaDemo": "Demo buchen",
     "ctaHow": "So funktioniert es",
-    "trust": "Entwickelt von Kevin Marry, Gründer von Epic Vans, für echte Vermietbetriebe"
+    "trust": "Entwickelt von Kevin Marry — ehemaliger Betreiber von Epic Vans"
   },
   "problem": {
     "badge": "Das Problem",
@@ -29,10 +29,29 @@
     "item3Title": "Langsame Übergaben",
     "item3Desc": "Übergabeprozesse sind manuell, inkonsistent und zeitaufwändig — sie schaffen Reibung für Gäste und Druck auf das Personal."
   },
+  "lifecycle": {
+    "badge": "Der komplette Betriebsablauf",
+    "headline": "Von der bestätigten Buchung bis zur Abfahrt",
+    "subheadline": "CamperFlow orchestriert jeden Schritt des Vermietbetriebs — automatisch und lückenlos.",
+    "step0": "Buchung eingetroffen",
+    "step0Desc": "Buchung kommt von Ihrer bestehenden Plattform",
+    "step1": "Checklisten zugewiesen",
+    "step1Desc": "Checkliste automatisch mit Fahrzeug verknüpft",
+    "step2": "Fahrzeugvorbereitung",
+    "step2Desc": "Mitarbeiter arbeiten Bereitschaftschecks ab",
+    "step3": "Compliance bestätigt",
+    "step3Desc": "Blocker werden vor der Übergabe erkannt",
+    "step4": "Gästeportal aktiv",
+    "step4Desc": "Gast erhält QR-Link zum Trip-Guide",
+    "step5": "Übergabe",
+    "step5Desc": "Digitale Checkliste protokolliert und zeitgestempelt",
+    "step6": "Rückgabe & Reset",
+    "step6Desc": "Rückgabeinspektion abgeschlossen, Fahrzeug bereit"
+  },
   "features": {
     "badge": "So funktioniert es",
     "headline": "Ein Betriebssystem für Ihre gesamte Flotte",
-    "subheadline": "CamperFlow ersetzt verstreute Tools durch einen einzigen, strukturierten Betriebshub.",
+    "subheadline": "Vom Moment der bestätigten Buchung bis zur Fahrzeugrückgabe und dem Reset — CamperFlow steuert die operative Schicht.",
     "tab0": "Buchungs-Betriebshub",
     "tab0Desc": "Sehen Sie jede bevorstehende Vermietung in einer Ansicht. Verfolgen Sie zugewiesene Fahrzeuge, ihren Bereitschaftsstatus und welche Aktionen vor der Übergabe erforderlich sind.",
     "tab0Detail": "Verbinden Sie Ihre Buchungsplattform und erhalten Sie eine einheitliche Ansicht aller Reservierungen mit Fahrzeugbereitschaft und offenen Aufgaben.",
@@ -46,24 +65,24 @@
     "tab3Desc": "Protokollieren und verfolgen Sie Fahrzeugdefekte, Schäden und Wartungsbedarf vor Ort. Verbinden Sie Probleme mit Vermietungen und überwachen Sie die Lösung.",
     "tab3Detail": "Mitarbeiter können Probleme sofort melden. Jedes Problem wird von der Entdeckung bis zur Lösung verfolgt — verknüpft mit dem Fahrzeug, der Vermietung und der verantwortlichen Person.",
     "tab4": "Compliance-Überwachung",
-    "tab4Desc": "Verfolgen Sie Wartungsintervalle, Garantiebedingungen, Fahrtüchtigkeitszertifikate und behördliche Prüfungen. Erhalten Sie Warnungen vor Fristen.",
+    "tab4Desc": "Verfolgen Sie Wartungsintervalle, Garantiebedingungen, Fahrtüchtigkeitszertifikate und behördliche Prüfungen. Warnungen kommen vor Fristen — nicht danach.",
     "tab4Detail": "Verpassen Sie nie eine Compliance-Frist. CamperFlow überwacht Wartungsintervalle, Sicherheitszertifikate und Garantiebedingungen für jedes Fahrzeug.",
-    "tab5": "Gäste-Informationsseiten",
-    "tab5Desc": "Generieren Sie automatisch Informationsseiten für jede Vermietung — Fahrzeugführer, lokale Tipps, Notfallkontakte und Übergabeanweisungen.",
-    "tab5Detail": "Jeder Gast erhält eine personalisierte digitale Seite mit allem, was er für seinen Trip benötigt — was Supportanrufe reduziert und das Gästeerlebnis verbessert."
+    "tab5": "Gästeportal & QR-Zugang",
+    "tab5Desc": "Jeder Mietvertrag generiert eine Gästeseite — Fahrzeugführer, Notfallkontakte, Rückgabeanweisungen — per QR-Code zugänglich. Keine App nötig. Mehrsprachig.",
+    "tab5Detail": "Gäste scannen einen QR-Code vor der Abholung und erhalten alles, was sie für ihre Reise brauchen. Sie kontrollieren Inhalt und Marke. Unterstützt mehrere Sprachen, wird in Echtzeit aktualisiert."
   },
   "founder": {
     "badge": "Warum CamperFlow",
     "headline": "Entwickelt von jemandem, der den Betrieb geführt hat",
-    "body1": "Ich habe Epic Vans geführt, ein Campervermietungsunternehmen, und aus erster Hand erlebt, wie schlecht die bestehenden Tools mit der operativen Seite umgehen. Buchungssysteme verwalteten Reservierungen. Nichts anderes wurde verwaltet.",
-    "body2": "Ich habe CamperFlow entwickelt, um diese Lücke zu schließen — nicht als generisches SaaS-Produkt, sondern als System, das speziell für die tatsächliche Funktionsweise von Vermietbetrieben konzipiert ist.",
+    "body1": "Bei Epic Vans verwaltete ich die Flotte täglich — Fahrzeugvorbereitung, Compliance-Fristen, Mitarbeiter-Checklisten, Gästeübergaben. Das Buchungssystem verwaltete Reservierungen. Alles andere lebte in Tabellen, WhatsApp-Threads und im Gedächtnis.",
+    "body2": "CamperFlow ist das, was ich brauchte und nicht finden konnte: keine generische Software mit Vermiet-Add-ons, sondern ein System, das speziell dafür entwickelt wurde, wie ein Vermietbetrieb wirklich funktioniert — von der bestätigten Buchung bis zur Fahrzeugrückgabe.",
     "name": "Kevin Marry",
-    "role": "Gründer, CamperFlow — und ehemaliger Betreiber von Epic Vans"
+    "role": "Gründer, CamperFlow — ehemaliger Betreiber von Epic Vans"
   },
   "cta": {
     "headline": "CamperFlow in Aktion sehen",
-    "body": "Buchen Sie eine 30-minütige Demo, um zu sehen, wie CamperFlow in Ihren Betrieb passt.",
+    "body": "Buchen Sie eine 30-minütige Demo. Wir schauen uns Ihre Flotte, Ihren aktuellen Prozess an und zeigen Ihnen genau, wie CamperFlow zu Ihrem Betrieb passt.",
     "button": "Demo buchen",
-    "note": "Keine Verpflichtung. Wir führen Sie durch Ihren spezifischen Betrieb."
+    "note": "Keine Verpflichtung. Kein Pitch Deck. Nur ein echter Blick auf das Produkt."
   }
 }

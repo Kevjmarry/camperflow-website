@@ -13,7 +13,7 @@ export default function FounderSection() {
       <div
         className="absolute right-0 top-1/2 -translate-y-1/2 w-96 h-96 rounded-full pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse at center, rgba(30,106,255,0.06) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse at center, rgba(37,99,235,0.06) 0%, transparent 70%)',
           filter: 'blur(40px)',
         }}
       />

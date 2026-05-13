@@ -1,119 +1,59 @@
+import Image from 'next/image';
 import {useTranslations} from 'next-intl';
 
-function DashboardMockup() {
+function OperationsScreenshot() {
   return (
     <div className="relative">
-      {/* Blue glow */}
+      {/* Subtle glow */}
       <div
-        className="absolute -inset-8 rounded-3xl"
+        className="absolute -inset-6 rounded-3xl pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse at center, rgba(30,106,255,0.18) 0%, transparent 70%)',
-          filter: 'blur(16px)',
+          background: 'radial-gradient(ellipse at center, rgba(37,99,235,0.14) 0%, transparent 70%)',
+          filter: 'blur(20px)',
         }}
       />
 
-      {/* Dashboard card */}
+      {/* Screenshot frame */}
       <div
         className="relative rounded-2xl overflow-hidden"
         style={{
-          backgroundColor: 'var(--navy-800)',
           border: '1px solid var(--border-dim)',
-          boxShadow: '0 32px 64px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.04)',
+          boxShadow: '0 24px 48px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.05)',
         }}
       >
-        {/* Window chrome */}
+        {/* Browser chrome */}
         <div
-          className="flex items-center gap-3 px-4 py-3 border-b"
-          style={{backgroundColor: 'var(--navy-950)', borderColor: 'var(--border-subtle)'}}
+          className="flex items-center gap-3 px-4 py-2.5 border-b"
+          style={{backgroundColor: '#f8fafc', borderColor: '#e2e8f0'}}
         >
           <div className="flex gap-1.5">
-            <div className="w-2.5 h-2.5 rounded-full" style={{backgroundColor: 'rgba(255,255,255,0.12)'}} />
-            <div className="w-2.5 h-2.5 rounded-full" style={{backgroundColor: 'rgba(255,255,255,0.12)'}} />
-            <div className="w-2.5 h-2.5 rounded-full" style={{backgroundColor: 'rgba(255,255,255,0.12)'}} />
+            <div className="w-2.5 h-2.5 rounded-full bg-red-400/60" />
+            <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/60" />
+            <div className="w-2.5 h-2.5 rounded-full bg-green-400/60" />
           </div>
-          <div className="flex-1 text-center text-[11px] font-mono" style={{color: 'var(--text-muted)'}}>
-            CamperFlow — Operations
-          </div>
-          <div className="text-[11px] font-mono" style={{color: 'var(--text-muted)'}}>
-            12 May
+          <div className="flex-1 text-center text-[11px] font-mono text-slate-400 truncate">
+            camperflow.io/operations
           </div>
         </div>
 
-        <div className="p-4 sm:p-5">
-          {/* Stat cards */}
-          <div className="grid grid-cols-3 gap-2.5 mb-4">
-            {[
-              {label: 'Fleet ready', value: '12', color: '#22c55e', pct: 80},
-              {label: 'Active rentals', value: '4', color: 'var(--blue-brand)', pct: 33},
-              {label: 'Open issues', value: '2', color: '#f59e0b', pct: 20},
-            ].map((stat) => (
-              <div
-                key={stat.label}
-                className="rounded-xl p-3 border"
-                style={{backgroundColor: 'var(--navy-950)', borderColor: 'var(--border-subtle)'}}
-              >
-                <div className="text-[18px] font-bold leading-none mb-1" style={{color: 'var(--text-primary)'}}>
-                  {stat.value}
-                </div>
-                <div className="text-[10px] mb-2" style={{color: 'var(--text-muted)'}}>
-                  {stat.label}
-                </div>
-                <div className="h-0.5 rounded-full w-full" style={{backgroundColor: 'rgba(255,255,255,0.06)'}}>
-                  <div
-                    className="h-full rounded-full"
-                    style={{width: `${stat.pct}%`, backgroundColor: stat.color}}
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Upcoming rentals */}
+        {/* Screenshot — shows top portion of the operations dashboard */}
+        <div className="relative" style={{height: '420px', overflow: 'hidden'}}>
+          <Image
+            src="/screenshots/operations.png"
+            alt="CamperFlow Operations Dashboard showing fleet status, active rentals, reminders and upcoming pickups"
+            width={2561}
+            height={5507}
+            style={{width: '100%', height: 'auto', display: 'block'}}
+            priority
+          />
+          {/* Gradient fade at bottom to signal more content below */}
           <div
-            className="rounded-xl overflow-hidden border"
-            style={{borderColor: 'var(--border-subtle)'}}
-          >
-            <div
-              className="px-3 py-2 border-b text-[10px] font-semibold uppercase tracking-wider"
-              style={{
-                backgroundColor: 'var(--navy-950)',
-                borderColor: 'var(--border-subtle)',
-                color: 'var(--text-muted)',
-              }}
-            >
-              Upcoming rentals
-            </div>
-            {[
-              {vehicle: 'EV-Camper A3', date: 'Today, 10:00', status: 'Ready', color: '#22c55e'},
-              {vehicle: 'EV-Camper B7', date: 'Today, 14:00', status: 'Checking', color: '#f59e0b'},
-              {vehicle: 'EV-Camper C2', date: 'Tomorrow', status: 'Ready', color: '#22c55e'},
-              {vehicle: 'EV-Camper D5', date: '14 May', status: 'Ready', color: '#22c55e'},
-            ].map((row, i) => (
-              <div
-                key={i}
-                className="flex items-center justify-between px-3 py-2.5 border-b last:border-0"
-                style={{
-                  backgroundColor: i % 2 === 0 ? 'rgba(255,255,255,0.01)' : 'transparent',
-                  borderColor: 'var(--border-subtle)',
-                }}
-              >
-                <div>
-                  <div className="text-[11px] font-medium" style={{color: 'var(--text-primary)'}}>
-                    {row.vehicle}
-                  </div>
-                  <div className="text-[10px]" style={{color: 'var(--text-muted)'}}>
-                    {row.date}
-                  </div>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <div className="w-1.5 h-1.5 rounded-full" style={{backgroundColor: row.color}} />
-                  <span className="text-[10px] font-medium" style={{color: row.color}}>
-                    {row.status}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
+            className="absolute bottom-0 left-0 right-0 pointer-events-none"
+            style={{
+              height: '80px',
+              background: 'linear-gradient(to bottom, transparent, rgba(10,22,40,0.85))',
+            }}
+          />
         </div>
       </div>
     </div>
@@ -132,7 +72,7 @@ export default function HeroSection() {
       <div
         className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-96 pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse at top, rgba(30,106,255,0.12) 0%, transparent 60%)',
+          background: 'radial-gradient(ellipse at top, rgba(37,99,235,0.12) 0%, transparent 60%)',
         }}
       />
 
@@ -145,8 +85,8 @@ export default function HeroSection() {
             <div
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[12px] font-medium mb-6 border"
               style={{
-                backgroundColor: 'rgba(30,106,255,0.1)',
-                borderColor: 'rgba(30,106,255,0.25)',
+                backgroundColor: 'rgba(37,99,235,0.1)',
+                borderColor: 'rgba(37,99,235,0.25)',
                 color: 'var(--blue-light)',
               }}
             >
@@ -189,7 +129,7 @@ export default function HeroSection() {
             <div className="flex flex-wrap gap-3 mb-8">
               <a
                 href="#cta"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-[15px] font-semibold bg-[#1e6aff] hover:bg-[#1459d9] text-white transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-[15px] font-semibold bg-[#2563eb] hover:bg-[#1d4ed8] text-white transition-colors"
               >
                 {t('ctaDemo')}
                 <svg viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4">
@@ -227,9 +167,9 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Right: dashboard visual */}
+          {/* Right: operations screenshot */}
           <div className="lg:block">
-            <DashboardMockup />
+            <OperationsScreenshot />
           </div>
         </div>
       </div>

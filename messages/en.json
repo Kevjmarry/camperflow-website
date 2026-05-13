@@ -10,11 +10,11 @@
   },
   "hero": {
     "headline": "Software for camper rental operations",
-    "subheadline": "CamperFlow helps campervan, caravan, and motorhome rental companies manage vehicle readiness, compliance, checklists, and daily operations in one system.",
-    "clarification": "CamperFlow is not a booking platform. It works alongside your existing booking system to manage the operational side of your rental business.",
+    "subheadline": "CamperFlow connects your bookings to your operations — vehicle readiness, digital checklists, compliance tracking, and guest handovers — so nothing falls through the gap between booking confirmed and keys handed over.",
+    "clarification": "Not a booking platform. CamperFlow runs alongside your reservation system and handles everything it doesn't: the full operational layer from booking confirmed to vehicle returned.",
     "ctaDemo": "Book a demo",
     "ctaHow": "See how it works",
-    "trust": "Built by Kevin Marry, founder of Epic Vans, for real rental operations"
+    "trust": "Built by Kevin Marry — former operator of Epic Vans"
   },
   "problem": {
     "badge": "The problem",
@@ -29,10 +29,29 @@
     "item3Title": "Slow handovers",
     "item3Desc": "Handover processes are manual, inconsistent, and time-consuming — creating friction for guests and pressure on staff."
   },
+  "lifecycle": {
+    "badge": "The complete operation cycle",
+    "headline": "From confirmed booking to road-ready",
+    "subheadline": "CamperFlow orchestrates every stage of the rental cycle — with nothing falling through the cracks.",
+    "step0": "Booking in",
+    "step0Desc": "Booking arrives from your existing platform",
+    "step1": "Checklists assigned",
+    "step1Desc": "Pre-rental checklist linked to vehicle",
+    "step2": "Vehicle prep",
+    "step2Desc": "Staff work through readiness checks",
+    "step3": "Compliance verified",
+    "step3Desc": "Any blockers surfaced before handover",
+    "step4": "Guest portal live",
+    "step4Desc": "Guest receives QR link to their trip guide",
+    "step5": "Pickup handover",
+    "step5Desc": "Digital checklist logged and timestamped",
+    "step6": "Return & reset",
+    "step6Desc": "Return inspection complete, vehicle ready again"
+  },
   "features": {
     "badge": "How it works",
     "headline": "One operational system for your entire fleet",
-    "subheadline": "CamperFlow replaces scattered tools with a single, structured operations hub.",
+    "subheadline": "From the moment a booking is confirmed to the vehicle being returned and reset — CamperFlow runs the operational layer.",
     "tab0": "Bookings operational hub",
     "tab0Desc": "See every upcoming rental in one view. Track which vehicles are assigned, their readiness status, and what actions need to happen before handover.",
     "tab0Detail": "Connect your existing booking platform and get a unified view of all upcoming reservations alongside vehicle readiness and open tasks.",
@@ -46,24 +65,24 @@
     "tab3Desc": "Log and track vehicle defects, damage, and maintenance needs from the field. Link issues to rentals and monitor resolution.",
     "tab3Detail": "Staff can report issues on the spot. Every issue is tracked from discovery to resolution — linked to the vehicle, rental, and responsible person.",
     "tab4": "Compliance monitoring",
-    "tab4Desc": "Track service intervals, warranty conditions, roadworthiness certificates, and regulatory checks. Get alerts before deadlines.",
+    "tab4Desc": "Track service intervals, warranty conditions, roadworthiness certificates, and regulatory checks. Get alerts before deadlines — not after.",
     "tab4Detail": "Never miss a compliance deadline. CamperFlow monitors service intervals, safety certificates, and warranty conditions for every vehicle in your fleet.",
-    "tab5": "Guest information pages",
-    "tab5Desc": "Automatically generate branded information pages for each rental — vehicle guides, local tips, emergency contacts, and handover instructions.",
-    "tab5Detail": "Each guest gets a personalised digital page with everything they need for their trip — reducing support calls and improving the guest experience."
+    "tab5": "Guest portal & QR access",
+    "tab5Desc": "Every rental generates a branded guest page — vehicle guide, emergency contacts, return instructions — accessible via QR code. No app download. Multilingual.",
+    "tab5Detail": "Guests scan a QR code before pickup and get everything they need for their trip. You control the content and branding. Supports multiple languages, updated in real time."
   },
   "founder": {
     "badge": "Why CamperFlow",
     "headline": "Built by someone who ran the operation",
-    "body1": "I ran Epic Vans, a campervan rental company, and experienced first-hand how poorly the existing tools handled the operational side. Booking systems handled reservations. Nothing handled the rest.",
-    "body2": "I built CamperFlow to fill that gap — not as a generic SaaS product, but as a system designed specifically for how rental operations actually work.",
+    "body1": "At Epic Vans, I managed the fleet day-to-day — vehicle prep, compliance deadlines, staff checklists, guest handovers. The booking system handled reservations. Everything else lived in spreadsheets, WhatsApp threads, and institutional memory.",
+    "body2": "CamperFlow is what I needed and couldn't find: not generic software with rental add-ons, but a system built specifically around how a rental operation actually works — from booking confirmed to vehicle returned.",
     "name": "Kevin Marry",
-    "role": "Founder, CamperFlow — and former operator of Epic Vans"
+    "role": "Founder, CamperFlow — former operator of Epic Vans"
   },
   "cta": {
     "headline": "See CamperFlow in action",
-    "body": "Book a 30-minute demo to see how CamperFlow fits into your operation.",
+    "body": "Book a 30-minute demo. We'll walk through your fleet, your current process, and show you exactly how CamperFlow fits your operation.",
     "button": "Book a demo",
-    "note": "No commitment required. We'll walk through your specific operation."
+    "note": "No commitment. No pitch deck. Just a real look at the product."
   }
 }
