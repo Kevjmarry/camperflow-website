@@ -19,6 +19,20 @@
   --text-muted: #64748b;
   --border-subtle: rgba(255, 255, 255, 0.06);
   --border-dim: rgba(255, 255, 255, 0.1);
+
+  /* Light operational aesthetic */
+  --surface-white: #ffffff;
+  --surface-light: #f8fafc;
+  --surface-slate: #f1f5f9;
+  --surface-blue-pale: #eff6ff;
+  --on-light-primary: #0f172a;
+  --on-light-secondary: #334155;
+  --on-light-muted: #64748b;
+  --border-light: #e2e8f0;
+  --border-blue-light: #bfdbfe;
+  --danger-red: #ef4444;
+  --danger-red-bg: #fef2f2;
+  --danger-red-border: #fecaca;
 }
 
 *,

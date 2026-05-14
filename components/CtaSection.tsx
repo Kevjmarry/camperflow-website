@@ -1,52 +1,45 @@
-import {useTranslations} from 'next-intl';
-
 export default function CtaSection() {
-  const t = useTranslations('cta');
-
   return (
     <section
       id="cta"
-      className="py-20 lg:py-28 relative overflow-hidden"
-      style={{backgroundColor: 'var(--navy-900)'}}
+      className="py-20 lg:py-28"
+      style={{ backgroundColor: 'var(--navy-900)' }}
     >
-      {/* Glow */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: 'radial-gradient(ellipse at center, rgba(37,99,235,0.1) 0%, transparent 60%)',
-        }}
-      />
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
-      <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-
-        {/* Headline */}
-        <h2
-          className="text-[32px] sm:text-[42px] lg:text-[48px] font-bold tracking-tight leading-tight mb-5"
-          style={{color: 'var(--text-primary)'}}
+        <div
+          className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-widest mb-6 border"
+          style={{ backgroundColor: 'rgba(37,99,235,0.1)', borderColor: 'rgba(37,99,235,0.25)', color: 'var(--blue-light)' }}
         >
-          {t('headline')}
+          Get started
+        </div>
+
+        <h2
+          className="text-[30px] sm:text-[40px] lg:text-[46px] font-bold tracking-tight leading-tight mb-5"
+          style={{ color: 'var(--text-primary)' }}
+        >
+          See CamperFlow in action.
         </h2>
 
-        {/* Body */}
-        <p className="text-[18px] leading-relaxed mb-8 max-w-xl mx-auto" style={{color: 'var(--text-secondary)'}}>
-          {t('body')}
+        <p className="text-[17px] leading-relaxed mb-8 max-w-xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
+          Book a 30-minute demo. We&apos;ll walk through your fleet, your current process, and show you exactly how CamperFlow fits your operation.
         </p>
 
-        {/* CTA button */}
         <a
-          href="mailto:demo@camperflow.io"
-          className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-[16px] font-semibold bg-[#2563eb] hover:bg-[#1d4ed8] text-white transition-colors mb-5"
+          href="mailto:info@camperflow.io"
+          className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-[16px] font-semibold text-white transition-colors mb-5"
+          style={{ backgroundColor: 'var(--blue-brand)' }}
         >
-          {t('button')}
+          Book a demo
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
             <path d="M3 8h10M8 3l5 5-5 5" />
           </svg>
         </a>
 
-        {/* Note */}
-        <p className="text-[13px]" style={{color: 'var(--text-muted)'}}>
-          {t('note')}
+        <p className="text-[13px]" style={{ color: 'var(--text-muted)' }}>
+          No commitment. No pitch deck. Just a real look at the product.
         </p>
+
       </div>
     </section>
   );

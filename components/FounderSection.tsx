@@ -1,80 +1,79 @@
-import {useTranslations} from 'next-intl';
-
 export default function FounderSection() {
-  const t = useTranslations('founder');
-
   return (
     <section
       id="founder"
-      className="py-20 lg:py-28 relative overflow-hidden"
-      style={{backgroundColor: 'var(--navy-950)'}}
+      className="py-20 lg:py-28 border-t"
+      style={{ backgroundColor: 'var(--surface-light)', borderColor: 'var(--border-light)' }}
     >
-      {/* Subtle background accent */}
-      <div
-        className="absolute right-0 top-1/2 -translate-y-1/2 w-96 h-96 rounded-full pointer-events-none"
-        style={{
-          background: 'radial-gradient(ellipse at center, rgba(37,99,235,0.06) 0%, transparent 70%)',
-          filter: 'blur(40px)',
-        }}
-      />
-
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
 
-          {/* Badge */}
           <div
             className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-widest mb-8 border"
-            style={{
-              backgroundColor: 'rgba(255,255,255,0.04)',
-              borderColor: 'var(--border-subtle)',
-              color: 'var(--text-muted)',
-            }}
+            style={{ backgroundColor: 'var(--surface-white)', borderColor: 'var(--border-light)', color: 'var(--on-light-muted)' }}
           >
-            {t('badge')}
+            Built from inside the industry
           </div>
 
-          {/* Headline */}
           <h2
-            className="text-[30px] sm:text-[36px] font-bold tracking-tight leading-tight mb-10"
-            style={{color: 'var(--text-primary)'}}
+            className="text-[28px] sm:text-[36px] font-bold tracking-tight leading-tight mb-10"
+            style={{ color: 'var(--on-light-primary)' }}
           >
-            {t('headline')}
+            Built by a commercial pilot who also runs a rental company.
           </h2>
 
-          {/* Quote block */}
           <div
             className="border-l-2 pl-6 mb-10 space-y-4"
-            style={{borderColor: 'var(--blue-brand)'}}
+            style={{ borderColor: 'var(--blue-brand)' }}
           >
-            <p className="text-[17px] leading-relaxed" style={{color: 'var(--text-secondary)'}}>
-              {t('body1')}
+            <p className="text-[17px] leading-relaxed" style={{ color: 'var(--on-light-secondary)' }}>
+              Aviation runs on checklists, readiness states, documented handovers, and accountability at every step — not because pilots are forgetful, but because the cost of a missed step is too high to leave to memory. That discipline exists because it was engineered in. It doesn&apos;t happen by accident.
             </p>
-            <p className="text-[17px] leading-relaxed" style={{color: 'var(--text-secondary)'}}>
-              {t('body2')}
+            <p className="text-[17px] leading-relaxed" style={{ color: 'var(--on-light-secondary)' }}>
+              Running Epic Vans, I kept hitting the same wall: the booking system handled reservations, and nothing handled the rest. Vehicle readiness, compliance tracking, staff checklists, guest handovers, photo documentation — it all fell back on whoever knew the most that day. That&apos;s not a process. That&apos;s a liability.
+            </p>
+            <p className="text-[17px] leading-relaxed" style={{ color: 'var(--on-light-secondary)' }}>
+              CamperFlow is what I built to close that gap — applying the same operational thinking I use in aviation to a rental context: repeatable processes, clear readiness states, documented handovers, and no step left to memory. Built for this industry specifically, while still actively running a rental company in it.
             </p>
           </div>
 
-          {/* Founder identity */}
+          {/* Aviation influence tags */}
+          <div className="flex flex-wrap gap-2 mb-10">
+            {[
+              'Checklist discipline',
+              'Readiness states',
+              'Documented handovers',
+              'Staff accountability',
+              'Repeatable processes',
+              'Reducing human error',
+            ].map((tag) => (
+              <span
+                key={tag}
+                className="px-3 py-1 rounded-full text-[12px] font-medium border"
+                style={{ backgroundColor: 'var(--surface-white)', borderColor: 'var(--border-blue-light)', color: 'var(--blue-brand)' }}
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+
           <div className="flex items-center gap-4">
             <div
-              className="w-12 h-12 rounded-full flex items-center justify-center text-[14px] font-bold flex-shrink-0 border"
-              style={{
-                backgroundColor: 'var(--navy-600)',
-                borderColor: 'var(--border-dim)',
-                color: 'var(--text-primary)',
-              }}
+              className="w-12 h-12 rounded-full flex items-center justify-center text-[14px] font-bold flex-shrink-0 border-2"
+              style={{ backgroundColor: '#1e3a5f', borderColor: 'var(--border-blue-light)', color: '#f1f5f9' }}
             >
               KM
             </div>
             <div>
-              <div className="text-[15px] font-semibold" style={{color: 'var(--text-primary)'}}>
-                {t('name')}
+              <div className="text-[15px] font-semibold" style={{ color: 'var(--on-light-primary)' }}>
+                Kevin Marry
               </div>
-              <div className="text-[13px]" style={{color: 'var(--text-muted)'}}>
-                {t('role')}
+              <div className="text-[13px]" style={{ color: 'var(--on-light-muted)' }}>
+                Founder, CamperFlow — commercial pilot and active operator of Epic Vans
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>

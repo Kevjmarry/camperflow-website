@@ -1,193 +1,159 @@
-import {useTranslations} from 'next-intl';
-
-const STEP_ICONS: React.ReactNode[] = [
-  /* 0: Booking in — calendar */
-  <svg key="0" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
-    <rect x="2" y="3" width="16" height="15" rx="2" />
-    <path d="M2 8h16M6 1v4M14 1v4" />
-  </svg>,
-
-  /* 1: Checklists assigned — clipboard with check */
-  <svg key="1" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
-    <path d="M7 2h6a1 1 0 011 1v13a1 1 0 01-1 1H7a1 1 0 01-1-1V3a1 1 0 011-1z" />
-    <path d="M8 9.5l1.5 1.5 3-3" />
-    <path d="M8 2V1M12 2V1" />
-  </svg>,
-
-  /* 2: Vehicle prep — wrench */
-  <svg key="2" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
-    <path d="M14.5 3.5a4 4 0 00-5 5.3L3.8 14.5a1.2 1.2 0 001.7 1.7l5.7-5.7a4 4 0 005.3-5l-2.2 2.2-1.5-1.5 2.2-2.2z" />
-  </svg>,
-
-  /* 3: Compliance verified — shield with check */
-  <svg key="3" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
-    <path d="M10 2l7 2.5V10c0 4.5-3 7.5-7 8-4-.5-7-3.5-7-8V4.5L10 2z" />
-    <path d="M7 10l2 2 4-4" />
-  </svg>,
-
-  /* 4: Guest portal — QR code */
-  <svg key="4" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
-    <rect x="2" y="2" width="6" height="6" rx="1" />
-    <rect x="12" y="2" width="6" height="6" rx="1" />
-    <rect x="2" y="12" width="6" height="6" rx="1" />
-    <path d="M12 12h2M16 12v2M14 14h2M12 16h2M14 16h2M16 16v2" />
-  </svg>,
-
-  /* 5: Pickup handover — key */
-  <svg key="5" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
-    <circle cx="7.5" cy="9.5" r="4.5" />
-    <path d="M10.5 12.5L17 6M13 6h4M17 6v4" />
-  </svg>,
-
-  /* 6: Return & reset — circular arrow */
-  <svg key="6" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
-    <path d="M4.5 10a5.5 5.5 0 106-5.47" />
-    <path d="M4.5 6v4h4" />
-  </svg>,
-];
-
-const STEPS = [0, 1, 2, 3, 4, 5, 6] as const;
+import Image from 'next/image';
 
 export default function LifecycleSection() {
-  const t = useTranslations('lifecycle');
-
   return (
     <section
       className="py-20 lg:py-28"
-      style={{backgroundColor: 'var(--navy-800)'}}
+      style={{ backgroundColor: 'var(--surface-blue-pale)' }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Header */}
-        <div className="max-w-2xl mb-14">
-          <div
-            className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-widest mb-4 border"
-            style={{
-              backgroundColor: 'rgba(37,99,235,0.08)',
-              borderColor: 'rgba(37,99,235,0.2)',
-              color: 'var(--blue-light)',
-            }}
-          >
-            {t('badge')}
-          </div>
-          <h2
-            className="text-[30px] sm:text-[36px] font-bold tracking-tight leading-tight mb-4"
-            style={{color: 'var(--text-primary)'}}
-          >
-            {t('headline')}
-          </h2>
-          <p className="text-[17px] leading-relaxed" style={{color: 'var(--text-secondary)'}}>
-            {t('subheadline')}
-          </p>
-        </div>
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
-        {/* Desktop: horizontal pipeline */}
-        <div className="hidden lg:block relative">
-          {/* Connecting line running through the icon circles */}
-          <div
-            className="absolute"
-            style={{
-              top: '20px',
-              left: 'calc(100% / 14)',
-              right: 'calc(100% / 14)',
-              height: '1px',
-              backgroundColor: 'var(--border-dim)',
-            }}
-          />
+          {/* Left: copy */}
+          <div className="max-w-lg">
+            <div
+              className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-widest mb-5 border"
+              style={{ backgroundColor: 'var(--surface-white)', borderColor: 'var(--border-blue-light)', color: 'var(--blue-brand)' }}
+            >
+              Staff &amp; checklists
+            </div>
 
-          <div
-            className="relative grid"
-            style={{gridTemplateColumns: 'repeat(7, 1fr)'}}
-          >
-            {STEPS.map((i) => (
-              <div key={i} className="flex flex-col items-center text-center px-2">
-                {/* Icon circle — sits on top of the line */}
+            <h2
+              className="text-[28px] sm:text-[36px] font-bold tracking-tight leading-tight mb-5"
+              style={{ color: 'var(--on-light-primary)' }}
+            >
+              Seasonal staff don&apos;t carry institutional memory. Your checklists should.
+            </h2>
+
+            <p className="text-[17px] leading-relaxed mb-6" style={{ color: 'var(--on-light-secondary)' }}>
+              Every season you onboard new staff. Every handover depends on someone knowing the right steps in the right order. Without a structured system, things get missed — and you only find out when a guest calls.
+            </p>
+
+            <div className="space-y-4 mb-8">
+              {[
+                {
+                  title: 'Consistent across every staff member',
+                  body: 'The checklist doesn\'t change based on who\'s on shift. Everyone follows the same structured workflow.',
+                },
+                {
+                  title: 'Logged and timestamped',
+                  body: 'Every completed step creates a record. You always know who did what and when — before or after handover.',
+                },
+                {
+                  title: 'Photo evidence at every handover',
+                  body: 'Staff capture vehicle condition at pickup and return. Timestamped photos tied to the booking — your protection if a damage dispute arises.',
+                },
+                {
+                  title: 'Custom templates per workflow',
+                  body: 'Different checklists for pre-rental prep, pickup handover, return inspection, and deep clean.',
+                },
+              ].map((item, i) => (
                 <div
-                  className="relative z-10 w-10 h-10 rounded-full flex items-center justify-center mb-3 border"
-                  style={{
-                    backgroundColor: 'var(--navy-800)',
-                    borderColor: 'rgba(37,99,235,0.4)',
-                    color: 'var(--blue-light)',
-                  }}
+                  key={i}
+                  className="flex gap-3 p-4 rounded-xl border"
+                  style={{ backgroundColor: 'var(--surface-white)', borderColor: 'var(--border-blue-light)' }}
                 >
-                  {STEP_ICONS[i]}
-                </div>
-
-                {/* Step number */}
-                <div
-                  className="text-[9px] font-semibold uppercase tracking-widest mb-1"
-                  style={{color: 'var(--text-muted)'}}
-                >
-                  0{i + 1}
-                </div>
-
-                {/* Label */}
-                <div
-                  className="text-[12px] font-semibold leading-tight mb-1"
-                  style={{color: 'var(--text-primary)'}}
-                >
-                  {t(`step${i}`)}
-                </div>
-
-                {/* Description */}
-                <div
-                  className="text-[11px] leading-relaxed"
-                  style={{color: 'var(--text-muted)'}}
-                >
-                  {t(`step${i}Desc`)}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Mobile: vertical timeline */}
-        <div className="lg:hidden">
-          {STEPS.map((i, idx) => (
-            <div key={i} className="flex gap-4">
-              {/* Left: icon + connecting line */}
-              <div className="flex flex-col items-center flex-shrink-0">
-                <div
-                  className="w-9 h-9 rounded-full flex items-center justify-center border"
-                  style={{
-                    backgroundColor: 'var(--navy-700)',
-                    borderColor: 'rgba(37,99,235,0.4)',
-                    color: 'var(--blue-light)',
-                  }}
-                >
-                  {STEP_ICONS[i]}
-                </div>
-                {idx < STEPS.length - 1 && (
                   <div
-                    className="w-px my-1.5"
-                    style={{backgroundColor: 'var(--border-subtle)', minHeight: '28px'}}
-                  />
-                )}
-              </div>
+                    className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                    style={{ backgroundColor: 'var(--blue-brand)' }}
+                  >
+                    <svg viewBox="0 0 10 10" fill="none" stroke="white" strokeWidth={2} strokeLinecap="round" className="w-2.5 h-2.5">
+                      <path d="M1.5 5l2.5 2.5 4.5-4.5" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div className="text-[14px] font-semibold mb-0.5" style={{ color: 'var(--on-light-primary)' }}>
+                      {item.title}
+                    </div>
+                    <div className="text-[13px] leading-relaxed" style={{ color: 'var(--on-light-muted)' }}>
+                      {item.body}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
 
-              {/* Right: content */}
-              <div className={idx < STEPS.length - 1 ? 'pb-5' : ''}>
-                <div
-                  className="text-[9px] font-semibold uppercase tracking-widest mb-0.5"
-                  style={{color: 'var(--text-muted)'}}
-                >
-                  0{i + 1}
+            <a
+              href="#cta"
+              className="inline-flex items-center gap-2 text-[14px] font-semibold"
+              style={{ color: 'var(--blue-brand)' }}
+            >
+              See checklists in action
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
+                <path d="M3 8h10M8 3l5 5-5 5" />
+              </svg>
+            </a>
+          </div>
+
+          {/* Right: staff.png (supporting) + digital-checklists.png (main) — layered stack */}
+          <div className="lg:sticky lg:top-24 space-y-4">
+
+            {/* Supporting: staff.png — team roles and task assignments */}
+            <div
+              className="rounded-xl overflow-hidden border"
+              style={{
+                borderColor: 'var(--border-blue-light)',
+                boxShadow: '0 4px 16px rgba(37,99,235,0.06)',
+              }}
+            >
+              <div
+                className="flex items-center gap-2 px-4 py-2 border-b"
+                style={{ backgroundColor: 'var(--surface-light)', borderColor: 'var(--border-light)' }}
+              >
+                <div className="flex gap-1">
+                  <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#fca5a5' }} />
+                  <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#fcd34d' }} />
+                  <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#86efac' }} />
                 </div>
-                <div
-                  className="text-[14px] font-semibold mb-0.5"
-                  style={{color: 'var(--text-primary)'}}
-                >
-                  {t(`step${i}`)}
+                <div className="flex-1 text-center text-[10px] font-mono" style={{ color: 'var(--on-light-muted)' }}>
+                  camperflow.io/staff
                 </div>
-                <div
-                  className="text-[13px] leading-relaxed"
-                  style={{color: 'var(--text-muted)'}}
-                >
-                  {t(`step${i}Desc`)}
-                </div>
+              </div>
+              <div style={{ height: '190px', overflow: 'hidden' }}>
+                <Image
+                  src="/screenshots/staff.png"
+                  alt="CamperFlow staff management — team roles, task assignments, and accountability across seasonal staff"
+                  width={2561}
+                  height={1800}
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
+                />
               </div>
             </div>
-          ))}
+
+            {/* Main: digital-checklists.png — tall, readable checklist interface */}
+            <div
+              className="rounded-2xl overflow-hidden border"
+              style={{
+                borderColor: 'var(--border-blue-light)',
+                boxShadow: '0 12px 40px rgba(37,99,235,0.08), 0 2px 8px rgba(0,0,0,0.06)',
+              }}
+            >
+              <div
+                className="flex items-center gap-3 px-4 py-2.5 border-b"
+                style={{ backgroundColor: 'var(--surface-light)', borderColor: 'var(--border-light)' }}
+              >
+                <div className="flex gap-1.5">
+                  <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: '#fca5a5' }} />
+                  <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: '#fcd34d' }} />
+                  <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: '#86efac' }} />
+                </div>
+                <div className="flex-1 text-center text-[11px] font-mono" style={{ color: 'var(--on-light-muted)' }}>
+                  camperflow.io/checklists
+                </div>
+              </div>
+              <div style={{ maxHeight: '520px', overflow: 'hidden' }}>
+                <Image
+                  src="/screenshots/digital-checklists.png"
+                  alt="CamperFlow digital checklists — structured handover workflows with completion tracking"
+                  width={2561}
+                  height={3200}
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
+                />
+              </div>
+            </div>
+
+          </div>
         </div>
 
       </div>
