@@ -21,7 +21,7 @@ export default function ProblemSection() {
       className="py-20 lg:py-28 border-y"
       style={{ backgroundColor: 'var(--surface-light)', borderColor: 'var(--border-light)' }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div data-reveal="" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="max-w-2xl mb-14">
           <div

@@ -5,7 +5,7 @@ export default function CtaSection() {
       className="py-20 lg:py-28"
       style={{ backgroundColor: 'var(--navy-900)' }}
     >
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div data-reveal="" className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
         <div
           className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-widest mb-6 border"

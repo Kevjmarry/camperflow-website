@@ -17,8 +17,8 @@ export default function ComplianceSection() {
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
 
-          {/* Left: compliance-monitoring screenshot — compliance card with visible Expired badge */}
-          <div className="order-2 lg:order-1">
+          {/* Left: compliance-monitoring screenshot */}
+          <div data-reveal="" className="order-2 lg:order-1">
             <div
               className="rounded-2xl overflow-hidden border"
               style={{
@@ -40,8 +40,8 @@ export default function ComplianceSection() {
                 </div>
               </div>
 
-              {/* compliance-monitoring.png — show full screenshot, red Expired status visible */}
-              <div style={{ maxHeight: '560px', overflow: 'hidden' }}>
+              {/* compliance-monitoring.png with Expired compliance callout */}
+              <div style={{ maxHeight: '560px', overflow: 'hidden', position: 'relative' }}>
                 <Image
                   src="/screenshots/compliance-monitoring.png"
                   alt="CamperFlow compliance monitoring — vehicle certifications, service dates, and Expired status indicators"
@@ -49,6 +49,10 @@ export default function ComplianceSection() {
                   height={1800}
                   style={{ width: '100%', height: 'auto', display: 'block' }}
                 />
+                <div className="sc-callout" style={{ top: '28%', right: '4%' }}>
+                  <div className="sc-dot sc-dot--danger sc-dot--pulse" />
+                  <span className="sc-label sc-label--danger">Expired compliance</span>
+                </div>
               </div>
             </div>
 
@@ -65,7 +69,7 @@ export default function ComplianceSection() {
           </div>
 
           {/* Right: copy */}
-          <div className="order-1 lg:order-2 max-w-lg">
+          <div data-reveal="" data-reveal-delay="1" className="order-1 lg:order-2 max-w-lg">
             <div
               className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-widest mb-5 border"
               style={{ backgroundColor: 'var(--danger-red-bg)', borderColor: 'var(--danger-red-border)', color: 'var(--danger-red)' }}

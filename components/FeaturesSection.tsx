@@ -27,7 +27,7 @@ export default function FeaturesSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section header */}
-        <div className="max-w-2xl mb-14">
+        <div data-reveal="" className="max-w-2xl mb-14">
           <div
             className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-widest mb-4 border"
             style={{ backgroundColor: 'var(--surface-blue-pale)', borderColor: 'var(--border-blue-light)', color: 'var(--blue-brand)' }}
@@ -47,6 +47,8 @@ export default function FeaturesSection() {
 
         {/* Operations screenshot crop — main accountability view */}
         <div
+          data-reveal=""
+          data-reveal-delay="1"
           className="rounded-2xl overflow-hidden border mb-6"
           style={{
             borderColor: 'var(--border-light)',
@@ -67,7 +69,7 @@ export default function FeaturesSection() {
             </div>
           </div>
           {/* Shows mid section of operations dashboard — reminders & task panel */}
-          <div style={{ height: '440px', overflow: 'hidden' }}>
+          <div style={{ height: '440px', overflow: 'hidden', position: 'relative' }}>
             <Image
               src="/screenshots/operations.png"
               alt="CamperFlow operations dashboard — reminders, task accountability and fleet overview"
@@ -78,11 +80,12 @@ export default function FeaturesSection() {
           </div>
         </div>
 
-        {/* Supporting proof screenshots — reminders + vehicle readiness */}
+        {/* Supporting proof screenshots */}
         <div className="grid sm:grid-cols-2 gap-5">
           {PROOF_POINTS.map((item) => (
             <div
               key={item.src}
+              data-reveal=""
               className="rounded-2xl overflow-hidden border"
               style={{ borderColor: 'var(--border-light)', backgroundColor: 'var(--surface-light)' }}
             >
@@ -109,6 +112,7 @@ export default function FeaturesSection() {
 
         {/* Platform completeness: customers.png — subtle supporting strip */}
         <div
+          data-reveal=""
           className="mt-5 rounded-2xl overflow-hidden border flex flex-col sm:flex-row"
           style={{ borderColor: 'var(--border-light)' }}
         >

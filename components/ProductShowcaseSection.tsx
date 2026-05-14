@@ -16,7 +16,7 @@ export default function ProductShowcaseSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
-        <div className="max-w-2xl mb-12">
+        <div data-reveal="" className="max-w-2xl mb-12">
           <div
             className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-widest mb-4 border"
             style={{ backgroundColor: 'rgba(37,99,235,0.1)', borderColor: 'rgba(37,99,235,0.25)', color: 'var(--blue-light)' }}
@@ -50,6 +50,8 @@ export default function ProductShowcaseSection() {
 
         {/* Operations.png — large, mission control presentation */}
         <div
+          data-reveal=""
+          data-reveal-delay="1"
           className="rounded-2xl overflow-hidden border"
           style={{
             borderColor: 'var(--border-dim)',

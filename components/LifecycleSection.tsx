@@ -11,7 +11,7 @@ export default function LifecycleSection() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
           {/* Left: copy */}
-          <div className="max-w-lg">
+          <div data-reveal="" className="max-w-lg">
             <div
               className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-widest mb-5 border"
               style={{ backgroundColor: 'var(--surface-white)', borderColor: 'var(--border-blue-light)', color: 'var(--blue-brand)' }}
@@ -86,10 +86,10 @@ export default function LifecycleSection() {
             </a>
           </div>
 
-          {/* Right: staff.png (supporting) + digital-checklists.png (main) — layered stack */}
-          <div className="lg:sticky lg:top-24 space-y-4">
+          {/* Right: staff.png + digital-checklists.png — layered stack */}
+          <div data-reveal="" data-reveal-delay="1" className="lg:sticky lg:top-24 space-y-4">
 
-            {/* Supporting: staff.png — team roles and task assignments */}
+            {/* Supporting: staff.png */}
             <div
               className="rounded-xl overflow-hidden border"
               style={{
@@ -121,7 +121,7 @@ export default function LifecycleSection() {
               </div>
             </div>
 
-            {/* Main: digital-checklists.png — tall, readable checklist interface */}
+            {/* Main: digital-checklists.png with Checklist progress callout */}
             <div
               className="rounded-2xl overflow-hidden border"
               style={{
@@ -142,7 +142,7 @@ export default function LifecycleSection() {
                   camperflow.io/checklists
                 </div>
               </div>
-              <div style={{ maxHeight: '520px', overflow: 'hidden' }}>
+              <div style={{ maxHeight: '520px', overflow: 'hidden', position: 'relative' }}>
                 <Image
                   src="/screenshots/digital-checklists.png"
                   alt="CamperFlow digital checklists — structured handover workflows with completion tracking"
@@ -150,6 +150,10 @@ export default function LifecycleSection() {
                   height={3200}
                   style={{ width: '100%', height: 'auto', display: 'block' }}
                 />
+                <div className="sc-callout" style={{ top: '38%', right: '4%' }}>
+                  <div className="sc-dot" />
+                  <span className="sc-label sc-label--blue">Checklist progress</span>
+                </div>
               </div>
             </div>
 

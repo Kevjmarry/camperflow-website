@@ -10,6 +10,7 @@ import GuestPortalSection from '@/components/GuestPortalSection';
 import BookingFlowSection from '@/components/BookingFlowSection';
 import FounderSection from '@/components/FounderSection';
 import CtaSection from '@/components/CtaSection';
+import ScrollObserver from '@/components/ScrollObserver';
 
 export default function LocalePage() {
   return (
@@ -39,6 +40,7 @@ export default function LocalePage() {
         {/* 9. Final CTA */}
         <CtaSection />
       </main>
+      <ScrollObserver />
       <footer
         className="py-8 border-t text-center text-[13px]"
         style={{

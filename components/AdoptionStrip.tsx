@@ -19,7 +19,7 @@ export default function AdoptionStrip() {
       className="py-12 lg:py-16 border-b"
       style={{ backgroundColor: 'var(--surface-white)', borderColor: 'var(--border-light)' }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div data-reveal="" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="mb-8">
           <div

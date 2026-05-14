@@ -31,7 +31,7 @@ export default function GuestPortalSection() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
           {/* Left: copy */}
-          <div className="max-w-lg">
+          <div data-reveal="" className="max-w-lg">
             <div
               className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-widest mb-5 border"
               style={{ backgroundColor: 'var(--surface-blue-pale)', borderColor: 'var(--border-blue-light)', color: 'var(--blue-brand)' }}
@@ -79,13 +79,14 @@ export default function GuestPortalSection() {
             </a>
           </div>
 
-          {/* Right: guest-portal.png — calm, clean */}
-          <div>
+          {/* Right: guest-portal.png with Guest portal callout */}
+          <div data-reveal="" data-reveal-delay="1">
             <div
               className="rounded-2xl overflow-hidden border"
               style={{
                 borderColor: 'var(--border-light)',
                 boxShadow: '0 8px 32px rgba(15,23,42,0.07)',
+                position: 'relative',
               }}
             >
               <div
@@ -102,14 +103,20 @@ export default function GuestPortalSection() {
                 </div>
               </div>
 
-              {/* guest-portal.png — natural proportions, fully readable */}
-              <Image
-                src="/screenshots/guest-portal.png"
-                alt="CamperFlow guest portal — My Booking page with booking details, pickup info, and multilingual access"
-                width={2561}
-                height={1264}
-                style={{ width: '100%', height: 'auto', display: 'block' }}
-              />
+              {/* guest-portal.png with callout */}
+              <div style={{ position: 'relative' }}>
+                <Image
+                  src="/screenshots/guest-portal.png"
+                  alt="CamperFlow guest portal — My Booking page with booking details, pickup info, and multilingual access"
+                  width={2561}
+                  height={1264}
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
+                />
+                <div className="sc-callout" style={{ top: '22%', right: '4%' }}>
+                  <div className="sc-dot" />
+                  <span className="sc-label sc-label--blue">Guest portal</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

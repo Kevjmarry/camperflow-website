@@ -1,5 +1,12 @@
 import Image from 'next/image';
 
+const FLOW_STEPS = [
+  { label: 'Booking imported', accent: 'var(--blue-brand)' },
+  { label: 'Checklist created', accent: 'var(--blue-brand)' },
+  { label: 'Vehicle ready', accent: '#16a34a' },
+  { label: 'Guest informed', accent: 'var(--blue-brand)' },
+];
+
 export default function HeroSection() {
   return (
     <section style={{ backgroundColor: 'var(--surface-white)' }} className="pt-28 overflow-hidden">
@@ -27,7 +34,7 @@ export default function HeroSection() {
             CamperFlow is the operational control layer for campervan, caravan, and motorhome rental companies. Once a booking is confirmed — in whatever system you use — CamperFlow handles everything next: vehicle readiness, compliance tracking, digital checklists, photo evidence, guest handovers, and automated reminders. Fewer missed steps. Fewer bad reviews.
           </p>
 
-          <div className="flex flex-wrap gap-3 mb-8">
+          <div className="flex flex-wrap gap-3 mb-7">
             <a
               href="#cta"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-[15px] font-semibold text-white bg-[#2563eb] hover:bg-[#1d4ed8] transition-colors"
@@ -44,6 +51,41 @@ export default function HeroSection() {
             >
               See how it works
             </a>
+          </div>
+
+          {/* Operational flow proof strip */}
+          <div className="flex flex-wrap items-center gap-x-1.5 gap-y-2 mb-6">
+            {FLOW_STEPS.map((step, i) => (
+              <div key={step.label} className="flex items-center gap-1.5">
+                <div
+                  className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg"
+                  style={{
+                    backgroundColor: 'var(--surface-light)',
+                    border: '1px solid var(--border-light)',
+                    color: 'var(--on-light-secondary)',
+                    fontSize: '11.5px',
+                    fontWeight: 500,
+                  }}
+                >
+                  <div className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: step.accent }} />
+                  {step.label}
+                </div>
+                {i < FLOW_STEPS.length - 1 && (
+                  <svg
+                    viewBox="0 0 10 10"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={1.5}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="w-2.5 h-2.5 flex-shrink-0"
+                    style={{ color: 'var(--on-light-muted)' }}
+                  >
+                    <path d="M2 5h6M5.5 2.5l2.5 2.5-2.5 2.5" />
+                  </svg>
+                )}
+              </div>
+            ))}
           </div>
 
           <p className="text-[13px] mb-6" style={{ color: 'var(--on-light-muted)' }}>
@@ -89,8 +131,8 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Screenshot — top 580px shows the command center at readable scale */}
-          <div style={{ height: '580px', overflow: 'hidden' }}>
+          {/* Screenshot with callout */}
+          <div style={{ height: '580px', overflow: 'hidden', position: 'relative' }}>
             <Image
               src="/screenshots/operations.png"
               alt="CamperFlow Operations Dashboard — fleet status, active rentals, reminders and upcoming pickups"
@@ -99,6 +141,10 @@ export default function HeroSection() {
               style={{ width: '100%', height: 'auto', display: 'block' }}
               priority
             />
+            <div className="sc-callout" style={{ top: '18%', right: '3.5%' }}>
+              <div className="sc-dot" />
+              <span className="sc-label sc-label--dark">Time until pickup</span>
+            </div>
           </div>
         </div>
 

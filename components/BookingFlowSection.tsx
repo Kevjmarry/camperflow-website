@@ -30,7 +30,7 @@ export default function BookingFlowSection() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
           {/* Left: copy */}
-          <div className="max-w-lg">
+          <div data-reveal="" className="max-w-lg">
             <div
               className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-widest mb-5 border"
               style={{ backgroundColor: 'var(--surface-white)', borderColor: 'var(--border-blue-light)', color: 'var(--blue-brand)' }}
@@ -102,8 +102,8 @@ export default function BookingFlowSection() {
             </a>
           </div>
 
-          {/* Right: booking-details.png — tall, operationally deep */}
-          <div className="lg:sticky lg:top-24">
+          {/* Right: booking-details.png with Staff tasks callout */}
+          <div data-reveal="" data-reveal-delay="1" className="lg:sticky lg:top-24">
             <div
               className="rounded-2xl overflow-hidden border"
               style={{
@@ -126,8 +126,8 @@ export default function BookingFlowSection() {
                 </div>
               </div>
 
-              {/* booking-details.png — tall, readable, shows full connected booking view */}
-              <div style={{ maxHeight: '700px', overflow: 'hidden' }}>
+              {/* booking-details.png with Staff tasks callout */}
+              <div style={{ maxHeight: '700px', overflow: 'hidden', position: 'relative' }}>
                 <Image
                   src="/screenshots/booking-details.png"
                   alt="CamperFlow booking details — connected booking view with reminders, guest portal, checklists, and operational status"
@@ -135,6 +135,10 @@ export default function BookingFlowSection() {
                   height={4000}
                   style={{ width: '100%', height: 'auto', display: 'block' }}
                 />
+                <div className="sc-callout" style={{ top: '52%', right: '4%' }}>
+                  <div className="sc-dot" />
+                  <span className="sc-label sc-label--blue">Staff tasks</span>
+                </div>
               </div>
             </div>
           </div>

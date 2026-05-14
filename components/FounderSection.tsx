@@ -6,7 +6,7 @@ export default function FounderSection() {
       style={{ backgroundColor: 'var(--surface-light)', borderColor: 'var(--border-light)' }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl">
+        <div data-reveal="" className="max-w-3xl">
 
           <div
             className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-widest mb-8 border"
