@@ -134,3 +134,27 @@ body {
   color: #1d4ed8;
   box-shadow: 0 2px 8px rgba(37, 99, 235, 0.1), 0 0 0 1px rgba(37, 99, 235, 0.12);
 }
+
+/* === Animated ribbon background ===================================== */
+/*
+ * Static ribbon — six layered paths (atm → wide → main → sheen → cyan → rim).
+ * Depth order: soft atmospheric outer glow, chromatic body mass, crisp core
+ * band, lit-face highlight, cyan edge accent, thin filter-free rim line.
+ * No animation; motion can be layered back in via the media query below.
+ */
+
+.ribbon-root {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 20;
+}
+
+.ribbon-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+

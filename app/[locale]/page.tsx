@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
+import AnimatedRibbon from '@/components/AnimatedRibbon';
 import ProblemSection from '@/components/ProblemSection';
 import AdoptionStrip from '@/components/AdoptionStrip';
 import LifecycleSection from '@/components/LifecycleSection';
@@ -15,7 +16,8 @@ import ScrollObserver from '@/components/ScrollObserver';
 
 export default function LocalePage() {
   return (
-    <>
+    <div className="relative overflow-hidden">
+      <AnimatedRibbon />
       <Navbar />
       <main>
         {/* 1. Hero — operations screenshot as the visual hero */}
@@ -54,6 +56,6 @@ export default function LocalePage() {
       >
         © {new Date().getFullYear()} CamperFlow. All rights reserved.
       </footer>
-    </>
+    </div>
   );
 }
