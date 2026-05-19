@@ -9,6 +9,7 @@ import ComplianceSection from '@/components/ComplianceSection';
 import GuestPortalSection from '@/components/GuestPortalSection';
 import BookingFlowSection from '@/components/BookingFlowSection';
 import FounderSection from '@/components/FounderSection';
+import PricingSection from '@/components/PricingSection';
 import CtaSection from '@/components/CtaSection';
 import ScrollObserver from '@/components/ScrollObserver';
 
@@ -37,7 +38,9 @@ export default function LocalePage() {
         <BookingFlowSection />
         {/* 9. Built by operators — founder section */}
         <FounderSection />
-        {/* 9. Final CTA */}
+        {/* 10. Pricing */}
+        <PricingSection />
+        {/* 11. Final CTA */}
         <CtaSection />
       </main>
       <ScrollObserver />
