@@ -135,14 +135,79 @@ body {
   box-shadow: 0 2px 8px rgba(37, 99, 235, 0.1), 0 0 0 1px rgba(37, 99, 235, 0.12);
 }
 
-/* === Screenshot pan-reveal =========================================== */
-/* Transform is driven entirely by ScrollObserver.tsx scroll listener.   */
-/* will-change promotes the layer so transform updates are compositor-    */
-/* only — no layout recalculation on every scroll tick.                  */
-@media (prefers-reduced-motion: no-preference) {
-  [data-sc-pan] img {
-    will-change: transform;
-  }
+/* === Screenshot lightbox ============================================= */
+.sc-view-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 7px;
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  cursor: pointer;
+  transition: background 0.15s;
+  z-index: 10;
+  pointer-events: auto;
+}
+.sc-view-btn:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.sc-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.88);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  cursor: zoom-out;
+  padding: 40px 20px;
+}
+
+.sc-lightbox-inner {
+  position: relative;
+  cursor: default;
+  width: min(95vw, 1280px);
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6);
+  line-height: 0;
+}
+
+.sc-lightbox-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.sc-lightbox-close {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s;
+  z-index: 10000;
+}
+.sc-lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.22);
 }
 
 /* === Animated ribbon background ===================================== */

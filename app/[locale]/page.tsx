@@ -12,6 +12,7 @@ import BookingFlowSection from '@/components/BookingFlowSection';
 import FounderSection from '@/components/FounderSection';
 import PricingSection from '@/components/PricingSection';
 import CtaSection from '@/components/CtaSection';
+import Footer from '@/components/Footer';
 import ScrollObserver from '@/components/ScrollObserver';
 
 export default function LocalePage() {
@@ -46,16 +47,7 @@ export default function LocalePage() {
         <CtaSection />
       </main>
       <ScrollObserver />
-      <footer
-        className="py-8 border-t text-center text-[13px]"
-        style={{
-          backgroundColor: 'var(--navy-950)',
-          borderColor: 'var(--border-subtle)',
-          color: 'var(--text-muted)',
-        }}
-      >
-        © {new Date().getFullYear()} CamperFlow. All rights reserved.
-      </footer>
+      <Footer />
     </div>
   );
 }

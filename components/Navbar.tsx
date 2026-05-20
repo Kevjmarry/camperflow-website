@@ -38,10 +38,10 @@ export default function Navbar() {
     <header
       className="fixed top-0 left-0 right-0 z-50 border-b"
       style={{
-        backgroundColor: 'rgba(10, 22, 40, 0.92)',
-        borderColor: 'var(--border-subtle)',
-        backdropFilter: 'blur(12px)',
-        WebkitBackdropFilter: 'blur(12px)',
+        backgroundColor: 'rgba(248, 250, 252, 0.82)',
+        borderColor: 'rgba(14, 30, 54, 0.07)',
+        backdropFilter: 'blur(20px) saturate(180%)',
+        WebkitBackdropFilter: 'blur(20px) saturate(180%)',
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -56,7 +56,7 @@ export default function Navbar() {
               height={28}
               className="rounded-md flex-shrink-0"
             />
-            <span className="font-semibold text-[15px] tracking-tight" style={{color: 'var(--text-primary)'}}>
+            <span className="font-semibold text-[15px] tracking-tight" style={{color: '#0f172a'}}>
               CamperFlow
             </span>
           </Link>
@@ -70,7 +70,16 @@ export default function Navbar() {
               onMouseLeave={() => setProductOpen(false)}
             >
               <button
-                className="px-3 py-2 text-[13px] font-medium rounded-md text-[#94a3b8] hover:text-white hover:bg-white/[0.04] transition-colors flex items-center gap-1"
+                className="px-3 py-2 text-[13px] font-medium rounded-md transition-colors flex items-center gap-1"
+                style={{color: '#475569'}}
+                onMouseEnter={e => {
+                  (e.currentTarget as HTMLButtonElement).style.color = '#0f172a';
+                  (e.currentTarget as HTMLButtonElement).style.backgroundColor = 'rgba(0,0,0,0.05)';
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget as HTMLButtonElement).style.color = '#475569';
+                  (e.currentTarget as HTMLButtonElement).style.backgroundColor = 'transparent';
+                }}
                 onClick={() => setProductOpen((o) => !o)}
                 aria-expanded={productOpen}
                 aria-haspopup="true"
@@ -90,10 +99,10 @@ export default function Navbar() {
 
               {productOpen && (
                 <div
-                  className="absolute top-full left-0 mt-1 w-52 rounded-lg border py-1 shadow-xl z-50"
+                  className="absolute top-full left-0 mt-1 w-52 rounded-lg border py-1 shadow-lg z-50"
                   style={{
-                    backgroundColor: 'rgba(10, 22, 40, 0.98)',
-                    borderColor: 'var(--border-subtle)',
+                    backgroundColor: 'rgba(255, 255, 255, 0.97)',
+                    borderColor: 'rgba(14, 30, 54, 0.09)',
                     backdropFilter: 'blur(12px)',
                     WebkitBackdropFilter: 'blur(12px)',
                   }}
@@ -102,7 +111,16 @@ export default function Navbar() {
                     <Link
                       key={key}
                       href={href}
-                      className="block px-4 py-2.5 text-[13px] text-[#94a3b8] hover:text-white hover:bg-white/[0.05] transition-colors"
+                      className="block px-4 py-2.5 text-[13px] transition-colors"
+                      style={{color: '#334155'}}
+                      onMouseEnter={e => {
+                        (e.currentTarget as HTMLAnchorElement).style.color = '#0f172a';
+                        (e.currentTarget as HTMLAnchorElement).style.backgroundColor = 'rgba(0,0,0,0.04)';
+                      }}
+                      onMouseLeave={e => {
+                        (e.currentTarget as HTMLAnchorElement).style.color = '#334155';
+                        (e.currentTarget as HTMLAnchorElement).style.backgroundColor = 'transparent';
+                      }}
                       onClick={() => setProductOpen(false)}
                     >
                       {t(key)}
@@ -117,7 +135,16 @@ export default function Navbar() {
               <Link
                 key={key}
                 href={href}
-                className="px-3 py-2 text-[13px] font-medium rounded-md text-[#94a3b8] hover:text-white hover:bg-white/[0.04] transition-colors"
+                className="px-3 py-2 text-[13px] font-medium rounded-md transition-colors"
+                style={{color: '#475569'}}
+                onMouseEnter={e => {
+                  (e.currentTarget as HTMLAnchorElement).style.color = '#0f172a';
+                  (e.currentTarget as HTMLAnchorElement).style.backgroundColor = 'rgba(0,0,0,0.05)';
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget as HTMLAnchorElement).style.color = '#475569';
+                  (e.currentTarget as HTMLAnchorElement).style.backgroundColor = 'transparent';
+                }}
               >
                 {t(key)}
               </Link>
@@ -134,8 +161,8 @@ export default function Navbar() {
                   disabled={loc === locale}
                   className="px-2.5 py-1.5 text-[11px] font-semibold uppercase tracking-wider rounded transition-colors"
                   style={{
-                    color: loc === locale ? 'var(--text-primary)' : 'var(--text-muted)',
-                    backgroundColor: loc === locale ? 'rgba(255,255,255,0.08)' : 'transparent',
+                    color: loc === locale ? '#0f172a' : '#64748b',
+                    backgroundColor: loc === locale ? 'rgba(0,0,0,0.06)' : 'transparent',
                     cursor: loc === locale ? 'default' : 'pointer',
                   }}
                 >
@@ -160,21 +187,21 @@ export default function Navbar() {
               <span
                 className="block w-5 h-0.5 rounded-full transition-all duration-200"
                 style={{
-                  backgroundColor: 'var(--text-primary)',
+                  backgroundColor: '#0f172a',
                   transform: mobileOpen ? 'translateY(7px) rotate(45deg)' : 'none',
                 }}
               />
               <span
                 className="block w-5 h-0.5 rounded-full transition-all duration-200"
                 style={{
-                  backgroundColor: 'var(--text-primary)',
+                  backgroundColor: '#0f172a',
                   opacity: mobileOpen ? 0 : 1,
                 }}
               />
               <span
                 className="block w-5 h-0.5 rounded-full transition-all duration-200"
                 style={{
-                  backgroundColor: 'var(--text-primary)',
+                  backgroundColor: '#0f172a',
                   transform: mobileOpen ? 'translateY(-7px) rotate(-45deg)' : 'none',
                 }}
               />
@@ -188,14 +215,16 @@ export default function Navbar() {
         <div
           className="md:hidden border-t px-4 py-4 space-y-1"
           style={{
-            backgroundColor: 'var(--navy-900)',
-            borderColor: 'var(--border-subtle)',
+            backgroundColor: 'rgba(248, 250, 252, 0.97)',
+            borderColor: 'rgba(14, 30, 54, 0.07)',
+            backdropFilter: 'blur(20px)',
+            WebkitBackdropFilter: 'blur(20px)',
           }}
         >
           {/* Product section */}
           <p
             className="px-3 pt-1 pb-0.5 text-[10px] font-semibold uppercase tracking-widest"
-            style={{color: 'var(--text-muted)'}}
+            style={{color: '#64748b'}}
           >
             {t('product')}
           </p>
@@ -205,27 +234,27 @@ export default function Navbar() {
               href={href}
               onClick={() => setMobileOpen(false)}
               className="block px-3 py-2.5 text-sm rounded-md"
-              style={{color: 'var(--text-secondary)'}}
+              style={{color: '#334155'}}
             >
               {t(key)}
             </Link>
           ))}
 
-          <div className="pt-2" style={{borderTop: '1px solid var(--border-subtle)'}}>
+          <div className="pt-2" style={{borderTop: '1px solid rgba(14,30,54,0.08)'}}>
             {topLinks.map(({key, href}) => (
               <Link
                 key={key}
                 href={href}
                 onClick={() => setMobileOpen(false)}
                 className="block px-3 py-2.5 text-sm rounded-md"
-                style={{color: 'var(--text-secondary)'}}
+                style={{color: '#334155'}}
               >
                 {t(key)}
               </Link>
             ))}
           </div>
 
-          <div className="pt-3 mt-2 border-t flex items-center justify-between" style={{borderColor: 'var(--border-subtle)'}}>
+          <div className="pt-3 mt-2 border-t flex items-center justify-between" style={{borderColor: 'rgba(14,30,54,0.08)'}}>
             <div className="flex gap-1">
               {routing.locales.map((loc) => (
                 <button
@@ -234,8 +263,8 @@ export default function Navbar() {
                   disabled={loc === locale}
                   className="px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider rounded"
                   style={{
-                    color: loc === locale ? 'var(--text-primary)' : 'var(--text-muted)',
-                    backgroundColor: loc === locale ? 'rgba(255,255,255,0.08)' : 'transparent',
+                    color: loc === locale ? '#0f172a' : '#64748b',
+                    backgroundColor: loc === locale ? 'rgba(0,0,0,0.06)' : 'transparent',
                   }}
                 >
                   {loc}
