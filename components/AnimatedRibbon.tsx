@@ -4,7 +4,8 @@ interface Props {
 
 /*
  * Full-page sinusoidal ribbon — viewBox 0 0 100 1000, preserveAspectRatio="none".
- * Static (no animation) while compositor behaviour is being finalised.
+ * Animation: CSS opacity keyframes on each path layer (see globals.css .rp--* rules).
+ * No path geometry moves; only per-layer opacity oscillates to simulate surface twist.
  *
  * Key design principles vs. previous version:
  *
@@ -47,48 +48,48 @@ export default function AnimatedRibbon({ className = '' }: Props) {
 
           <linearGradient id="rg-atm" x1="0" y1="-30" x2="0" y2="1000" gradientUnits="userSpaceOnUse">
             <stop offset="0%"   stopColor="rgba(14,165,233,0)" />
-            <stop offset="5%"   stopColor="rgba(14,165,233,0.11)" />
-            <stop offset="24%"  stopColor="rgba(14,165,233,0.15)" />
-            <stop offset="76%"  stopColor="rgba(14,165,233,0.15)" />
-            <stop offset="95%"  stopColor="rgba(14,165,233,0.04)" />
+            <stop offset="5%"   stopColor="rgba(14,165,233,0.09)" />
+            <stop offset="24%"  stopColor="rgba(14,165,233,0.12)" />
+            <stop offset="76%"  stopColor="rgba(14,165,233,0.12)" />
+            <stop offset="95%"  stopColor="rgba(14,165,233,0.03)" />
             <stop offset="100%" stopColor="rgba(14,165,233,0)" />
           </linearGradient>
 
           <linearGradient id="rg-blue" x1="0" y1="-22" x2="0" y2="1000" gradientUnits="userSpaceOnUse">
             <stop offset="0%"   stopColor="rgba(37,99,235,0)" />
-            <stop offset="4%"   stopColor="rgba(37,99,235,0.52)" />
-            <stop offset="20%"  stopColor="rgba(37,99,235,0.62)" />
-            <stop offset="80%"  stopColor="rgba(37,99,235,0.56)" />
-            <stop offset="96%"  stopColor="rgba(37,99,235,0.09)" />
+            <stop offset="4%"   stopColor="rgba(37,99,235,0.40)" />
+            <stop offset="20%"  stopColor="rgba(37,99,235,0.48)" />
+            <stop offset="80%"  stopColor="rgba(37,99,235,0.43)" />
+            <stop offset="96%"  stopColor="rgba(37,99,235,0.07)" />
             <stop offset="100%" stopColor="rgba(37,99,235,0)" />
           </linearGradient>
 
           {/* Lighter periwinkle for the surface-sheen highlight */}
           <linearGradient id="rg-sheen" x1="0" y1="-16" x2="0" y2="1000" gradientUnits="userSpaceOnUse">
             <stop offset="0%"   stopColor="rgba(188,216,255,0)" />
-            <stop offset="4%"   stopColor="rgba(188,216,255,0.45)" />
-            <stop offset="22%"  stopColor="rgba(210,230,255,0.56)" />
-            <stop offset="78%"  stopColor="rgba(210,230,255,0.48)" />
-            <stop offset="96%"  stopColor="rgba(188,216,255,0.08)" />
+            <stop offset="4%"   stopColor="rgba(188,216,255,0.34)" />
+            <stop offset="22%"  stopColor="rgba(210,230,255,0.42)" />
+            <stop offset="78%"  stopColor="rgba(210,230,255,0.36)" />
+            <stop offset="96%"  stopColor="rgba(188,216,255,0.06)" />
             <stop offset="100%" stopColor="rgba(188,216,255,0)" />
           </linearGradient>
 
           <linearGradient id="rg-cyan" x1="0" y1="-14" x2="0" y2="1000" gradientUnits="userSpaceOnUse">
             <stop offset="0%"   stopColor="rgba(0,195,228,0)" />
-            <stop offset="3%"   stopColor="rgba(0,195,228,0.65)" />
-            <stop offset="16%"  stopColor="rgba(0,214,244,0.74)" />
-            <stop offset="84%"  stopColor="rgba(0,214,244,0.68)" />
-            <stop offset="97%"  stopColor="rgba(0,195,228,0.14)" />
+            <stop offset="3%"   stopColor="rgba(0,195,228,0.40)" />
+            <stop offset="16%"  stopColor="rgba(0,214,244,0.46)" />
+            <stop offset="84%"  stopColor="rgba(0,214,244,0.42)" />
+            <stop offset="97%"  stopColor="rgba(0,195,228,0.09)" />
             <stop offset="100%" stopColor="rgba(0,195,228,0)" />
           </linearGradient>
 
           {/* Rim — crisp outer-boundary highlight, no filter */}
           <linearGradient id="rg-rim" x1="0" y1="-16" x2="0" y2="1000" gradientUnits="userSpaceOnUse">
             <stop offset="0%"   stopColor="rgba(212,234,255,0)" />
-            <stop offset="4%"   stopColor="rgba(212,234,255,0.70)" />
-            <stop offset="18%"  stopColor="rgba(224,242,255,0.80)" />
-            <stop offset="82%"  stopColor="rgba(224,242,255,0.72)" />
-            <stop offset="96%"  stopColor="rgba(212,234,255,0.12)" />
+            <stop offset="4%"   stopColor="rgba(212,234,255,0.44)" />
+            <stop offset="18%"  stopColor="rgba(224,242,255,0.50)" />
+            <stop offset="82%"  stopColor="rgba(224,242,255,0.45)" />
+            <stop offset="96%"  stopColor="rgba(212,234,255,0.08)" />
             <stop offset="100%" stopColor="rgba(212,234,255,0)" />
           </linearGradient>
 

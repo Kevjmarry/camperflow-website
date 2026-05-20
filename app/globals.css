@@ -135,6 +135,16 @@ body {
   box-shadow: 0 2px 8px rgba(37, 99, 235, 0.1), 0 0 0 1px rgba(37, 99, 235, 0.12);
 }
 
+/* === Screenshot pan-reveal =========================================== */
+/* Transform is driven entirely by ScrollObserver.tsx scroll listener.   */
+/* will-change promotes the layer so transform updates are compositor-    */
+/* only — no layout recalculation on every scroll tick.                  */
+@media (prefers-reduced-motion: no-preference) {
+  [data-sc-pan] img {
+    will-change: transform;
+  }
+}
+
 /* === Animated ribbon background ===================================== */
 /*
  * Static ribbon — six layered paths (atm → wide → main → sheen → cyan → rim).
@@ -148,6 +158,7 @@ body {
   inset: 0;
   pointer-events: none;
   z-index: 20;
+  mix-blend-mode: screen;
 }
 
 .ribbon-svg {
@@ -156,5 +167,52 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+/* === Ribbon path animations ========================================
+ *
+ * Three keyframe sets drive the internal-twist illusion:
+ *
+ *   rp-pulse  body mass layers (atm / wide / main)
+ *             Low-amplitude breath. Keeps the ribbon alive without
+ *             drawing attention to any single layer.
+ *
+ *   rp-sheen  Lit-face highlight. Large swing (1.0 → 0.30) simulates
+ *             the ribbon face rotating toward / away from the viewer.
+ *
+ *   rp-edge   Edge layers (cyan / rim). Approximate anti-phase to sheen.
+ *             When the face dims, the edge brightens — giving the
+ *             impression the ribbon has rolled to show its side.
+ *             rp--rim uses alternate-reverse so it starts out of sync
+ *             with rp--cyan, adding a third perceived "surface."
+ *
+ * Non-integer-ratio durations (4.3 / 5.1 / 6.2 / 6.7 / 7.8 / 9.0 s)
+ * keep the composite from having an obvious repeating period.
+ * Negative delays stagger the phases so no two layers are in lock-step
+ * at page load. No path moves; only per-layer opacity shifts.
+ * ================================================================== */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes rp-pulse {
+    from { opacity: 1;    }
+    to   { opacity: 0.72; }
+  }
+  @keyframes rp-sheen {
+    from { opacity: 1;    }
+    to   { opacity: 0.30; }
+  }
+  @keyframes rp-edge {
+    from { opacity: 0.28; }
+    to   { opacity: 1;    }
+  }
+
+  /* Body layers — low-amplitude breath */
+  .rp--atm  { animation: rp-pulse 9.0s ease-in-out alternate         infinite; animation-delay: -0.5s; }
+  .rp--wide { animation: rp-pulse 7.8s ease-in-out alternate         infinite; animation-delay: -2.4s; }
+  .rp--main { animation: rp-pulse 6.2s ease-in-out alternate         infinite; animation-delay: -1.1s; }
+
+  /* Surface layers — approximate anti-phase, higher amplitude */
+  .rp--sheen { animation: rp-sheen 5.1s ease-in-out alternate         infinite; animation-delay: -3.7s; }
+  .rp--cyan  { animation: rp-edge  4.3s ease-in-out alternate         infinite; animation-delay: -1.8s; }
+  .rp--rim   { animation: rp-edge  6.7s ease-in-out alternate-reverse infinite; animation-delay: -2.2s; }
 }
 
