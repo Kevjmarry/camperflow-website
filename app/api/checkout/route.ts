@@ -27,7 +27,7 @@ export async function POST(req: NextRequest) {
     session = await stripe.checkout.sessions.create({
       mode: 'subscription',
       line_items: [{ price: PRICE_IDS[plan], quantity: 1 }],
-      success_url: `https://app.camperflow.io/en/signup?plan=${plan}`,
+      success_url: `https://app.camperflow.io/en/staff/signup?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${origin}/en/pricing`,
     });
   } catch (err) {
