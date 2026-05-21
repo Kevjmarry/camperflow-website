@@ -2,7 +2,6 @@ import Image from 'next/image';
 import {getTranslations} from 'next-intl/server';
 import Navbar from '@/components/Navbar';
 import AnimatedRibbon from '@/components/AnimatedRibbon';
-import CtaSection from '@/components/CtaSection';
 import Footer from '@/components/Footer';
 import ScrollObserver from '@/components/ScrollObserver';
 
@@ -228,7 +227,7 @@ export default async function FeaturesPage() {
 
               <div className="flex flex-wrap gap-3 mb-6">
                 <a
-                  href="#cta"
+                  href="mailto:info@camperflow.io"
                   className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-[15px] font-semibold text-white bg-[#2563eb] hover:bg-[#1d4ed8] transition-colors"
                 >
                   {t('heroCta')}
@@ -257,7 +256,7 @@ export default async function FeaturesPage() {
           <section
             key={gi}
             id={gi === 0 ? 'capabilities' : undefined}
-            className="pt-10 pb-14 lg:pt-12 lg:pb-20"
+            className="py-10 lg:py-14"
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -314,7 +313,7 @@ export default async function FeaturesPage() {
         ))}
 
         {/* ── 6. In practice — screenshot crops ───────────────────────── */}
-        <section className="pt-10 pb-14 lg:pt-12 lg:pb-20">
+        <section className="py-10 lg:py-14">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div data-reveal="" className="max-w-2xl mb-8">
@@ -369,8 +368,6 @@ export default async function FeaturesPage() {
           </div>
         </section>
 
-        {/* ── 7. CTA ─────────────────────────────────────────────────── */}
-        <CtaSection />
 
       </main>
       <ScrollObserver />

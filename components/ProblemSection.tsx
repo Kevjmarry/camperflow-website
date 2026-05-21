@@ -18,7 +18,7 @@ export default function ProblemSection() {
   return (
     <section
       id="problem"
-      className="py-20 lg:py-28"
+      className="py-14 lg:py-20"
     >
       <div data-reveal="" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 

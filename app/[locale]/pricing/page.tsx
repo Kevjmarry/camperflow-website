@@ -1,10 +1,10 @@
 import {getTranslations} from 'next-intl/server';
 import Navbar from '@/components/Navbar';
 import AnimatedRibbon from '@/components/AnimatedRibbon';
-import CtaSection from '@/components/CtaSection';
 import Footer from '@/components/Footer';
 import ScrollObserver from '@/components/ScrollObserver';
 import PricingFAQAccordion from '@/components/PricingFAQAccordion';
+import CheckoutButton from '@/components/CheckoutButton';
 
 type Plan = {
   key: 'starter' | 'core' | 'growth' | 'pro';
@@ -177,7 +177,7 @@ export default async function PricingPage() {
         </section>
 
         {/* ── 2. Plans ─────────────────────────────────────────────── */}
-        <section id="plans" className="pt-8 pb-16 lg:pt-10 lg:pb-20">
+        <section id="plans" className="py-10 lg:py-14">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div data-reveal="" className="max-w-2xl mb-10">
@@ -310,21 +310,11 @@ export default async function PricingPage() {
                     </div>
 
                     {/* CTA */}
-                    <a
-                      href="mailto:info@camperflow.io"
-                      className="block text-center px-4 py-3 rounded-xl text-[14px] font-semibold transition-colors"
-                      style={
-                        dark
-                          ? {backgroundColor: 'var(--blue-brand)', color: '#fff'}
-                          : {
-                              backgroundColor: 'transparent',
-                              color: 'var(--blue-brand)',
-                              border: '1.5px solid var(--blue-brand)',
-                            }
-                      }
-                    >
-                      {t('bookDemo')}
-                    </a>
+                    <CheckoutButton
+                      plan={plan.key}
+                      dark={dark}
+                      label={t('getStarted')}
+                    />
                   </div>
                 );
               })}
@@ -334,7 +324,7 @@ export default async function PricingPage() {
         </section>
 
         {/* ── 3. Setup / switching fear ─────────────────────────────── */}
-        <section className="pt-10 pb-14 lg:pt-12 lg:pb-20">
+        <section className="py-10 lg:py-14">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div data-reveal="" className="max-w-2xl mb-8">
@@ -391,7 +381,7 @@ export default async function PricingPage() {
         </section>
 
         {/* ── 4. FAQ ───────────────────────────────────────────────── */}
-        <section id="faq" className="pt-10 pb-14 lg:pt-12 lg:pb-20">
+        <section id="faq" className="py-10 lg:py-14">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div data-reveal="" className="max-w-2xl mb-8">
@@ -430,8 +420,6 @@ export default async function PricingPage() {
           </div>
         </section>
 
-        {/* ── 5. CTA ───────────────────────────────────────────────── */}
-        <CtaSection />
 
       </main>
       <ScrollObserver />

@@ -1,7 +1,6 @@
 import {getTranslations} from 'next-intl/server';
 import Navbar from '@/components/Navbar';
 import AnimatedRibbon from '@/components/AnimatedRibbon';
-import CtaSection from '@/components/CtaSection';
 import Footer from '@/components/Footer';
 import ScrollObserver from '@/components/ScrollObserver';
 import PricingFAQAccordion from '@/components/PricingFAQAccordion';
@@ -122,7 +121,7 @@ export default async function FaqPage() {
 
         {/* ── 2. FAQ groups ─────────────────────────────────────────── */}
         {groups.map((group, gi) => (
-          <section key={gi} className="pt-8 pb-10 lg:pt-10 lg:pb-14">
+          <section key={gi} className="py-10 lg:py-14">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
               <div data-reveal="" className="max-w-2xl mb-6">
@@ -162,8 +161,6 @@ export default async function FaqPage() {
           </section>
         ))}
 
-        {/* ── 3. CTA ───────────────────────────────────────────────── */}
-        <CtaSection />
 
       </main>
       <ScrollObserver />

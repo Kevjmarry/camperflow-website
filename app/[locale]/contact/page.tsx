@@ -1,7 +1,6 @@
 import {getTranslations} from 'next-intl/server';
 import Navbar from '@/components/Navbar';
 import AnimatedRibbon from '@/components/AnimatedRibbon';
-import CtaSection from '@/components/CtaSection';
 import Footer from '@/components/Footer';
 import ScrollObserver from '@/components/ScrollObserver';
 
@@ -184,7 +183,7 @@ export default async function ContactPage() {
         </section>
 
         {/* ── 2. What happens next ───────────────────────────────────── */}
-        <section id="next" className="pt-10 pb-14 lg:pt-12 lg:pb-20">
+        <section id="next" className="py-10 lg:py-14">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div data-reveal="" className="max-w-2xl mb-8">
@@ -239,7 +238,7 @@ export default async function ContactPage() {
         </section>
 
         {/* ── 3. Who it's for ─────────────────────────────────────────── */}
-        <section className="pt-10 pb-14 lg:pt-12 lg:pb-20">
+        <section className="py-10 lg:py-14">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div data-reveal="" className="max-w-2xl mb-8">
@@ -294,7 +293,7 @@ export default async function ContactPage() {
         </section>
 
         {/* ── 4. Assisted setup ───────────────────────────────────────── */}
-        <section className="pt-10 pb-14 lg:pt-12 lg:pb-20">
+        <section className="py-10 lg:py-14">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div data-reveal="" className="max-w-2xl mb-8">
@@ -349,7 +348,7 @@ export default async function ContactPage() {
         </section>
 
         {/* ── 5. Get in touch ─────────────────────────────────────────── */}
-        <section id="contact" className="pt-10 pb-14 lg:pt-12 lg:pb-20">
+        <section id="contact" className="py-10 lg:py-14">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div data-reveal="" className="max-w-2xl mb-8">
@@ -414,8 +413,6 @@ export default async function ContactPage() {
           </div>
         </section>
 
-        {/* ── 6. CTA ──────────────────────────────────────────────────── */}
-        <CtaSection />
 
       </main>
       <ScrollObserver />

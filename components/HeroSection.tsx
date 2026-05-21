@@ -36,7 +36,7 @@ export default function HeroSection() {
 
           <div className="flex flex-wrap gap-3 mb-6">
             <a
-              href="#cta"
+              href="mailto:info@camperflow.io"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-[15px] font-semibold text-white bg-[#2563eb] hover:bg-[#1d4ed8] transition-colors"
             >
               Book a demo

@@ -1,7 +1,6 @@
 import {getTranslations} from 'next-intl/server';
 import Navbar from '@/components/Navbar';
 import AnimatedRibbon from '@/components/AnimatedRibbon';
-import CtaSection from '@/components/CtaSection';
 import Footer from '@/components/Footer';
 import ScrollObserver from '@/components/ScrollObserver';
 
@@ -146,7 +145,7 @@ export default async function AboutPage() {
         </section>
 
         {/* ── 2. Origin / founder story ─────────────────────────────── */}
-        <section id="story" className="pt-8 pb-14 lg:pt-10 lg:pb-20">
+        <section id="story" className="py-10 lg:py-14">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div className="lg:grid lg:grid-cols-5 lg:gap-16 lg:items-start">
@@ -233,7 +232,7 @@ export default async function AboutPage() {
         </section>
 
         {/* ── 3. The gap: booking systems aren't enough ────────────── */}
-        <section className="pt-10 pb-14 lg:pt-12 lg:pb-20">
+        <section className="py-10 lg:py-14">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div data-reveal="" className="max-w-2xl mb-8">
@@ -291,7 +290,7 @@ export default async function AboutPage() {
         </section>
 
         {/* ── 4. Checklist / accountability philosophy ─────────────── */}
-        <section className="pt-10 pb-14 lg:pt-12 lg:pb-20">
+        <section className="py-10 lg:py-14">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div className="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
@@ -350,7 +349,7 @@ export default async function AboutPage() {
         </section>
 
         {/* ── 5. Positioning — works alongside ─────────────────────── */}
-        <section className="pt-10 pb-14 lg:pt-12 lg:pb-20">
+        <section className="py-10 lg:py-14">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div data-reveal="" className="max-w-2xl mb-8">
@@ -410,8 +409,6 @@ export default async function AboutPage() {
           </div>
         </section>
 
-        {/* ── 6. CTA ───────────────────────────────────────────────── */}
-        <CtaSection />
 
       </main>
       <ScrollObserver />

@@ -15,7 +15,10 @@
       "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('messages/de.json','utf8'\\)\\); console.log\\('de OK'\\)\")",
       "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('messages/sk.json','utf8'\\)\\); console.log\\('sk OK'\\)\")",
       "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\vikto\\\\Desktop\\\\camperflow-website\\\\app\\\\[locale\\\\]\" -Name)",
-      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('messages/en.json','utf8'\\)\\); JSON.parse\\(require\\('fs'\\).readFileSync\\('messages/de.json','utf8'\\)\\); JSON.parse\\(require\\('fs'\\).readFileSync\\('messages/sk.json','utf8'\\)\\); console.log\\('all valid'\\)\")"
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('messages/en.json','utf8'\\)\\); JSON.parse\\(require\\('fs'\\).readFileSync\\('messages/de.json','utf8'\\)\\); JSON.parse\\(require\\('fs'\\).readFileSync\\('messages/sk.json','utf8'\\)\\); console.log\\('all valid'\\)\")",
+      "Bash(npm install *)",
+      "Bash(Select-String -Path \"c:\\\\Users\\\\vikto\\\\Desktop\\\\camperflow-website\\\\.env.local\" -Pattern \"STRIPE\")",
+      "Bash(xargs wc -l)"
     ],
     "additionalDirectories": [
       "c:\\Users\\vikto\\Desktop\\camperflow-website\\app\\[locale]\\features"

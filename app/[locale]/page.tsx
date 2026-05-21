@@ -4,7 +4,6 @@ import HeroSection from '@/components/HeroSection';
 import AnimatedRibbon from '@/components/AnimatedRibbon';
 import ProblemSection from '@/components/ProblemSection';
 import FounderSection from '@/components/FounderSection';
-import CtaSection from '@/components/CtaSection';
 import Footer from '@/components/Footer';
 import ScrollObserver from '@/components/ScrollObserver';
 
@@ -72,7 +71,7 @@ export default function LocalePage() {
         <ProblemSection />
 
         {/* ── 3. Product paths ───────────────────────────────────────── */}
-        <section id="paths" className="py-14 lg:py-20">
+        <section id="paths" className="py-10 lg:py-14">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div data-reveal="" className="max-w-xl mb-10">
@@ -189,8 +188,6 @@ export default function LocalePage() {
         {/* ── 4. Founder credibility ─────────────────────────────────── */}
         <FounderSection />
 
-        {/* ── 5. CTA ─────────────────────────────────────────────────── */}
-        <CtaSection />
 
       </main>
       <ScrollObserver />
