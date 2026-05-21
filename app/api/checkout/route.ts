@@ -2,10 +2,10 @@ import Stripe from 'stripe';
 import { NextRequest } from 'next/server';
 
 const PRICE_IDS: Record<string, string> = {
-  starter: 'price_1TZVlhIhm4YI8m30fXVduVM1',
-  core:    'price_1TZVlhIhm4YI8m30iV65Ovzq',
-  growth:  'price_1TZVlhIhm4YI8m304Ve9z5Nt',
-  pro:     'price_1TZVliIhm4YI8m30AYzyhWah',
+  starter: 'price_1TZXTPIhm4YI8m30XpwGR05g',
+  core:    'price_1TZXVCIhm4YI8m306ZWJWBfu',
+  growth:  'price_1TZXXpIhm4YI8m308GZATyhu',
+  pro:     'price_1TZXZRIhm4YI8m308YOwthl4',
 };
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
