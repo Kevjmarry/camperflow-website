@@ -8,11 +8,13 @@ const PRICE_IDS: Record<string, string> = {
   pro:     'price_1TZXZRIhm4YI8m308YOwthl4',
 };
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: '2026-04-22.dahlia',
-});
-
 export async function POST(req: NextRequest) {
+  const stripeKey = process.env.STRIPE_SECRET_KEY;
+  if (!stripeKey) {
+    return Response.json({ error: 'Stripe not configured' }, { status: 500 });
+  }
+  const stripe = new Stripe(stripeKey, { apiVersion: '2026-04-22.dahlia' });
+
   const body = await req.json().catch(() => ({}));
   const plan = (body.plan as string)?.toLowerCase();
 
