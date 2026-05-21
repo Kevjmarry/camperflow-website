@@ -2,15 +2,24 @@ export default function FounderSection() {
   return (
     <section
       id="founder"
-      className="py-20 lg:py-28 border-t"
-      style={{ backgroundColor: 'var(--surface-light)', borderColor: 'var(--border-light)' }}
+      className="py-20 lg:py-28"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div data-reveal="" className="max-w-3xl">
+        <div
+          data-reveal=""
+          className="max-w-3xl rounded-3xl border p-8 lg:p-12"
+          style={{
+            backgroundColor: 'rgba(255,255,255,0.82)',
+            backdropFilter: 'blur(20px) saturate(160%)',
+            WebkitBackdropFilter: 'blur(20px) saturate(160%)',
+            borderColor: 'rgba(14,30,54,0.07)',
+            boxShadow: '0 4px 32px rgba(15,23,42,0.06)',
+          }}
+        >
 
           <div
             className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-widest mb-8 border"
-            style={{ backgroundColor: 'var(--surface-white)', borderColor: 'var(--border-light)', color: 'var(--on-light-muted)' }}
+            style={{ backgroundColor: 'var(--surface-blue-pale)', borderColor: 'var(--border-blue-light)', color: 'var(--blue-brand)' }}
           >
             Built from inside the industry
           </div>
@@ -50,7 +59,7 @@ export default function FounderSection() {
               <span
                 key={tag}
                 className="px-3 py-1 rounded-full text-[12px] font-medium border"
-                style={{ backgroundColor: 'var(--surface-white)', borderColor: 'var(--border-blue-light)', color: 'var(--blue-brand)' }}
+                style={{ backgroundColor: 'var(--surface-blue-pale)', borderColor: 'var(--border-blue-light)', color: 'var(--blue-brand)' }}
               >
                 {tag}
               </span>

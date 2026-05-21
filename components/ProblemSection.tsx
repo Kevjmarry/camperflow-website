@@ -18,8 +18,7 @@ export default function ProblemSection() {
   return (
     <section
       id="problem"
-      className="py-20 lg:py-28 border-y"
-      style={{ backgroundColor: 'var(--surface-light)', borderColor: 'var(--border-light)' }}
+      className="py-20 lg:py-28"
     >
       <div data-reveal="" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -46,7 +45,7 @@ export default function ProblemSection() {
           {/* Before column */}
           <div
             className="rounded-2xl border p-6 lg:p-8"
-            style={{ backgroundColor: 'var(--surface-white)', borderColor: 'var(--border-light)' }}
+            style={{ backgroundColor: 'var(--surface-white)', borderColor: 'var(--border-light)', boxShadow: '0 2px 16px rgba(15,23,42,0.05)' }}
           >
             <div className="flex items-center gap-2 mb-6">
               <div
@@ -80,7 +79,7 @@ export default function ProblemSection() {
           {/* After column */}
           <div
             className="rounded-2xl border p-6 lg:p-8"
-            style={{ backgroundColor: 'var(--surface-white)', borderColor: 'var(--border-light)' }}
+            style={{ backgroundColor: 'var(--surface-white)', borderColor: 'var(--border-light)', boxShadow: '0 2px 16px rgba(15,23,42,0.05)' }}
           >
             <div className="flex items-center gap-2 mb-6">
               <div

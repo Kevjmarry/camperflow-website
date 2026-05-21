@@ -3,7 +3,22 @@
     "allow": [
       "Bash(npx tsc *)",
       "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\vikto\\\\Desktop\\\\camperflow-website\" -Directory)",
-      "Bash(Select-Object Name)"
+      "Bash(Select-Object Name)",
+      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\vikto\\\\Desktop\\\\camperflow-website\" -Recurse -Directory)",
+      "Bash(Select-Object -ExpandProperty FullName)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\vikto\\\\Desktop\\\\camperflow-website\\\\app\" -Recurse -Depth 2 -Directory)",
+      "Bash(Select-Object FullName)",
+      "Bash(mkdir \"c:\\\\Users\\\\vikto\\\\Desktop\\\\camperflow-website\\\\app\\\\[locale]\\\\features\")",
+      "Bash(type nul *)",
+      "Bash(touch \"c:/Users/vikto/Desktop/camperflow-website/app/[locale]/features/page.tsx\")",
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('messages/en.json','utf8'\\)\\); console.log\\('en OK'\\)\")",
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('messages/de.json','utf8'\\)\\); console.log\\('de OK'\\)\")",
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('messages/sk.json','utf8'\\)\\); console.log\\('sk OK'\\)\")",
+      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\vikto\\\\Desktop\\\\camperflow-website\\\\app\\\\[locale\\\\]\" -Name)",
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('messages/en.json','utf8'\\)\\); JSON.parse\\(require\\('fs'\\).readFileSync\\('messages/de.json','utf8'\\)\\); JSON.parse\\(require\\('fs'\\).readFileSync\\('messages/sk.json','utf8'\\)\\); console.log\\('all valid'\\)\")"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\vikto\\Desktop\\camperflow-website\\app\\[locale]\\features"
     ]
   }
 }
