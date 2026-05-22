@@ -11,17 +11,14 @@ type Plan = {
   price: number;
   vehicles: number;
   staff: number;
-  extraVehicle: number;
-  extraStaff: number;
-  maxExtraVehicles: number | null;
   popular: boolean;
 };
 
 const PLANS: Plan[] = [
-  {key: 'starter', price: 29, vehicles: 3,  staff: 3,  extraVehicle: 9, extraStaff: 5, maxExtraVehicles: 3,    popular: false},
-  {key: 'core',    price: 49, vehicles: 5,  staff: 5,  extraVehicle: 9, extraStaff: 5, maxExtraVehicles: 5,    popular: true},
-  {key: 'growth',  price: 79, vehicles: 15, staff: 15, extraVehicle: 7, extraStaff: 3, maxExtraVehicles: 10,   popular: false},
-  {key: 'pro',     price: 119,vehicles: 30, staff: 30, extraVehicle: 7, extraStaff: 3, maxExtraVehicles: null, popular: false},
+  {key: 'starter', price: 29,  vehicles: 3,  staff: 3,  popular: false},
+  {key: 'core',    price: 49,  vehicles: 5,  staff: 5,  popular: true},
+  {key: 'growth',  price: 79,  vehicles: 15, staff: 15, popular: false},
+  {key: 'pro',     price: 119, vehicles: 30, staff: 30, popular: false},
 ];
 
 function CheckIcon({bright}: {bright: boolean}) {
@@ -101,7 +98,6 @@ export default async function PricingPage() {
 
   const faqItems = [
     {q: t('faq0Q'), a: t('faq0A')},
-    {q: t('faq1Q'), a: t('faq1A')},
     {q: t('faq2Q'), a: t('faq2A')},
     {q: t('faq3Q'), a: t('faq3A')},
     {q: t('faq4Q'), a: t('faq4A')},
@@ -291,23 +287,6 @@ export default async function PricingPage() {
                         </li>
                       ))}
                     </ul>
-
-                    {/* Extras + scaling */}
-                    <div
-                      className="mb-5 text-[12px] leading-relaxed space-y-0.5"
-                      style={{color: dark ? 'var(--text-muted)' : 'var(--on-light-muted)'}}
-                    >
-                      <div>+ €{plan.extraVehicle}{t('perMonth')} {t('extraVehicle')}</div>
-                      <div>+ €{plan.extraStaff}{t('perMonth')} {t('extraStaff')}</div>
-                      <div
-                        className="mt-1 text-[11px]"
-                        style={{color: dark ? 'rgba(148,163,184,0.65)' : 'var(--on-light-muted)', opacity: 0.8}}
-                      >
-                        {plan.maxExtraVehicles !== null
-                          ? t('maxExtraNote', {n: plan.maxExtraVehicles})
-                          : t('noExtraLimit')}
-                      </div>
-                    </div>
 
                     {/* CTA */}
                     <CheckoutButton

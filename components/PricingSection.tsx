@@ -3,9 +3,6 @@ type Plan = {
   price: number;
   vehicles: number;
   staff: number;
-  extraVehicle: number;
-  extraStaff: number;
-  maxExtraVehicles: number | null;
   popular: boolean;
   description: string;
 };
@@ -16,9 +13,6 @@ const PLANS: Plan[] = [
     price: 29,
     vehicles: 3,
     staff: 3,
-    extraVehicle: 9,
-    extraStaff: 5,
-    maxExtraVehicles: 3,
     popular: false,
     description: 'For small fleets getting started.',
   },
@@ -27,9 +21,6 @@ const PLANS: Plan[] = [
     price: 49,
     vehicles: 5,
     staff: 5,
-    extraVehicle: 9,
-    extraStaff: 5,
-    maxExtraVehicles: 5,
     popular: true,
     description: 'For growing rental operations.',
   },
@@ -38,9 +29,6 @@ const PLANS: Plan[] = [
     price: 79,
     vehicles: 15,
     staff: 15,
-    extraVehicle: 7,
-    extraStaff: 3,
-    maxExtraVehicles: 10,
     popular: false,
     description: 'For established multi-vehicle fleets.',
   },
@@ -49,9 +37,6 @@ const PLANS: Plan[] = [
     price: 119,
     vehicles: 30,
     staff: 30,
-    extraVehicle: 7,
-    extraStaff: 3,
-    maxExtraVehicles: null,
     popular: false,
     description: 'For large professional operations.',
   },
