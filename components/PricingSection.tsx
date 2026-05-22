@@ -164,19 +164,6 @@ function PlanCard({ plan }: { plan: Plan }) {
         ))}
       </ul>
 
-      <div
-        className="mb-5 text-[12px] leading-relaxed space-y-0.5"
-        style={{ color: dark ? 'var(--text-muted)' : 'var(--on-light-muted)' }}
-      >
-        <div>+ €{plan.extraVehicle}/mo per extra vehicle</div>
-        <div>+ €{plan.extraStaff}/mo per extra staff member</div>
-        {plan.maxExtraVehicles !== null && (
-          <div className="mt-1" style={{ color: dark ? 'var(--text-muted)' : 'var(--on-light-muted)' }}>
-            Max +{plan.maxExtraVehicles} extra vehicles, then upgrade
-          </div>
-        )}
-      </div>
-
       <a
         href="mailto:info@camperflow.io"
         className="block text-center px-4 py-3 rounded-xl text-[14px] font-semibold transition-colors"
@@ -236,11 +223,6 @@ export default function PricingSection() {
           ))}
         </div>
 
-        <div data-reveal="" className="mt-8 text-center">
-          <p className="text-[13px]" style={{ color: 'var(--on-light-muted)' }}>
-            Extra vehicles from €7/mo &middot; Extra staff from €3/mo &middot; Scale within your plan, then upgrade to the next tier
-          </p>
-        </div>
 
       </div>
     </section>
