@@ -16,27 +16,23 @@ export default async function OperationsPage() {
     {value: t('stat2Value'), label: t('stat2Label')},
   ];
 
-  const outcomeCards = [
-    {title: t('outcome0Title'), desc: t('outcome0Desc')},
-    {title: t('outcome1Title'), desc: t('outcome1Desc')},
-    {title: t('outcome2Title'), desc: t('outcome2Desc')},
+  const remindersList = [
+    t('remindersList0'),
+    t('remindersList1'),
+    t('remindersList2'),
+    t('remindersList3'),
   ];
 
-  const proofPoints = [
-    {
-      src: '/screenshots/reminders.png',
-      width: 2561,
-      height: 1600,
-      label: t('remindersLabel'),
-      desc: t('remindersDesc'),
-    },
-    {
-      src: '/screenshots/vehicle-readiness.png',
-      width: 2561,
-      height: 1600,
-      label: t('readinessLabel'),
-      desc: t('readinessDesc'),
-    },
+  const readinessList = [
+    t('readinessList0'),
+    t('readinessList1'),
+    t('readinessList2'),
+  ];
+
+  const staffCards = [
+    {title: t('staff0Title'), timestamp: t('staff0Timestamp'), desc: t('staff0Desc'), icon: 'checklist' as const},
+    {title: t('staff1Title'), timestamp: t('staff1Timestamp'), desc: t('staff1Desc'), icon: 'issue' as const},
+    {title: t('staff2Title'), timestamp: t('staff2Timestamp'), desc: t('staff2Desc'), icon: 'return' as const},
   ];
 
   return (
@@ -150,13 +146,13 @@ export default async function OperationsPage() {
           </div>
         </section>
 
-        {/* ── 2. Live operations overview ─────────────────────────────── */}
+        {/* ── 2. Fleet at a Glance ─────────────────────────────────── */}
         <section
           id="dashboard"
-          className="py-10 lg:py-14"
+          className="py-16 lg:py-24"
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-start">
+            <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-start">
 
               {/* Left: copy + stats */}
               <div data-reveal="" className="max-w-lg">
@@ -225,6 +221,14 @@ export default async function OperationsPage() {
                     height={5507}
                     style={{width: '100%', height: 'auto', display: 'block'}}
                   />
+                  <div className="sc-callout" style={{top: '12%', left: '4%'}}>
+                    <div className="sc-dot" />
+                    <span className="sc-label">Vehicle readiness</span>
+                  </div>
+                  <div className="sc-callout" style={{top: '28%', right: '4%'}}>
+                    <div className="sc-dot sc-dot--pulse" />
+                    <span className="sc-label">Pickup in 2h</span>
+                  </div>
                 </div>
               </div>
 
@@ -232,38 +236,14 @@ export default async function OperationsPage() {
           </div>
         </section>
 
-        {/* ── 3. Today's priorities ──────────────────────────────────── */}
-        <section className="py-10 lg:py-14">
+        {/* ── 3. Today's Priorities (reversed: screenshot left, copy right) ── */}
+        <section className="py-16 lg:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-start">
+            <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-start">
 
-              {/* Left: copy */}
-              <div data-reveal="" className="max-w-lg">
-                <div
-                  className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-widest mb-5 border"
-                  style={{
-                    backgroundColor: 'var(--surface-blue-pale)',
-                    borderColor: 'var(--border-blue-light)',
-                    color: 'var(--blue-brand)',
-                  }}
-                >
-                  {t('workflowBadge')}
-                </div>
-                <h2
-                  className="text-[28px] sm:text-[34px] font-bold tracking-tight leading-tight mb-5"
-                  style={{color: 'var(--on-light-primary)'}}
-                >
-                  {t('workflowHeadline')}
-                </h2>
-                <p className="text-[17px] leading-relaxed" style={{color: 'var(--on-light-secondary)'}}>
-                  {t('workflowBody')}
-                </p>
-              </div>
-
-              {/* Right: operations.png mid-crop — today's tasks panel */}
+              {/* Screenshot: left on desktop (first in DOM order) */}
               <div
                 data-reveal=""
-                data-reveal-delay="1"
                 className="rounded-2xl overflow-hidden border"
                 style={{
                   borderColor: 'var(--border-light)',
@@ -298,70 +278,230 @@ export default async function OperationsPage() {
                 </div>
               </div>
 
+              {/* Copy: right on desktop (second in DOM order) */}
+              <div data-reveal="" data-reveal-delay="1" className="max-w-lg">
+                <div
+                  className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-widest mb-5 border"
+                  style={{
+                    backgroundColor: 'var(--surface-blue-pale)',
+                    borderColor: 'var(--border-blue-light)',
+                    color: 'var(--blue-brand)',
+                  }}
+                >
+                  {t('workflowBadge')}
+                </div>
+                <h2
+                  className="text-[28px] sm:text-[34px] font-bold tracking-tight leading-tight mb-5"
+                  style={{color: 'var(--on-light-primary)'}}
+                >
+                  {t('workflowHeadline')}
+                </h2>
+                <p className="text-[17px] leading-relaxed" style={{color: 'var(--on-light-secondary)'}}>
+                  {t('workflowBody')}
+                </p>
+              </div>
+
             </div>
           </div>
         </section>
 
-        {/* ── 4. Reminders + Vehicle Readiness ───────────────────────── */}
-        <section className="py-10 lg:py-14">
+        {/* ── 4. Automated Reminders ───────────────────────────────── */}
+        <section className="py-16 lg:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-[1fr_1.25fr] gap-10 lg:gap-14 items-start">
 
-            <div data-reveal="" className="max-w-2xl mb-8">
+              {/* Left: copy + reminder checklist */}
+              <div data-reveal="" className="max-w-lg">
+                <div
+                  className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-widest mb-5 border"
+                  style={{
+                    backgroundColor: 'var(--surface-blue-pale)',
+                    borderColor: 'var(--border-blue-light)',
+                    color: 'var(--blue-brand)',
+                  }}
+                >
+                  {t('remindersSectionBadge')}
+                </div>
+                <h2
+                  className="text-[28px] sm:text-[34px] font-bold tracking-tight leading-tight mb-5"
+                  style={{color: 'var(--on-light-primary)'}}
+                >
+                  {t('remindersSectionHeadline')}
+                </h2>
+                <p className="text-[17px] leading-relaxed mb-7" style={{color: 'var(--on-light-secondary)'}}>
+                  {t('remindersSectionBody')}
+                </p>
+
+                <ul className="space-y-3">
+                  {remindersList.map((item, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <div
+                        className="mt-0.5 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
+                        style={{backgroundColor: 'rgba(37,99,235,0.1)'}}
+                      >
+                        <svg width="9" height="9" viewBox="0 0 9 9" fill="none">
+                          <path d="M1.5 4.5l2 2 4-4" stroke="#2563eb" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </div>
+                      <span className="text-[14px] leading-snug" style={{color: 'var(--on-light-secondary)'}}>
+                        {item}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Right: reminders screenshot with caption */}
               <div
-                className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-widest mb-4 border"
+                data-reveal=""
+                data-reveal-delay="1"
+                className="rounded-2xl overflow-hidden border"
                 style={{
-                  backgroundColor: 'var(--surface-blue-pale)',
-                  borderColor: 'var(--border-blue-light)',
-                  color: 'var(--blue-brand)',
+                  borderColor: 'var(--border-light)',
+                  boxShadow: '0 4px 24px rgba(15,23,42,0.07)',
                 }}
               >
-                {t('featuresBadge')}
-              </div>
-              <h2
-                className="text-[28px] sm:text-[36px] font-bold tracking-tight leading-tight mb-4"
-                style={{color: 'var(--on-light-primary)'}}
-              >
-                {t('featuresHeadline')}
-              </h2>
-            </div>
-
-            <div className="grid sm:grid-cols-2 gap-5">
-              {proofPoints.map((item) => (
                 <div
-                  key={item.src}
-                  data-reveal=""
-                  className="rounded-2xl overflow-hidden border"
-                  style={{borderColor: 'var(--border-light)', backgroundColor: 'var(--surface-light)'}}
+                  className="flex items-center gap-3 px-4 py-2.5 border-b"
+                  style={{backgroundColor: 'var(--surface-light)', borderColor: 'var(--border-light)'}}
                 >
-                  <div style={{height: '260px', overflow: 'hidden'}}>
-                    <Image
-                      src={item.src}
-                      alt={item.label}
-                      width={item.width}
-                      height={item.height}
-                      style={{width: '100%', height: 'auto', display: 'block'}}
-                    />
+                  <div className="flex gap-1.5">
+                    <div className="w-2.5 h-2.5 rounded-full" style={{backgroundColor: '#fca5a5'}} />
+                    <div className="w-2.5 h-2.5 rounded-full" style={{backgroundColor: '#fcd34d'}} />
+                    <div className="w-2.5 h-2.5 rounded-full" style={{backgroundColor: '#86efac'}} />
                   </div>
-                  <div className="px-5 py-4 border-t" style={{borderColor: 'var(--border-light)'}}>
-                    <div className="text-[14px] font-semibold mb-1" style={{color: 'var(--on-light-primary)'}}>
-                      {item.label}
-                    </div>
-                    <div className="text-[13px] leading-relaxed" style={{color: 'var(--on-light-muted)'}}>
-                      {item.desc}
-                    </div>
+                  <div className="flex-1 text-center text-[11px] font-mono" style={{color: 'var(--on-light-muted)'}}>
+                    camperflow.io/reminders
                   </div>
                 </div>
-              ))}
-            </div>
+                <div style={{height: '440px', overflow: 'hidden', position: 'relative'}}>
+                  <Image
+                    src="/screenshots/reminders.png"
+                    alt="CamperFlow automated reminders — pre-pickup, return, invoice and compliance notifications"
+                    width={2561}
+                    height={1600}
+                    style={{width: '100%', height: 'auto', display: 'block'}}
+                  />
+                  <div className="sc-callout" style={{bottom: '18%', left: '4%'}}>
+                    <div className="sc-dot sc-dot--pulse" />
+                    <span className="sc-label">Sent automatically</span>
+                  </div>
+                </div>
+                <div
+                  className="px-5 py-3.5 border-t"
+                  style={{borderColor: 'var(--border-light)', backgroundColor: 'var(--surface-light)'}}
+                >
+                  <p className="text-[12px] leading-relaxed" style={{color: 'var(--on-light-muted)'}}>
+                    {t('remindersDesc')}
+                  </p>
+                </div>
+              </div>
 
+            </div>
           </div>
         </section>
 
-        {/* ── 5. Operational consistency ──────────────────────────────── */}
-        <section className="py-10 lg:py-14">
+        {/* ── 5. Vehicle Readiness ─────────────────────────────────── */}
+        <section className="py-16 lg:py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-start">
+
+              {/* Left: copy + readiness list */}
+              <div data-reveal="" className="max-w-lg">
+                <div
+                  className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-widest mb-5 border"
+                  style={{
+                    backgroundColor: 'var(--surface-blue-pale)',
+                    borderColor: 'var(--border-blue-light)',
+                    color: 'var(--blue-brand)',
+                  }}
+                >
+                  {t('readinessSectionBadge')}
+                </div>
+                <h2
+                  className="text-[28px] sm:text-[34px] font-bold tracking-tight leading-tight mb-5"
+                  style={{color: 'var(--on-light-primary)'}}
+                >
+                  {t('readinessSectionHeadline')}
+                </h2>
+                <p className="text-[17px] leading-relaxed mb-7" style={{color: 'var(--on-light-secondary)'}}>
+                  {t('readinessSectionBody')}
+                </p>
+
+                <ul className="space-y-3">
+                  {readinessList.map((item, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <div
+                        className="mt-0.5 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
+                        style={{backgroundColor: 'rgba(239,68,68,0.08)'}}
+                      >
+                        <svg width="9" height="9" viewBox="0 0 9 9" fill="none">
+                          <path d="M4.5 2v2.8M4.5 6.2v.3" stroke="#ef4444" strokeWidth="1.5" strokeLinecap="round" />
+                        </svg>
+                      </div>
+                      <span className="text-[14px] leading-snug" style={{color: 'var(--on-light-secondary)'}}>
+                        {item}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Right: vehicle readiness screenshot with caption */}
+              <div
+                data-reveal=""
+                data-reveal-delay="1"
+                className="rounded-2xl overflow-hidden border"
+                style={{
+                  borderColor: 'var(--border-light)',
+                  boxShadow: '0 4px 24px rgba(15,23,42,0.07)',
+                }}
+              >
+                <div
+                  className="flex items-center gap-3 px-4 py-2.5 border-b"
+                  style={{backgroundColor: 'var(--surface-light)', borderColor: 'var(--border-light)'}}
+                >
+                  <div className="flex gap-1.5">
+                    <div className="w-2.5 h-2.5 rounded-full" style={{backgroundColor: '#fca5a5'}} />
+                    <div className="w-2.5 h-2.5 rounded-full" style={{backgroundColor: '#fcd34d'}} />
+                    <div className="w-2.5 h-2.5 rounded-full" style={{backgroundColor: '#86efac'}} />
+                  </div>
+                  <div className="flex-1 text-center text-[11px] font-mono" style={{color: 'var(--on-light-muted)'}}>
+                    camperflow.io/vehicles
+                  </div>
+                </div>
+                <div style={{height: '440px', overflow: 'hidden', position: 'relative'}}>
+                  <Image
+                    src="/screenshots/vehicle-readiness.png"
+                    alt="CamperFlow vehicle readiness — amber and red status flags across the fleet"
+                    width={2561}
+                    height={1600}
+                    style={{width: '100%', height: 'auto', display: 'block'}}
+                  />
+                  <div className="sc-callout" style={{top: '18%', right: '4%'}}>
+                    <div className="sc-dot sc-dot--danger" />
+                    <span className="sc-label">Action needed</span>
+                  </div>
+                </div>
+                <div
+                  className="px-5 py-3.5 border-t"
+                  style={{borderColor: 'var(--border-light)', backgroundColor: 'var(--surface-light)'}}
+                >
+                  <p className="text-[12px] leading-relaxed" style={{color: 'var(--on-light-muted)'}}>
+                    {t('readinessDesc')}
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        {/* ── 6. Staff Attribution & Accountability ────────────────── */}
+        <section className="py-16 lg:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-            <div data-reveal="" className="max-w-2xl mb-12">
+            <div data-reveal="" className="max-w-2xl mb-10">
               <div
                 className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-widest mb-4 border"
                 style={{
@@ -370,18 +510,18 @@ export default async function OperationsPage() {
                   color: 'var(--blue-brand)',
                 }}
               >
-                {t('consistencyBadge')}
+                {t('staffBadge')}
               </div>
               <h2
                 className="text-[28px] sm:text-[36px] font-bold tracking-tight leading-tight"
                 style={{color: 'var(--on-light-primary)'}}
               >
-                {t('consistencyHeadline')}
+                {t('staffHeadline')}
               </h2>
             </div>
 
             <div className="grid sm:grid-cols-3 gap-5">
-              {outcomeCards.map((card, i) => (
+              {staffCards.map((card, i) => (
                 <div
                   key={card.title}
                   data-reveal=""
@@ -397,31 +537,47 @@ export default async function OperationsPage() {
                     className="w-9 h-9 rounded-xl flex items-center justify-center mb-4"
                     style={{backgroundColor: 'rgba(37,99,235,0.08)'}}
                   >
-                    {i === 0 && (
+                    {card.icon === 'checklist' && (
                       <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
                         <rect x="2" y="3" width="14" height="12" rx="2" stroke="#2563eb" strokeWidth="1.5" />
                         <path d="M2 7h14" stroke="#2563eb" strokeWidth="1.5" />
-                        <path d="M6 2v2M12 2v2" stroke="#2563eb" strokeWidth="1.5" strokeLinecap="round" />
-                        <rect x="5" y="10" width="3" height="2" rx="0.5" fill="#2563eb" opacity=".5" />
-                        <rect x="10" y="10" width="3" height="2" rx="0.5" fill="#2563eb" opacity=".3" />
+                        <path d="M5 10.5l2 2 4-4" stroke="#2563eb" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                     )}
-                    {i === 1 && (
+                    {card.icon === 'issue' && (
                       <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
                         <path d="M9 2L2 5v5c0 4 3.5 6.5 7 7 3.5-.5 7-3 7-7V5L9 2z" stroke="#2563eb" strokeWidth="1.5" strokeLinejoin="round" />
-                        <path d="M6 9l2 2 4-4" stroke="#2563eb" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M9 6.5v3M9 11v.5" stroke="#2563eb" strokeWidth="1.6" strokeLinecap="round" />
                       </svg>
                     )}
-                    {i === 2 && (
+                    {card.icon === 'return' && (
                       <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
                         <circle cx="9" cy="9" r="7" stroke="#2563eb" strokeWidth="1.5" />
                         <path d="M9 5v4l2.5 2.5" stroke="#2563eb" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                     )}
                   </div>
+
                   <div className="text-[15px] font-semibold mb-2" style={{color: 'var(--on-light-primary)'}}>
                     {card.title}
                   </div>
+
+                  {/* Timestamp badge — styled as a log entry */}
+                  <div
+                    className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md text-[11px] font-medium mb-3"
+                    style={{
+                      backgroundColor: 'var(--surface-slate)',
+                      color: 'var(--on-light-muted)',
+                      border: '1px solid var(--border-light)',
+                    }}
+                  >
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                      <circle cx="5" cy="5" r="4" stroke="currentColor" strokeWidth="1.2" />
+                      <path d="M5 3v2.2l1.3 1.3" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    {card.timestamp}
+                  </div>
+
                   <div className="text-[13px] leading-relaxed" style={{color: 'var(--on-light-muted)'}}>
                     {card.desc}
                   </div>
@@ -432,6 +588,58 @@ export default async function OperationsPage() {
           </div>
         </section>
 
+        {/* ── 7. Final CTA ─────────────────────────────────────────── */}
+        <section className="py-14 lg:py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div
+              data-reveal=""
+              className="max-w-2xl mx-auto rounded-3xl px-8 py-12 lg:px-14 lg:py-16 text-center"
+              style={{
+                backgroundColor: 'rgba(248, 250, 252, 0.88)',
+                backdropFilter: 'blur(20px) saturate(180%)',
+                WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+                border: '1px solid rgba(14, 30, 54, 0.07)',
+                boxShadow: '0 8px 48px rgba(37, 99, 235, 0.08), 0 2px 20px rgba(15, 23, 42, 0.06)',
+              }}
+            >
+              <div
+                className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-widest mb-6 border"
+                style={{
+                  backgroundColor: 'var(--surface-blue-pale)',
+                  borderColor: 'var(--border-blue-light)',
+                  color: 'var(--blue-brand)',
+                }}
+              >
+                {t('finalCtaBadge')}
+              </div>
+
+              <h2
+                className="text-[28px] sm:text-[38px] lg:text-[44px] font-bold tracking-tight leading-tight mb-4"
+                style={{color: 'var(--on-light-primary)'}}
+              >
+                {t('finalCtaHeadline')}
+              </h2>
+
+              <p className="text-[16px] leading-relaxed mb-8 max-w-md mx-auto" style={{color: 'var(--on-light-secondary)'}}>
+                {t('finalCtaBody')}
+              </p>
+
+              <a
+                href="mailto:info@camperflow.io"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-[16px] font-semibold text-white transition-colors mb-6 bg-[#2563eb] hover:bg-[#1d4ed8]"
+              >
+                {t('heroCta')}
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
+                  <path d="M3 8h10M8 3l5 5-5 5" />
+                </svg>
+              </a>
+
+              <p className="text-[13px]" style={{color: 'var(--on-light-muted)'}}>
+                {t('finalCtaNote')}
+              </p>
+            </div>
+          </div>
+        </section>
 
       </main>
       <ScrollObserver />

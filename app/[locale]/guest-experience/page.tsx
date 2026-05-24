@@ -10,33 +10,28 @@ export default async function GuestExperiencePage() {
   const t = await getTranslations('guestExperience');
   const tCommon = await getTranslations('common');
 
-  const stats = [
-    {value: t('stat0Value'), label: t('stat0Label')},
-    {value: t('stat1Value'), label: t('stat1Label')},
-    {value: t('stat2Value'), label: t('stat2Label')},
-  ];
-
-  const workflowSteps = [
+  const timelineSteps = [
     {title: t('step0Title'), desc: t('step0Desc')},
     {title: t('step1Title'), desc: t('step1Desc')},
     {title: t('step2Title'), desc: t('step2Desc')},
   ];
 
-  const proofCards = [
-    {
-      src: '/screenshots/guest-portal.png',
-      width: 2561,
-      height: 1600,
-      label: t('portalLabel'),
-      desc: t('portalDesc'),
-    },
-    {
-      src: '/screenshots/reminders.png',
-      width: 2561,
-      height: 1600,
-      label: t('remindersLabel'),
-      desc: t('remindersDesc'),
-    },
+  const mobileList = [
+    t('mobileList0'),
+    t('mobileList1'),
+    t('mobileList2'),
+  ];
+
+  const fewerCallsList = [
+    t('fewerCallsList0'),
+    t('fewerCallsList1'),
+    t('fewerCallsList2'),
+  ];
+
+  const stats = [
+    {value: t('stat0Value'), label: t('stat0Label')},
+    {value: t('stat1Value'), label: t('stat1Label')},
+    {value: t('stat2Value'), label: t('stat2Label')},
   ];
 
   const outcomeCards = [
@@ -104,7 +99,7 @@ export default async function GuestExperiencePage() {
                   </svg>
                 </a>
                 <a
-                  href="#portal"
+                  href="#what-guests-receive"
                   className="inline-flex items-center px-6 py-3.5 rounded-xl text-[15px] font-semibold border transition-colors"
                   style={{borderColor: 'var(--border-light)', color: 'var(--on-light-secondary)'}}
                 >
@@ -156,13 +151,13 @@ export default async function GuestExperiencePage() {
           </div>
         </section>
 
-        {/* ── 2. Booking information delivered ───────────────────────── */}
+        {/* ── 2. What the Guest Receives ─────────────────────────────── */}
         <section
-          id="portal"
-          className="py-10 lg:py-14"
+          id="what-guests-receive"
+          className="py-16 lg:py-24"
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-start">
+            <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-start">
 
               {/* Left: copy */}
               <div data-reveal="" className="max-w-lg">
@@ -229,8 +224,8 @@ export default async function GuestExperiencePage() {
           </div>
         </section>
 
-        {/* ── 3. Professional journey — step by step ──────────────────── */}
-        <section className="py-10 lg:py-14">
+        {/* ── 3. Automated Messaging Timeline ────────────────────────── */}
+        <section className="py-16 lg:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div data-reveal="" className="max-w-2xl mb-8">
@@ -255,29 +250,15 @@ export default async function GuestExperiencePage() {
               </p>
             </div>
 
-            {/* Stats row */}
-            <div className="grid grid-cols-3 gap-4 mb-8 max-w-2xl">
-              {stats.map((s) => (
-                <div key={s.label}>
-                  <div className="text-[22px] sm:text-[28px] font-bold mb-0.5" style={{color: 'var(--blue-brand)'}}>
-                    {s.value}
-                  </div>
-                  <div className="text-[12px] leading-snug" style={{color: 'var(--on-light-muted)'}}>
-                    {s.label}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Steps + focused screenshot */}
+            {/* Timeline steps + reminders screenshot */}
             <div
               data-reveal=""
               data-reveal-delay="1"
-              className="grid lg:grid-cols-[1fr_360px] gap-8 lg:gap-12 items-start"
+              className="grid lg:grid-cols-[1fr_360px] gap-10 lg:gap-14 items-start"
             >
-              {/* Numbered steps */}
+              {/* Numbered timeline steps */}
               <div className="space-y-7">
-                {workflowSteps.map((step, i) => (
+                {timelineSteps.map((step, i) => (
                   <div key={step.title} className="flex gap-5 items-start">
                     <div
                       className="shrink-0 w-9 h-9 rounded-xl flex items-center justify-center text-[12px] font-bold tabular-nums"
@@ -297,7 +278,7 @@ export default async function GuestExperiencePage() {
                 ))}
               </div>
 
-              {/* Small supporting screenshot */}
+              {/* Reminders screenshot */}
               <div
                 className="rounded-2xl overflow-hidden border"
                 style={{borderColor: 'var(--border-light)', boxShadow: '0 4px 20px rgba(15,23,42,0.07)'}}
@@ -312,13 +293,13 @@ export default async function GuestExperiencePage() {
                     <div className="w-2.5 h-2.5 rounded-full" style={{backgroundColor: '#86efac'}} />
                   </div>
                   <div className="flex-1 text-center text-[11px] font-mono" style={{color: 'var(--on-light-muted)'}}>
-                    camperflow.io/guest-portal
+                    camperflow.io/reminders
                   </div>
                 </div>
                 <div style={{height: '300px', overflow: 'hidden'}}>
                   <Image
-                    src="/screenshots/guest-portal.png"
-                    alt="CamperFlow guest portal on mobile"
+                    src="/screenshots/reminders.png"
+                    alt="CamperFlow automated reminders — pre-pickup, return, and guest communications sent automatically"
                     width={2561}
                     height={1600}
                     style={{width: '100%', height: 'auto', display: 'block'}}
@@ -330,63 +311,205 @@ export default async function GuestExperiencePage() {
           </div>
         </section>
 
-        {/* ── 4. Portal + Reminders proof cards ───────────────────────── */}
-        <section className="py-10 lg:py-14">
+        {/* ── 4. Mobile Guest View ───────────────────────────────────── */}
+        <section className="py-16 lg:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-start">
 
-            <div data-reveal="" className="max-w-2xl mb-8">
+              {/* Screenshot: left on desktop */}
               <div
-                className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-widest mb-4 border"
+                data-reveal=""
+                className="rounded-2xl overflow-hidden border"
                 style={{
-                  backgroundColor: 'var(--surface-blue-pale)',
-                  borderColor: 'var(--border-blue-light)',
-                  color: 'var(--blue-brand)',
+                  borderColor: 'var(--border-light)',
+                  boxShadow: '0 4px 24px rgba(15,23,42,0.07)',
                 }}
               >
-                {t('featuresBadge')}
-              </div>
-              <h2
-                className="text-[28px] sm:text-[36px] font-bold tracking-tight leading-tight mb-4"
-                style={{color: 'var(--on-light-primary)'}}
-              >
-                {t('featuresHeadline')}
-              </h2>
-            </div>
-
-            <div className="grid sm:grid-cols-2 gap-5">
-              {proofCards.map((item) => (
                 <div
-                  key={item.src}
-                  data-reveal=""
-                  className="rounded-2xl overflow-hidden border"
-                  style={{borderColor: 'var(--border-light)', backgroundColor: 'var(--surface-light)'}}
+                  className="flex items-center gap-3 px-4 py-2.5 border-b"
+                  style={{backgroundColor: 'var(--surface-light)', borderColor: 'var(--border-light)'}}
                 >
-                  <div style={{height: '260px', overflow: 'hidden'}}>
-                    <Image
-                      src={item.src}
-                      alt={item.label}
-                      width={item.width}
-                      height={item.height}
-                      style={{width: '100%', height: 'auto', display: 'block'}}
-                    />
+                  <div className="flex gap-1.5">
+                    <div className="w-2.5 h-2.5 rounded-full" style={{backgroundColor: '#fca5a5'}} />
+                    <div className="w-2.5 h-2.5 rounded-full" style={{backgroundColor: '#fcd34d'}} />
+                    <div className="w-2.5 h-2.5 rounded-full" style={{backgroundColor: '#86efac'}} />
                   </div>
-                  <div className="px-5 py-4 border-t" style={{borderColor: 'var(--border-light)'}}>
-                    <div className="text-[14px] font-semibold mb-1" style={{color: 'var(--on-light-primary)'}}>
-                      {item.label}
-                    </div>
-                    <div className="text-[13px] leading-relaxed" style={{color: 'var(--on-light-muted)'}}>
-                      {item.desc}
-                    </div>
+                  <div className="flex-1 text-center text-[11px] font-mono" style={{color: 'var(--on-light-muted)'}}>
+                    camperflow.io/guest-portal
                   </div>
                 </div>
-              ))}
-            </div>
+                <div style={{height: '420px', overflow: 'hidden', position: 'relative'}}>
+                  <Image
+                    src="/screenshots/guest-portal.png"
+                    alt="CamperFlow guest portal on mobile — accessible on any phone without an app"
+                    width={2561}
+                    height={1600}
+                    style={{width: '100%', height: 'auto', display: 'block', marginTop: '-60px'}}
+                  />
+                  <div className="sc-callout" style={{top: '22%', right: '4%'}}>
+                    <div className="sc-dot sc-dot--pulse" />
+                    <span className="sc-label sc-label--blue">{t('workflowCallout')}</span>
+                  </div>
+                </div>
+              </div>
 
+              {/* Copy: right on desktop */}
+              <div data-reveal="" data-reveal-delay="1" className="max-w-lg">
+                <div
+                  className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-widest mb-5 border"
+                  style={{
+                    backgroundColor: 'var(--surface-blue-pale)',
+                    borderColor: 'var(--border-blue-light)',
+                    color: 'var(--blue-brand)',
+                  }}
+                >
+                  {t('mobileBadge')}
+                </div>
+                <h2
+                  className="text-[28px] sm:text-[34px] font-bold tracking-tight leading-tight mb-5"
+                  style={{color: 'var(--on-light-primary)'}}
+                >
+                  {t('mobileHeadline')}
+                </h2>
+                <p className="text-[17px] leading-relaxed mb-7" style={{color: 'var(--on-light-secondary)'}}>
+                  {t('mobileBody')}
+                </p>
+
+                <ul className="space-y-3">
+                  {mobileList.map((item, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <div
+                        className="mt-0.5 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
+                        style={{backgroundColor: 'rgba(37,99,235,0.1)'}}
+                      >
+                        <svg width="9" height="9" viewBox="0 0 9 9" fill="none">
+                          <path d="M1.5 4.5l2 2 4-4" stroke="#2563eb" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </div>
+                      <span className="text-[14px] leading-snug" style={{color: 'var(--on-light-secondary)'}}>
+                        {item}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+            </div>
           </div>
         </section>
 
-        {/* ── 5. Every rental, same professional experience ────────────── */}
-        <section className="py-10 lg:py-14">
+        {/* ── 5. Fewer Calls. Better Arrivals. ──────────────────────── */}
+        <section className="py-16 lg:py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-[1fr_1.25fr] gap-10 lg:gap-14 items-start">
+
+              {/* Left: copy + stats + list */}
+              <div data-reveal="" className="max-w-lg">
+                <div
+                  className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-widest mb-5 border"
+                  style={{
+                    backgroundColor: 'var(--surface-blue-pale)',
+                    borderColor: 'var(--border-blue-light)',
+                    color: 'var(--blue-brand)',
+                  }}
+                >
+                  {t('fewerCallsBadge')}
+                </div>
+                <h2
+                  className="text-[28px] sm:text-[34px] font-bold tracking-tight leading-tight mb-5"
+                  style={{color: 'var(--on-light-primary)'}}
+                >
+                  {t('fewerCallsHeadline')}
+                </h2>
+                <p className="text-[17px] leading-relaxed mb-7" style={{color: 'var(--on-light-secondary)'}}>
+                  {t('fewerCallsBody')}
+                </p>
+
+                {/* Stats row */}
+                <div className="grid grid-cols-3 gap-4 mb-7">
+                  {stats.map((s) => (
+                    <div key={s.label}>
+                      <div className="text-[22px] sm:text-[28px] font-bold mb-0.5" style={{color: 'var(--blue-brand)'}}>
+                        {s.value}
+                      </div>
+                      <div className="text-[12px] leading-snug" style={{color: 'var(--on-light-muted)'}}>
+                        {s.label}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <ul className="space-y-3">
+                  {fewerCallsList.map((item, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <div
+                        className="mt-0.5 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
+                        style={{backgroundColor: 'rgba(37,99,235,0.1)'}}
+                      >
+                        <svg width="9" height="9" viewBox="0 0 9 9" fill="none">
+                          <path d="M1.5 4.5l2 2 4-4" stroke="#2563eb" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </div>
+                      <span className="text-[14px] leading-snug" style={{color: 'var(--on-light-secondary)'}}>
+                        {item}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Right: reminders screenshot with caption */}
+              <div
+                data-reveal=""
+                data-reveal-delay="1"
+                className="rounded-2xl overflow-hidden border"
+                style={{
+                  borderColor: 'var(--border-light)',
+                  boxShadow: '0 4px 24px rgba(15,23,42,0.07)',
+                }}
+              >
+                <div
+                  className="flex items-center gap-3 px-4 py-2.5 border-b"
+                  style={{backgroundColor: 'var(--surface-light)', borderColor: 'var(--border-light)'}}
+                >
+                  <div className="flex gap-1.5">
+                    <div className="w-2.5 h-2.5 rounded-full" style={{backgroundColor: '#fca5a5'}} />
+                    <div className="w-2.5 h-2.5 rounded-full" style={{backgroundColor: '#fcd34d'}} />
+                    <div className="w-2.5 h-2.5 rounded-full" style={{backgroundColor: '#86efac'}} />
+                  </div>
+                  <div className="flex-1 text-center text-[11px] font-mono" style={{color: 'var(--on-light-muted)'}}>
+                    camperflow.io/reminders
+                  </div>
+                </div>
+                <div style={{height: '440px', overflow: 'hidden', position: 'relative'}}>
+                  <Image
+                    src="/screenshots/reminders.png"
+                    alt="CamperFlow automated guest reminders — pre-pickup confirmation sent automatically before handover"
+                    width={2561}
+                    height={1600}
+                    style={{width: '100%', height: 'auto', display: 'block'}}
+                  />
+                  <div className="sc-callout" style={{bottom: '18%', left: '4%'}}>
+                    <div className="sc-dot sc-dot--pulse" />
+                    <span className="sc-label">Sent automatically</span>
+                  </div>
+                </div>
+                <div
+                  className="px-5 py-3.5 border-t"
+                  style={{borderColor: 'var(--border-light)', backgroundColor: 'var(--surface-light)'}}
+                >
+                  <p className="text-[12px] leading-relaxed" style={{color: 'var(--on-light-muted)'}}>
+                    {t('remindersDesc')}
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        {/* ── 6. Outcome Cards ──────────────────────────────────────── */}
+        <section className="py-14 lg:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div data-reveal="" className="max-w-2xl mb-12">
@@ -459,6 +582,58 @@ export default async function GuestExperiencePage() {
           </div>
         </section>
 
+        {/* ── 7. Final CTA ─────────────────────────────────────────── */}
+        <section className="py-14 lg:py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div
+              data-reveal=""
+              className="max-w-2xl mx-auto rounded-3xl px-8 py-12 lg:px-14 lg:py-16 text-center"
+              style={{
+                backgroundColor: 'rgba(248, 250, 252, 0.88)',
+                backdropFilter: 'blur(20px) saturate(180%)',
+                WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+                border: '1px solid rgba(14, 30, 54, 0.07)',
+                boxShadow: '0 8px 48px rgba(37, 99, 235, 0.08), 0 2px 20px rgba(15, 23, 42, 0.06)',
+              }}
+            >
+              <div
+                className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-widest mb-6 border"
+                style={{
+                  backgroundColor: 'var(--surface-blue-pale)',
+                  borderColor: 'var(--border-blue-light)',
+                  color: 'var(--blue-brand)',
+                }}
+              >
+                {t('finalCtaBadge')}
+              </div>
+
+              <h2
+                className="text-[28px] sm:text-[38px] lg:text-[44px] font-bold tracking-tight leading-tight mb-4"
+                style={{color: 'var(--on-light-primary)'}}
+              >
+                {t('finalCtaHeadline')}
+              </h2>
+
+              <p className="text-[16px] leading-relaxed mb-8 max-w-md mx-auto" style={{color: 'var(--on-light-secondary)'}}>
+                {t('finalCtaBody')}
+              </p>
+
+              <a
+                href="mailto:info@camperflow.io"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-[16px] font-semibold text-white transition-colors mb-6 bg-[#2563eb] hover:bg-[#1d4ed8]"
+              >
+                {t('heroCta')}
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
+                  <path d="M3 8h10M8 3l5 5-5 5" />
+                </svg>
+              </a>
+
+              <p className="text-[13px]" style={{color: 'var(--on-light-muted)'}}>
+                {t('finalCtaNote')}
+              </p>
+            </div>
+          </div>
+        </section>
 
       </main>
       <ScrollObserver />

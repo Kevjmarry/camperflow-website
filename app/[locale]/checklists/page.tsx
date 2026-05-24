@@ -10,22 +10,22 @@ export default async function ChecklistsPage() {
   const t = await getTranslations('checklists');
   const tCommon = await getTranslations('common');
 
-  const stats = [
-    {value: t('stat0Value'), label: t('stat0Label')},
-    {value: t('stat1Value'), label: t('stat1Label')},
-    {value: t('stat2Value'), label: t('stat2Label')},
-  ];
-
   const consistencyItems = [
     {title: t('item0Title'), desc: t('item0Desc')},
     {title: t('item1Title'), desc: t('item1Desc')},
     {title: t('item2Title'), desc: t('item2Desc')},
   ];
 
-  const workflowSteps = [
-    {title: t('step0Title'), desc: t('step0Desc')},
-    {title: t('step1Title'), desc: t('step1Desc')},
-    {title: t('step2Title'), desc: t('step2Desc')},
+  const mobileList = [
+    t('mobileList0'),
+    t('mobileList1'),
+    t('mobileList2'),
+  ];
+
+  const returnList = [
+    t('returnList0'),
+    t('returnList1'),
+    t('returnList2'),
   ];
 
   const evidenceCards = [
@@ -51,11 +51,8 @@ export default async function ChecklistsPage() {
       style={{background: '#eef4ff'}}
     >
       {/*
-       * Page-scoped style: override ribbon blend mode to multiply so the ribbon's
-       * actual blue/cyan colors show clearly against the light background.
-       * mix-blend-mode: screen on near-white is mathematically invisible;
-       * multiply produces rgb(ribbon) × rgb(background) — visible blue bands.
-       * This override is scoped to .checklist-page so no other page is affected.
+       * Ribbon blend mode override: multiply makes the blue/cyan bands visible
+       * against the light #eef4ff surface.
        */}
       <style>{`
         .checklist-page .ribbon-root { mix-blend-mode: multiply; }
@@ -159,13 +156,13 @@ export default async function ChecklistsPage() {
           </div>
         </section>
 
-        {/* ── 2. Per-booking checklists ──────────────────────────────── */}
+        {/* ── 2. Every Booking Gets a Checklist ─────────────────────── */}
         <section
           id="proof"
-          className="py-10 lg:py-14"
+          className="py-16 lg:py-24"
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-start">
+            <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-start">
 
               {/* Left: copy */}
               <div data-reveal="" className="max-w-lg">
@@ -232,81 +229,22 @@ export default async function ChecklistsPage() {
           </div>
         </section>
 
-        {/* ── 3. Guided process step by step ──────────────────────────── */}
-        <section className="py-10 lg:py-14">
+        {/* ── 3. Mobile Checklist Experience ─────────────────────────── */}
+        <section className="py-16 lg:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-start">
 
-            <div data-reveal="" className="max-w-2xl mb-8">
+              {/* Screenshot: left on desktop */}
               <div
-                className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-widest mb-4 border"
+                data-reveal=""
+                className="rounded-2xl overflow-hidden border"
                 style={{
-                  backgroundColor: 'var(--surface-blue-pale)',
-                  borderColor: 'var(--border-blue-light)',
-                  color: 'var(--blue-brand)',
+                  borderColor: 'var(--border-light)',
+                  boxShadow: '0 4px 24px rgba(15,23,42,0.07)',
                 }}
               >
-                {t('proofBadge')}
-              </div>
-              <h2
-                className="text-[28px] sm:text-[36px] font-bold tracking-tight leading-tight mb-4"
-                style={{color: 'var(--on-light-primary)'}}
-              >
-                {t('proofHeadline')}
-              </h2>
-              <p className="text-[17px] leading-relaxed" style={{color: 'var(--on-light-secondary)'}}>
-                {t('proofBody')}
-              </p>
-            </div>
-
-            {/* Stats row */}
-            <div className="grid grid-cols-3 gap-4 mb-8 max-w-2xl">
-              {stats.map((s) => (
-                <div key={s.label}>
-                  <div className="text-[22px] sm:text-[28px] font-bold mb-0.5" style={{color: 'var(--blue-brand)'}}>
-                    {s.value}
-                  </div>
-                  <div className="text-[12px] leading-snug" style={{color: 'var(--on-light-muted)'}}>
-                    {s.label}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Steps + focused screenshot */}
-            <div
-              data-reveal=""
-              data-reveal-delay="1"
-              className="grid lg:grid-cols-[1fr_360px] gap-8 lg:gap-12 items-start"
-            >
-              {/* Numbered steps */}
-              <div className="space-y-7">
-                {workflowSteps.map((step, i) => (
-                  <div key={step.title} className="flex gap-5 items-start">
-                    <div
-                      className="shrink-0 w-9 h-9 rounded-xl flex items-center justify-center text-[12px] font-bold tabular-nums"
-                      style={{backgroundColor: 'rgba(37,99,235,0.08)', color: 'var(--blue-brand)'}}
-                    >
-                      {String(i + 1).padStart(2, '0')}
-                    </div>
-                    <div className="pt-1">
-                      <div className="text-[15px] font-semibold mb-1.5" style={{color: 'var(--on-light-primary)'}}>
-                        {step.title}
-                      </div>
-                      <div className="text-[13px] leading-relaxed" style={{color: 'var(--on-light-muted)'}}>
-                        {step.desc}
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Small supporting screenshot */}
-              <div
-                className="rounded-2xl overflow-hidden border"
-                style={{borderColor: 'var(--border-light)', boxShadow: '0 4px 20px rgba(15,23,42,0.07)'}}
-              >
                 <div
-                  className="flex items-center gap-2 px-4 py-2.5 border-b"
+                  className="flex items-center gap-3 px-4 py-2.5 border-b"
                   style={{backgroundColor: 'var(--surface-light)', borderColor: 'var(--border-light)'}}
                 >
                   <div className="flex gap-1.5">
@@ -318,23 +256,68 @@ export default async function ChecklistsPage() {
                     camperflow.io/checklists
                   </div>
                 </div>
-                <div style={{height: '300px', overflow: 'hidden'}}>
+                <div style={{height: '420px', overflow: 'hidden', position: 'relative'}}>
                   <Image
                     src="/screenshots/digital-checklists.png"
-                    alt="CamperFlow checklist in progress on mobile"
+                    alt="CamperFlow checklist on mobile — step-by-step guided workflow with photo capture"
                     width={2561}
                     height={1600}
-                    style={{width: '100%', height: 'auto', display: 'block'}}
+                    style={{width: '100%', height: 'auto', display: 'block', marginTop: '-80px'}}
                   />
+                  <div className="sc-callout" style={{top: '30%', right: '4%'}}>
+                    <div className="sc-dot sc-dot--pulse" />
+                    <span className="sc-label sc-label--blue">{t('mobileCallout')}</span>
+                  </div>
                 </div>
               </div>
-            </div>
 
+              {/* Copy: right on desktop */}
+              <div data-reveal="" data-reveal-delay="1" className="max-w-lg">
+                <div
+                  className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-widest mb-5 border"
+                  style={{
+                    backgroundColor: 'var(--surface-blue-pale)',
+                    borderColor: 'var(--border-blue-light)',
+                    color: 'var(--blue-brand)',
+                  }}
+                >
+                  {t('mobileBadge')}
+                </div>
+                <h2
+                  className="text-[28px] sm:text-[34px] font-bold tracking-tight leading-tight mb-5"
+                  style={{color: 'var(--on-light-primary)'}}
+                >
+                  {t('mobileHeadline')}
+                </h2>
+                <p className="text-[17px] leading-relaxed mb-7" style={{color: 'var(--on-light-secondary)'}}>
+                  {t('mobileBody')}
+                </p>
+
+                <ul className="space-y-3">
+                  {mobileList.map((item, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <div
+                        className="mt-0.5 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
+                        style={{backgroundColor: 'rgba(37,99,235,0.1)'}}
+                      >
+                        <svg width="9" height="9" viewBox="0 0 9 9" fill="none">
+                          <path d="M1.5 4.5l2 2 4-4" stroke="#2563eb" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </div>
+                      <span className="text-[14px] leading-snug" style={{color: 'var(--on-light-secondary)'}}>
+                        {item}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+            </div>
           </div>
         </section>
 
-        {/* ── 4. Evidence, photos & accountability ────────────────────── */}
-        <section className="py-10 lg:py-14">
+        {/* ── 4. Photo Evidence & Timestamps ────────────────────────── */}
+        <section className="py-16 lg:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div data-reveal="" className="max-w-2xl mb-8">
@@ -391,8 +374,96 @@ export default async function ChecklistsPage() {
           </div>
         </section>
 
-        {/* ── 5. Staff consistency ────────────────────────────────────── */}
-        <section className="py-10 lg:py-14">
+        {/* ── 5. Return Checklists ─────────────────────────────────── */}
+        <section className="py-16 lg:py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-[1fr_1.25fr] gap-10 lg:gap-14 items-start">
+
+              {/* Left: copy + return list */}
+              <div data-reveal="" className="max-w-lg">
+                <div
+                  className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-widest mb-5 border"
+                  style={{
+                    backgroundColor: 'var(--surface-blue-pale)',
+                    borderColor: 'var(--border-blue-light)',
+                    color: 'var(--blue-brand)',
+                  }}
+                >
+                  {t('returnBadge')}
+                </div>
+                <h2
+                  className="text-[28px] sm:text-[34px] font-bold tracking-tight leading-tight mb-5"
+                  style={{color: 'var(--on-light-primary)'}}
+                >
+                  {t('returnHeadline')}
+                </h2>
+                <p className="text-[17px] leading-relaxed mb-7" style={{color: 'var(--on-light-secondary)'}}>
+                  {t('returnBody')}
+                </p>
+
+                <ul className="space-y-3">
+                  {returnList.map((item, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <div
+                        className="mt-0.5 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
+                        style={{backgroundColor: 'rgba(37,99,235,0.1)'}}
+                      >
+                        <svg width="9" height="9" viewBox="0 0 9 9" fill="none">
+                          <path d="M1.5 4.5l2 2 4-4" stroke="#2563eb" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </div>
+                      <span className="text-[14px] leading-snug" style={{color: 'var(--on-light-secondary)'}}>
+                        {item}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Right: booking-details screenshot — scrolled to return view */}
+              <div
+                data-reveal=""
+                data-reveal-delay="1"
+                className="rounded-2xl overflow-hidden border"
+                style={{
+                  borderColor: 'var(--border-light)',
+                  boxShadow: '0 4px 24px rgba(15,23,42,0.07)',
+                }}
+              >
+                <div
+                  className="flex items-center gap-3 px-4 py-2.5 border-b"
+                  style={{backgroundColor: 'var(--surface-light)', borderColor: 'var(--border-light)'}}
+                >
+                  <div className="flex gap-1.5">
+                    <div className="w-2.5 h-2.5 rounded-full" style={{backgroundColor: '#fca5a5'}} />
+                    <div className="w-2.5 h-2.5 rounded-full" style={{backgroundColor: '#fcd34d'}} />
+                    <div className="w-2.5 h-2.5 rounded-full" style={{backgroundColor: '#86efac'}} />
+                  </div>
+                  <div className="flex-1 text-center text-[11px] font-mono" style={{color: 'var(--on-light-muted)'}}>
+                    camperflow.io/booking/RET-2024
+                  </div>
+                </div>
+                <div style={{height: '440px', overflow: 'hidden', position: 'relative'}}>
+                  <Image
+                    src="/screenshots/booking-details.png"
+                    alt="CamperFlow booking details — return checklist in progress with timestamped completion"
+                    width={2561}
+                    height={1600}
+                    style={{width: '100%', height: 'auto', display: 'block', marginTop: '-160px'}}
+                  />
+                  <div className="sc-callout" style={{top: '22%', right: '4%'}}>
+                    <div className="sc-dot sc-dot--pulse" />
+                    <span className="sc-label">{t('returnCallout')}</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        {/* ── 6. Consistency / Accountability Outcomes ────────────────── */}
+        <section className="py-14 lg:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div data-reveal="" className="max-w-2xl mb-12">
@@ -465,6 +536,58 @@ export default async function ChecklistsPage() {
           </div>
         </section>
 
+        {/* ── 7. Final CTA ─────────────────────────────────────────── */}
+        <section className="py-14 lg:py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div
+              data-reveal=""
+              className="max-w-2xl mx-auto rounded-3xl px-8 py-12 lg:px-14 lg:py-16 text-center"
+              style={{
+                backgroundColor: 'rgba(248, 250, 252, 0.88)',
+                backdropFilter: 'blur(20px) saturate(180%)',
+                WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+                border: '1px solid rgba(14, 30, 54, 0.07)',
+                boxShadow: '0 8px 48px rgba(37, 99, 235, 0.08), 0 2px 20px rgba(15, 23, 42, 0.06)',
+              }}
+            >
+              <div
+                className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-widest mb-6 border"
+                style={{
+                  backgroundColor: 'var(--surface-blue-pale)',
+                  borderColor: 'var(--border-blue-light)',
+                  color: 'var(--blue-brand)',
+                }}
+              >
+                {t('finalCtaBadge')}
+              </div>
+
+              <h2
+                className="text-[28px] sm:text-[38px] lg:text-[44px] font-bold tracking-tight leading-tight mb-4"
+                style={{color: 'var(--on-light-primary)'}}
+              >
+                {t('finalCtaHeadline')}
+              </h2>
+
+              <p className="text-[16px] leading-relaxed mb-8 max-w-md mx-auto" style={{color: 'var(--on-light-secondary)'}}>
+                {t('finalCtaBody')}
+              </p>
+
+              <a
+                href="mailto:info@camperflow.io"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-[16px] font-semibold text-white transition-colors mb-6 bg-[#2563eb] hover:bg-[#1d4ed8]"
+              >
+                {t('heroCta')}
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
+                  <path d="M3 8h10M8 3l5 5-5 5" />
+                </svg>
+              </a>
+
+              <p className="text-[13px]" style={{color: 'var(--on-light-muted)'}}>
+                {t('finalCtaNote')}
+              </p>
+            </div>
+          </div>
+        </section>
 
       </main>
       <ScrollObserver />

@@ -24,6 +24,7 @@ export default async function FaqPage() {
       items: [
         {q: t('g1q0'), a: t('g1a0')},
         {q: t('g1q1'), a: t('g1a1')},
+        {q: t('g1q2'), a: t('g1a2')},
       ],
     },
     {
@@ -33,8 +34,6 @@ export default async function FaqPage() {
         {q: t('g2q0'), a: t('g2a0')},
         {q: t('g2q1'), a: t('g2a1')},
         {q: t('g2q2'), a: t('g2a2')},
-        {q: t('g2q3'), a: t('g2a3')},
-        {q: t('g2q4'), a: t('g2a4')},
       ],
     },
     {
@@ -43,7 +42,6 @@ export default async function FaqPage() {
       items: [
         {q: t('g3q0'), a: t('g3a0')},
         {q: t('g3q1'), a: t('g3a1')},
-        {q: t('g3q2'), a: t('g3a2')},
       ],
     },
     {
@@ -52,8 +50,6 @@ export default async function FaqPage() {
       items: [
         {q: t('g4q0'), a: t('g4a0')},
         {q: t('g4q1'), a: t('g4a1')},
-        {q: t('g4q2'), a: t('g4a2')},
-        {q: t('g4q3'), a: t('g4a3')},
       ],
     },
   ];
@@ -121,7 +117,7 @@ export default async function FaqPage() {
 
         {/* ── 2. FAQ groups ─────────────────────────────────────────── */}
         {groups.map((group, gi) => (
-          <section key={gi} className="py-10 lg:py-14">
+          <section key={gi} className="py-14 lg:py-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
               <div data-reveal="" className="max-w-2xl mb-6">
@@ -161,6 +157,61 @@ export default async function FaqPage() {
           </section>
         ))}
 
+        {/* ── 3. Still Have Questions CTA ───────────────────────────── */}
+        <section className="py-14 lg:py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div
+              data-reveal=""
+              className="max-w-2xl mx-auto rounded-3xl px-8 py-12 lg:px-14 lg:py-16 text-center"
+              style={{
+                backgroundColor: 'rgba(248, 250, 252, 0.88)',
+                backdropFilter: 'blur(20px) saturate(180%)',
+                WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+                border: '1px solid rgba(14, 30, 54, 0.07)',
+                boxShadow: '0 8px 48px rgba(37, 99, 235, 0.08), 0 2px 20px rgba(15, 23, 42, 0.06)',
+              }}
+            >
+              <div
+                className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-widest mb-6 border"
+                style={{
+                  backgroundColor: 'var(--surface-blue-pale)',
+                  borderColor: 'var(--border-blue-light)',
+                  color: 'var(--blue-brand)',
+                }}
+              >
+                {t('ctaBadge')}
+              </div>
+
+              <h2
+                className="text-[28px] sm:text-[38px] font-bold tracking-tight leading-tight mb-5"
+                style={{color: 'var(--on-light-primary)'}}
+              >
+                {t('ctaHeadline')}
+              </h2>
+
+              <p
+                className="text-[16px] leading-relaxed mb-8 max-w-md mx-auto"
+                style={{color: 'var(--on-light-secondary)'}}
+              >
+                {t('ctaBody')}
+              </p>
+
+              <a
+                href="mailto:info@camperflow.io"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-[16px] font-semibold text-white transition-colors mb-6 bg-[#2563eb] hover:bg-[#1d4ed8]"
+              >
+                {t('ctaCta')}
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
+                  <path d="M3 8h10M8 3l5 5-5 5" />
+                </svg>
+              </a>
+
+              <p className="text-[13px]" style={{color: 'var(--on-light-muted)'}}>
+                {t('ctaNote')}
+              </p>
+            </div>
+          </div>
+        </section>
 
       </main>
       <ScrollObserver />

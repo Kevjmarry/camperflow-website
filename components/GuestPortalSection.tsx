@@ -23,12 +23,12 @@ export default function GuestPortalSection() {
   return (
     <section
       id="guest-portal"
-      className="py-20 lg:py-28"
+      className="py-16 lg:py-24"
       style={{ backgroundColor: 'var(--surface-white)' }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
 
           {/* Left: copy */}
           <div data-reveal="" className="max-w-lg">

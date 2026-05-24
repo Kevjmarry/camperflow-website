@@ -1,12 +1,77 @@
+import Image from 'next/image';
 import ScreenshotFrame from '@/components/ScreenshotFrame';
 
 export default function HeroSection() {
   return (
     <section className="pt-20 pb-0 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+
+        {/* Floating mobile phone — right gutter, xl screens only */}
+        <div
+          className="hidden xl:block absolute top-16 right-12 z-10"
+          style={{ width: '148px' }}
+        >
+          <div
+            className="rounded-[1.5rem] overflow-hidden border-2"
+            style={{
+              borderColor: 'var(--border-light)',
+              boxShadow: '0 12px 36px rgba(15,23,42,0.14), 0 2px 8px rgba(15,23,42,0.08)',
+              aspectRatio: '9/16',
+              backgroundColor: 'var(--surface-slate)',
+              position: 'relative',
+            }}
+          >
+            {/* Phone pill notch */}
+            <div
+              style={{
+                position: 'absolute',
+                top: '10px',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                width: '56px',
+                height: '5px',
+                borderRadius: '3px',
+                backgroundColor: 'rgba(15,23,42,0.12)',
+                zIndex: 10,
+              }}
+            />
+            {/* Mini chrome bar */}
+            <div
+              className="flex items-center gap-1 px-2 py-1.5 border-b"
+              style={{
+                backgroundColor: 'var(--surface-light)',
+                borderColor: 'var(--border-light)',
+                position: 'relative',
+                zIndex: 5,
+              }}
+            >
+              <div className="flex gap-0.5">
+                <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#fca5a5' }} />
+                <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#fcd34d' }} />
+                <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#86efac' }} />
+              </div>
+            </div>
+            {/* Screenshot — crops to portrait from top-left */}
+            <div style={{ overflow: 'hidden', flex: 1 }}>
+              <Image
+                src="/screenshots/digital-checklists.png"
+                alt="CamperFlow mobile checklist"
+                width={2561}
+                height={1600}
+                style={{ width: '180%', height: 'auto', display: 'block', marginLeft: '-40%' }}
+              />
+            </div>
+          </div>
+          <p
+            className="mt-2 text-center text-[10px] font-medium"
+            style={{ color: 'var(--on-light-muted)' }}
+          >
+            Mobile checklists
+          </p>
+        </div>
 
         {/* Copy block */}
-        <div className="max-w-3xl pt-6 pb-12 lg:pt-8">
+        <div className="max-w-3xl pt-6 pb-16 lg:pt-8">
 
           <div
             className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[12px] font-semibold mb-6 border"
@@ -31,7 +96,7 @@ export default function HeroSection() {
             className="text-[18px] leading-relaxed mb-8 max-w-2xl"
             style={{ color: 'var(--on-light-secondary)' }}
           >
-            The operational control layer for campervan and motorhome rental companies. CamperFlow handles everything after the booking is confirmed — vehicle readiness, digital checklists, compliance tracking, guest portals, and automated reminders. Built for this industry, by an active operator.
+            The operational layer built for campervan and motorhome rental. Everything after the booking — vehicle readiness, digital checklists, compliance tracking, and guest portals — handled in one place. Built for this industry, by an active operator.
           </p>
 
           <div className="flex flex-wrap gap-3 mb-6">

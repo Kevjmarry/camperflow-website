@@ -3,7 +3,11 @@ import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import AnimatedRibbon from '@/components/AnimatedRibbon';
 import ProblemSection from '@/components/ProblemSection';
+import OperationsMomentSection from '@/components/OperationsMomentSection';
+import ChecklistMomentSection from '@/components/ChecklistMomentSection';
+import GuestExperienceMomentSection from '@/components/GuestExperienceMomentSection';
 import FounderSection from '@/components/FounderSection';
+import FinalCtaSection from '@/components/FinalCtaSection';
 import Footer from '@/components/Footer';
 import ScrollObserver from '@/components/ScrollObserver';
 
@@ -12,7 +16,7 @@ const PATHS = [
     href: '/operations',
     badge: 'Operations',
     headline: 'Fleet command center',
-    desc: 'Every vehicle, booking, and open task in one view. Upcoming pickups, vehicle readiness, and compliance deadlines — surfaced before they become problems at handover.',
+    desc: 'Every vehicle, booking, and open task in one view. Upcoming pickups, vehicle readiness, and compliance deadlines — surfaced before they become problems.',
     src: '/screenshots/operations.png',
     width: 2561,
     height: 5507,
@@ -20,8 +24,8 @@ const PATHS = [
   },
   {
     href: '/checklists',
-    badge: 'Checklists',
-    headline: 'Structured, logged handovers',
+    badge: 'Checklists & Evidence',
+    headline: 'Structured, documented handovers',
     desc: 'Guided digital checklists for every pickup and return. Timestamped photo evidence tied to the booking — consistent across every staff member, every shift.',
     src: '/screenshots/digital-checklists.png',
     width: 2561,
@@ -41,8 +45,8 @@ const PATHS = [
   {
     href: '/pricing',
     badge: 'Pricing',
-    headline: 'From €29 / month',
-    desc: 'Simple per-vehicle pricing that scales with your fleet. Starter, Core, Growth, and Pro plans — no hidden fees, no long-term contract.',
+    headline: 'Simple, scalable pricing',
+    desc: 'Per-vehicle pricing that grows with your fleet. No hidden fees, no long-term contract.',
     src: null,
     width: 0,
     height: 0,
@@ -70,8 +74,8 @@ export default function LocalePage() {
         {/* ── 2. Problem ─────────────────────────────────────────────── */}
         <ProblemSection />
 
-        {/* ── 3. Product paths ───────────────────────────────────────── */}
-        <section id="paths" className="py-10 lg:py-14">
+        {/* ── 3. Four Operational Layers ─────────────────────────────── */}
+        <section id="paths" className="py-16 lg:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div data-reveal="" className="max-w-xl mb-10">
@@ -88,7 +92,7 @@ export default function LocalePage() {
                 One platform. Four operational layers.
               </h2>
               <p className="text-[15px] leading-relaxed" style={{ color: 'var(--on-light-secondary)' }}>
-                Explore each area, or book a demo to see the full platform in your context.
+                Every layer works together — or explore each area in depth below.
               </p>
             </div>
 
@@ -135,21 +139,30 @@ export default function LocalePage() {
                       </div>
                     </div>
                   ) : (
+                    /* Pricing — tier-scaling visual, no price shown */
                     <div
-                      className="flex flex-col items-center justify-center"
+                      className="flex flex-col items-center justify-center gap-4"
                       style={{
                         height: '180px',
                         background: 'linear-gradient(135deg, var(--surface-blue-pale) 0%, #dbeafe 100%)',
                       }}
                     >
-                      <div
-                        className="text-[42px] font-bold tracking-tight leading-none mb-1"
-                        style={{ color: 'var(--blue-brand)' }}
-                      >
-                        €29
+                      <div className="flex items-end gap-1.5">
+                        {[24, 32, 42, 56].map((h, i) => (
+                          <div
+                            key={i}
+                            className="rounded"
+                            style={{
+                              width: '14px',
+                              height: `${h}px`,
+                              backgroundColor: i === 3 ? '#2563eb' : `rgba(37,99,235,${0.15 + i * 0.07})`,
+                              border: `1px solid ${i === 3 ? '#1d4ed8' : 'rgba(37,99,235,0.22)'}`,
+                            }}
+                          />
+                        ))}
                       </div>
-                      <div className="text-[12px]" style={{ color: 'var(--on-light-muted)' }}>
-                        per month to start
+                      <div className="text-[11px] font-medium" style={{ color: 'var(--on-light-muted)' }}>
+                        Plans that scale with your fleet
                       </div>
                     </div>
                   )}
@@ -185,9 +198,20 @@ export default function LocalePage() {
           </div>
         </section>
 
-        {/* ── 4. Founder credibility ─────────────────────────────────── */}
+        {/* ── 4. Operations Moment ───────────────────────────────────── */}
+        <OperationsMomentSection />
+
+        {/* ── 5. Checklist Mobile Moment ─────────────────────────────── */}
+        <ChecklistMomentSection />
+
+        {/* ── 6. Guest Experience Moment ─────────────────────────────── */}
+        <GuestExperienceMomentSection />
+
+        {/* ── 7. Founder credibility ─────────────────────────────────── */}
         <FounderSection />
 
+        {/* ── 8. Final CTA ───────────────────────────────────────────── */}
+        <FinalCtaSection />
 
       </main>
       <ScrollObserver />

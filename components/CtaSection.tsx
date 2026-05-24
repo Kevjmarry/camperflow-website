@@ -2,7 +2,7 @@ export default function CtaSection() {
   return (
     <section
       id="cta"
-      className="py-16 lg:py-24"
+      className="py-14 lg:py-20"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div

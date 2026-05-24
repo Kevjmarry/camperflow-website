@@ -145,10 +145,10 @@ export default async function AboutPage() {
         </section>
 
         {/* ── 2. Origin / founder story ─────────────────────────────── */}
-        <section id="story" className="py-10 lg:py-14">
+        <section id="story" className="py-16 lg:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-            <div className="lg:grid lg:grid-cols-5 lg:gap-16 lg:items-start">
+            <div className="lg:grid lg:grid-cols-5 gap-10 lg:gap-14 lg:items-start">
 
               {/* Narrative */}
               <div className="lg:col-span-3" data-reveal="">
@@ -232,7 +232,7 @@ export default async function AboutPage() {
         </section>
 
         {/* ── 3. The gap: booking systems aren't enough ────────────── */}
-        <section className="py-10 lg:py-14">
+        <section className="py-16 lg:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div data-reveal="" className="max-w-2xl mb-8">
@@ -290,10 +290,10 @@ export default async function AboutPage() {
         </section>
 
         {/* ── 4. Checklist / accountability philosophy ─────────────── */}
-        <section className="py-10 lg:py-14">
+        <section className="py-16 lg:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-            <div className="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+            <div className="lg:grid lg:grid-cols-2 gap-10 lg:gap-14 lg:items-center">
 
               <div data-reveal="">
                 <div
@@ -349,7 +349,7 @@ export default async function AboutPage() {
         </section>
 
         {/* ── 5. Positioning — works alongside ─────────────────────── */}
-        <section className="py-10 lg:py-14">
+        <section className="py-16 lg:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div data-reveal="" className="max-w-2xl mb-8">
@@ -409,6 +409,71 @@ export default async function AboutPage() {
           </div>
         </section>
 
+
+        {/* ── 6. Closing CTA ───────────────────────────────────────── */}
+        <section className="py-14 lg:py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div
+              data-reveal=""
+              className="max-w-2xl mx-auto rounded-3xl px-8 py-12 lg:px-14 lg:py-16 text-center"
+              style={{
+                backgroundColor: 'rgba(248, 250, 252, 0.88)',
+                backdropFilter: 'blur(20px) saturate(180%)',
+                WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+                border: '1px solid rgba(14, 30, 54, 0.07)',
+                boxShadow: '0 8px 48px rgba(37, 99, 235, 0.08), 0 2px 20px rgba(15, 23, 42, 0.06)',
+              }}
+            >
+              <div
+                className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-widest mb-6 border"
+                style={{
+                  backgroundColor: 'var(--surface-blue-pale)',
+                  borderColor: 'var(--border-blue-light)',
+                  color: 'var(--blue-brand)',
+                }}
+              >
+                {t('ctaBadge')}
+              </div>
+
+              <h2
+                className="text-[28px] sm:text-[38px] font-bold tracking-tight leading-tight mb-6"
+                style={{color: 'var(--on-light-primary)'}}
+              >
+                {t('ctaHeadline')}
+              </h2>
+
+              <p
+                className="text-[16px] leading-relaxed mb-7 max-w-md mx-auto"
+                style={{color: 'var(--on-light-secondary)'}}
+              >
+                {t('ctaBody')}
+              </p>
+
+              <div className="flex flex-wrap justify-center gap-3 mb-5">
+                <a
+                  href="mailto:info@camperflow.io"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-[15px] font-semibold text-white bg-[#2563eb] hover:bg-[#1d4ed8] transition-colors"
+                >
+                  {t('ctaPrimary')}
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
+                    <path d="M3 8h10M8 3l5 5-5 5" />
+                  </svg>
+                </a>
+                <a
+                  href="/pricing"
+                  className="inline-flex items-center px-7 py-3.5 rounded-xl text-[15px] font-semibold border transition-colors"
+                  style={{borderColor: 'var(--border-light)', color: 'var(--on-light-secondary)'}}
+                >
+                  {t('ctaSecondary')}
+                </a>
+              </div>
+
+              <p className="text-[13px]" style={{color: 'var(--on-light-muted)'}}>
+                {t('ctaTrustNote')}
+              </p>
+            </div>
+          </div>
+        </section>
 
       </main>
       <ScrollObserver />

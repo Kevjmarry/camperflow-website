@@ -1,17 +1,17 @@
 const BEFORE = [
-  { icon: '📋', label: 'Spreadsheets and memory for vehicle readiness' },
-  { icon: '💬', label: 'WhatsApp threads for staff coordination' },
-  { icon: '📸', label: 'No photo record when guests dispute damage' },
-  { icon: '🧠', label: 'Compliance deadlines tracked in someone\'s head' },
-  { icon: '🚐', label: 'Guests arriving without proper handover info' },
+  { icon: '📋', label: 'Vehicle readiness tracked in a spreadsheet — or someone\'s head' },
+  { icon: '💬', label: 'Staff coordination by WhatsApp message and guesswork' },
+  { icon: '📸', label: 'No photo evidence when a guest disputes damage' },
+  { icon: '📅', label: 'Compliance deadlines missed because no one was tracking them' },
+  { icon: '🚐', label: 'Guests arrive at pickup with no idea what to expect' },
 ];
 
 const AFTER = [
   { label: 'Live fleet status — every vehicle\'s readiness at a glance' },
-  { label: 'Structured workflows guiding every staff member' },
+  { label: 'Structured workflows guiding every staff member, every shift' },
   { label: 'Photo-documented condition at pickup and return' },
   { label: 'Compliance alerts before deadlines are missed' },
-  { label: 'Guests arrive informed — portal, instructions, return info' },
+  { label: 'Guests arrive informed — portal, instructions, return info sent ahead' },
 ];
 
 export default function ProblemSection() {
@@ -27,16 +27,16 @@ export default function ProblemSection() {
             className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-widest mb-4 border"
             style={{ backgroundColor: 'var(--surface-white)', borderColor: 'var(--border-light)', color: 'var(--on-light-muted)' }}
           >
-            The reality
+            The Problem
           </div>
           <h2
             className="text-[30px] sm:text-[38px] font-bold tracking-tight leading-tight mb-4"
             style={{ color: 'var(--on-light-primary)' }}
           >
-            A booking confirmed is just the start. What happens next is where things go wrong.
+            A booking confirmed is just the start. What happens after is where most operations break down.
           </h2>
           <p className="text-[17px] leading-relaxed" style={{ color: 'var(--on-light-secondary)' }}>
-            Most booking systems stop at the reservation. Everything after — vehicle prep, compliance checks, staff coordination, guest handovers, photo evidence — is left to spreadsheets, memory, and whoever is on shift that day.
+            Most booking systems stop at the reservation. Everything after — vehicle prep, compliance checks, staff coordination, guest handovers, photo evidence — falls to spreadsheets, memory, and whoever happens to know the most on shift. That&apos;s not a system. That&apos;s a liability.
           </p>
         </div>
 

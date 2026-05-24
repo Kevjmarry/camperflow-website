@@ -3,12 +3,12 @@ import Image from 'next/image';
 export default function LifecycleSection() {
   return (
     <section
-      className="py-20 lg:py-28"
+      className="py-16 lg:py-24"
       style={{ backgroundColor: 'var(--surface-blue-pale)' }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-start">
 
           {/* Left: copy */}
           <div data-reveal="" className="max-w-lg">

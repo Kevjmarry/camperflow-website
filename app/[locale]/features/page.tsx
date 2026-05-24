@@ -197,7 +197,7 @@ export default async function FeaturesPage() {
         {/* ── 1. Hero ────────────────────────────────────────────────── */}
         <section className="pt-20 pb-0 relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl pt-6 pb-14 lg:pt-8">
+            <div className="max-w-3xl pt-6 pb-16 lg:pt-8">
 
               <div
                 className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[12px] font-semibold mb-6 border"
@@ -256,7 +256,7 @@ export default async function FeaturesPage() {
           <section
             key={gi}
             id={gi === 0 ? 'capabilities' : undefined}
-            className="py-10 lg:py-14"
+            className="py-16 lg:py-24"
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -313,7 +313,7 @@ export default async function FeaturesPage() {
         ))}
 
         {/* ── 6. In practice — screenshot crops ───────────────────────── */}
-        <section className="py-10 lg:py-14">
+        <section className="py-14 lg:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div data-reveal="" className="max-w-2xl mb-8">

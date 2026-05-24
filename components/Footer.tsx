@@ -23,25 +23,6 @@ export default function Footer() {
         borderTop: '1px solid rgba(14, 30, 54, 0.07)',
       }}
     >
-      {/* Primary CTA */}
-      <div
-        className="py-12 flex flex-col items-center gap-3"
-        style={{borderBottom: '1px solid rgba(14, 30, 54, 0.06)'}}
-      >
-        <a
-          href="mailto:info@camperflow.io"
-          className="inline-flex items-center gap-2 text-[15px] font-semibold px-7 py-3.5 rounded-xl bg-[#2563eb] hover:bg-[#1d4ed8] text-white transition-colors"
-        >
-          Book a demo
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
-            <path d="M3 8h10M8 3l5 5-5 5" />
-          </svg>
-        </a>
-        <p className="text-[13px]" style={{color: '#94a3b8'}}>
-          30-minute walkthrough. No commitment.
-        </p>
-      </div>
-
       {/* Main columns */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">

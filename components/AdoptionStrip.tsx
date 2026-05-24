@@ -16,7 +16,7 @@ const POINTS = [
 export default function AdoptionStrip() {
   return (
     <section
-      className="py-12 lg:py-16 border-b"
+      className="py-14 lg:py-20 border-b"
       style={{ backgroundColor: 'var(--surface-white)', borderColor: 'var(--border-light)' }}
     >
       <div data-reveal="" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
